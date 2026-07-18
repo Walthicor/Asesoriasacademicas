@@ -9,13 +9,39 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RevisionBibliograficaRouteImport } from './routes/revision-bibliografica'
+import { Route as PreparacionSustentacionesRouteImport } from './routes/preparacion-sustentaciones'
+import { Route as NormasApaRouteImport } from './routes/normas-apa'
+import { Route as CorreccionDeEstiloRouteImport } from './routes/correccion-de-estilo'
 import { Route as AsesoriaTrabajosDeGradoRouteImport } from './routes/asesoria-trabajos-de-grado'
 import { Route as AsesoriaMonografiasRouteImport } from './routes/asesoria-monografias'
 import { Route as AsesoriaEnsayosAcademicosRouteImport } from './routes/asesoria-ensayos-academicos'
 import { Route as AsesoriaDeTesisRouteImport } from './routes/asesoria-de-tesis'
 import { Route as AsesoriaArticulosCientificosRouteImport } from './routes/asesoria-articulos-cientificos'
+import { Route as AnalisisEstadisticoSpssRouteImport } from './routes/analisis-estadistico-spss'
 import { Route as IndexRouteImport } from './routes/index'
 
+const RevisionBibliograficaRoute = RevisionBibliograficaRouteImport.update({
+  id: '/revision-bibliografica',
+  path: '/revision-bibliografica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreparacionSustentacionesRoute =
+  PreparacionSustentacionesRouteImport.update({
+    id: '/preparacion-sustentaciones',
+    path: '/preparacion-sustentaciones',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const NormasApaRoute = NormasApaRouteImport.update({
+  id: '/normas-apa',
+  path: '/normas-apa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CorreccionDeEstiloRoute = CorreccionDeEstiloRouteImport.update({
+  id: '/correccion-de-estilo',
+  path: '/correccion-de-estilo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AsesoriaTrabajosDeGradoRoute = AsesoriaTrabajosDeGradoRouteImport.update({
   id: '/asesoria-trabajos-de-grado',
   path: '/asesoria-trabajos-de-grado',
@@ -43,6 +69,11 @@ const AsesoriaArticulosCientificosRoute =
     path: '/asesoria-articulos-cientificos',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AnalisisEstadisticoSpssRoute = AnalisisEstadisticoSpssRouteImport.update({
+  id: '/analisis-estadistico-spss',
+  path: '/analisis-estadistico-spss',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -51,67 +82,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analisis-estadistico-spss': typeof AnalisisEstadisticoSpssRoute
   '/asesoria-articulos-cientificos': typeof AsesoriaArticulosCientificosRoute
   '/asesoria-de-tesis': typeof AsesoriaDeTesisRoute
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
+  '/normas-apa': typeof NormasApaRoute
+  '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
+  '/revision-bibliografica': typeof RevisionBibliograficaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analisis-estadistico-spss': typeof AnalisisEstadisticoSpssRoute
   '/asesoria-articulos-cientificos': typeof AsesoriaArticulosCientificosRoute
   '/asesoria-de-tesis': typeof AsesoriaDeTesisRoute
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
+  '/normas-apa': typeof NormasApaRoute
+  '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
+  '/revision-bibliografica': typeof RevisionBibliograficaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analisis-estadistico-spss': typeof AnalisisEstadisticoSpssRoute
   '/asesoria-articulos-cientificos': typeof AsesoriaArticulosCientificosRoute
   '/asesoria-de-tesis': typeof AsesoriaDeTesisRoute
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
+  '/normas-apa': typeof NormasApaRoute
+  '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
+  '/revision-bibliografica': typeof RevisionBibliograficaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/analisis-estadistico-spss'
     | '/asesoria-articulos-cientificos'
     | '/asesoria-de-tesis'
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/correccion-de-estilo'
+    | '/normas-apa'
+    | '/preparacion-sustentaciones'
+    | '/revision-bibliografica'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/analisis-estadistico-spss'
     | '/asesoria-articulos-cientificos'
     | '/asesoria-de-tesis'
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/correccion-de-estilo'
+    | '/normas-apa'
+    | '/preparacion-sustentaciones'
+    | '/revision-bibliografica'
   id:
     | '__root__'
     | '/'
+    | '/analisis-estadistico-spss'
     | '/asesoria-articulos-cientificos'
     | '/asesoria-de-tesis'
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/correccion-de-estilo'
+    | '/normas-apa'
+    | '/preparacion-sustentaciones'
+    | '/revision-bibliografica'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalisisEstadisticoSpssRoute: typeof AnalisisEstadisticoSpssRoute
   AsesoriaArticulosCientificosRoute: typeof AsesoriaArticulosCientificosRoute
   AsesoriaDeTesisRoute: typeof AsesoriaDeTesisRoute
   AsesoriaEnsayosAcademicosRoute: typeof AsesoriaEnsayosAcademicosRoute
   AsesoriaMonografiasRoute: typeof AsesoriaMonografiasRoute
   AsesoriaTrabajosDeGradoRoute: typeof AsesoriaTrabajosDeGradoRoute
+  CorreccionDeEstiloRoute: typeof CorreccionDeEstiloRoute
+  NormasApaRoute: typeof NormasApaRoute
+  PreparacionSustentacionesRoute: typeof PreparacionSustentacionesRoute
+  RevisionBibliograficaRoute: typeof RevisionBibliograficaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/revision-bibliografica': {
+      id: '/revision-bibliografica'
+      path: '/revision-bibliografica'
+      fullPath: '/revision-bibliografica'
+      preLoaderRoute: typeof RevisionBibliograficaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preparacion-sustentaciones': {
+      id: '/preparacion-sustentaciones'
+      path: '/preparacion-sustentaciones'
+      fullPath: '/preparacion-sustentaciones'
+      preLoaderRoute: typeof PreparacionSustentacionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/normas-apa': {
+      id: '/normas-apa'
+      path: '/normas-apa'
+      fullPath: '/normas-apa'
+      preLoaderRoute: typeof NormasApaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/correccion-de-estilo': {
+      id: '/correccion-de-estilo'
+      path: '/correccion-de-estilo'
+      fullPath: '/correccion-de-estilo'
+      preLoaderRoute: typeof CorreccionDeEstiloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/asesoria-trabajos-de-grado': {
       id: '/asesoria-trabajos-de-grado'
       path: '/asesoria-trabajos-de-grado'
@@ -147,6 +241,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AsesoriaArticulosCientificosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/analisis-estadistico-spss': {
+      id: '/analisis-estadistico-spss'
+      path: '/analisis-estadistico-spss'
+      fullPath: '/analisis-estadistico-spss'
+      preLoaderRoute: typeof AnalisisEstadisticoSpssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -159,11 +260,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalisisEstadisticoSpssRoute: AnalisisEstadisticoSpssRoute,
   AsesoriaArticulosCientificosRoute: AsesoriaArticulosCientificosRoute,
   AsesoriaDeTesisRoute: AsesoriaDeTesisRoute,
   AsesoriaEnsayosAcademicosRoute: AsesoriaEnsayosAcademicosRoute,
   AsesoriaMonografiasRoute: AsesoriaMonografiasRoute,
   AsesoriaTrabajosDeGradoRoute: AsesoriaTrabajosDeGradoRoute,
+  CorreccionDeEstiloRoute: CorreccionDeEstiloRoute,
+  NormasApaRoute: NormasApaRoute,
+  PreparacionSustentacionesRoute: PreparacionSustentacionesRoute,
+  RevisionBibliograficaRoute: RevisionBibliograficaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
