@@ -3,12 +3,11 @@ import { Instagram, Mail, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 
 const servicios = [
-  "Asesoría de tesis",
-  "Trabajo de grado",
-  "Ensayo y monografía",
-  "Artículo científico",
-  "Análisis estadístico SPSS",
-  "Normas APA",
+  { label: "Asesoría de tesis", to: "/asesoria-de-tesis" },
+  { label: "Trabajo de grado", to: "/asesoria-trabajos-de-grado" },
+  { label: "Ensayos académicos", to: "/asesoria-ensayos-academicos" },
+  { label: "Monografías", to: "/asesoria-monografias" },
+  { label: "Artículos científicos", to: "/asesoria-articulos-cientificos" },
 ];
 
 const institucional = [
@@ -16,12 +15,12 @@ const institucional = [
   { label: "Metodología", to: "/" },
   { label: "Blog", to: "/" },
   { label: "Preguntas frecuentes", to: "/" },
-  { label: "Política de acompañamiento ético", to: "/" },
+  { label: "Ética académica", to: "/" },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-[color:var(--border)] bg-[color:var(--background)]">
+    <footer className="border-t border-[color:var(--border)] bg-[color:var(--surface)]">
       <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -34,17 +33,17 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs uppercase tracking-[0.22em] text-[color:var(--accent)]">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
               Servicios
             </h4>
             <ul className="mt-5 space-y-3">
               {servicios.map((s) => (
-                <li key={s}>
+                <li key={s.label}>
                   <Link
-                    to="/"
-                    className="text-sm text-[color:var(--ivory)]/75 transition-colors hover:text-[color:var(--accent-hover)]"
+                    to={s.to}
+                    className="text-sm text-[color:var(--primary)]/75 transition-colors hover:text-[color:var(--brand-magenta)]"
                   >
-                    {s}
+                    {s.label}
                   </Link>
                 </li>
               ))}
@@ -52,7 +51,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs uppercase tracking-[0.22em] text-[color:var(--accent)]">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
               Institucional
             </h4>
             <ul className="mt-5 space-y-3">
@@ -60,7 +59,7 @@ export function Footer() {
                 <li key={i.label}>
                   <Link
                     to={i.to}
-                    className="text-sm text-[color:var(--ivory)]/75 transition-colors hover:text-[color:var(--accent-hover)]"
+                    className="text-sm text-[color:var(--primary)]/75 transition-colors hover:text-[color:var(--brand-magenta)]"
                   >
                     {i.label}
                   </Link>
@@ -70,16 +69,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs uppercase tracking-[0.22em] text-[color:var(--accent)]">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
               Contacto
             </h4>
-            <ul className="mt-5 space-y-3 text-sm text-[color:var(--ivory)]/75">
+            <ul className="mt-5 space-y-3 text-sm text-[color:var(--primary)]/80">
               <li>
                 <a
                   href="https://wa.me/573163641646"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-[color:var(--accent-hover)]"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-[color:var(--brand-magenta)]"
                 >
                   <Phone className="h-4 w-4 text-[color:var(--accent)]" />
                   +57 316 364 1646
@@ -88,7 +87,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:contacto@asesoriasacademicas.co"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-[color:var(--accent-hover)]"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-[color:var(--brand-magenta)]"
                 >
                   <Mail className="h-4 w-4 text-[color:var(--accent)]" />
                   contacto@asesoriasacademicas.co
@@ -99,7 +98,7 @@ export function Footer() {
                   href="https://instagram.com/asesorias_academics"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-[color:var(--accent-hover)]"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-[color:var(--brand-magenta)]"
                 >
                   <Instagram className="h-4 w-4 text-[color:var(--accent)]" />
                   @asesorias_academics
@@ -109,7 +108,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 h-px w-full bg-gradient-to-r from-transparent via-[color:var(--accent)]/40 to-transparent" />
+        <div className="mt-14 h-px w-full bg-gradient-to-r from-transparent via-[color:var(--border)] to-transparent" />
 
         <p className="mt-6 text-center text-xs text-[color:var(--muted-foreground)]">
           © 2026 Asesorías Académicas — Acompañamiento académico ético. Tú eres

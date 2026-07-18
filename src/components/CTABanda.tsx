@@ -10,32 +10,34 @@ export function CTABanda({
   subtitle?: string;
 }) {
   return (
-    <section className="relative overflow-hidden border-y border-[color:var(--border)] bg-[color:var(--surface)]">
+    <section className="relative overflow-hidden border-y border-[color:var(--border)] bg-white">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-30"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 80% at 50% 0%, rgba(201,162,39,0.18), transparent 70%)",
+            "radial-gradient(60% 80% at 50% 0%, rgba(201,162,39,0.10), transparent 70%), radial-gradient(50% 60% at 100% 100%, rgba(142,29,69,0.08), transparent 70%)",
         }}
       />
-      <div className="relative mx-auto max-w-4xl px-5 py-20 text-center lg:px-8">
-        <h2 className="text-shine font-display text-3xl md:text-5xl">{title}</h2>
+      <div className="relative mx-auto max-w-4xl px-5 py-24 text-center lg:px-8">
+        <h2 className="font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
+          {title}
+        </h2>
         <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted-foreground)]">
           {subtitle}
         </p>
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href={WA_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-sm border border-[color:var(--accent)]/50 bg-transparent px-7 py-3 text-sm font-medium text-[color:var(--ivory)] transition-all duration-300 hover:border-[color:var(--accent)] hover:bg-[color:var(--accent)]/10 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center rounded-full border border-[color:var(--primary)]/20 bg-white px-7 py-3 text-sm font-medium text-[color:var(--primary)] transition-all duration-300 hover:border-[color:var(--primary)] hover:-translate-y-0.5"
           >
             Escríbenos por WhatsApp
           </a>
           <a
             href="#cotizar"
-            className="inline-flex items-center justify-center rounded-sm bg-[color:var(--accent)] px-7 py-3 text-sm font-medium text-[color:var(--accent-foreground)] shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--accent-hover)] hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center rounded-full bg-[color:var(--primary)] px-8 py-3 text-sm font-medium text-white shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
           >
             Solicitar cotización
           </a>
