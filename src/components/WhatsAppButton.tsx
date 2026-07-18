@@ -1,14 +1,17 @@
-const WA_URL =
-  "https://wa.me/573163641646?text=" +
-  encodeURIComponent("Hola, quiero una cotización de asesoría académica");
+import { waUrl } from "../lib/whatsapp";
 
-export function WhatsAppButton() {
+export function WhatsAppButton({ servicio }: { servicio?: string } = {}) {
+  const href = waUrl(servicio);
+  const label = servicio
+    ? `Escríbenos por WhatsApp para ${servicio.toLowerCase()}`
+    : "Escríbenos por WhatsApp";
+
   return (
     <a
-      href={WA_URL}
+      href={href}
       target="_blank"
       rel="noreferrer"
-      aria-label="Escríbenos por WhatsApp"
+      aria-label={label}
       className="pulse-gold fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-[color:var(--accent)] text-[color:var(--accent-foreground)] shadow-[var(--shadow-gold)] transition-transform duration-300 hover:scale-105 hover:bg-[color:var(--accent-hover)]"
     >
       <svg viewBox="0 0 32 32" className="h-7 w-7" fill="currentColor" aria-hidden>
