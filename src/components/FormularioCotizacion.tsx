@@ -15,9 +15,9 @@ const SERVICIOS = [
 ];
 
 const fieldBase =
-  "w-full rounded-sm border border-[color:var(--border)] bg-[color:var(--background)]/60 px-4 py-3 text-sm text-[color:var(--ivory)] placeholder:text-[color:var(--muted-foreground)] transition-colors focus:border-[color:var(--accent)] focus:outline-none focus:ring-1 focus:ring-[color:var(--accent)]/40";
+  "w-full rounded-xl border border-[color:var(--border)] bg-white px-4 py-3 text-sm text-[color:var(--primary)] placeholder:text-[color:var(--muted-foreground)] transition-colors focus:border-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]/30";
 const labelBase =
-  "text-xs uppercase tracking-[0.18em] text-[color:var(--muted-foreground)]";
+  "text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--primary)]/70";
 
 export function FormularioCotizacion({
   title = "Solicita tu cotización",
@@ -40,9 +40,9 @@ export function FormularioCotizacion({
 
   if (sent) {
     return (
-      <div className="rounded-md border border-[color:var(--accent)]/40 bg-[color:var(--card)] p-10 text-center shadow-[var(--shadow-elegant)]">
-        <CheckCircle2 className="mx-auto h-12 w-12 text-[color:var(--accent)]" />
-        <h3 className="mt-5 font-display text-2xl text-[color:var(--ivory)]">
+      <div className="rounded-2xl border border-[color:var(--border)] bg-white p-10 text-center shadow-[var(--shadow-elegant)]">
+        <CheckCircle2 className="mx-auto h-14 w-14 text-[color:var(--accent)]" />
+        <h3 className="mt-5 font-display text-2xl text-[color:var(--primary)]">
           Recibimos tu solicitud
         </h3>
         <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
@@ -51,7 +51,7 @@ export function FormularioCotizacion({
         </p>
         <button
           onClick={() => setSent(false)}
-          className="mt-6 text-xs uppercase tracking-[0.2em] text-[color:var(--accent)] hover:text-[color:var(--accent-hover)]"
+          className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-magenta)] hover:text-[color:var(--primary)]"
         >
           Enviar otra solicitud
         </button>
@@ -62,13 +62,13 @@ export function FormularioCotizacion({
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-md border border-[color:var(--border)] bg-[color:var(--card)] p-8 shadow-[var(--shadow-elegant)] md:p-10"
+      className="rounded-2xl border border-[color:var(--border)] bg-white p-8 shadow-[var(--shadow-elegant)] md:p-10"
     >
       <div className="mb-8">
-        <p className="text-xs uppercase tracking-[0.22em] text-[color:var(--accent)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
           Cotización sin compromiso
         </p>
-        <h3 className="mt-2 font-display text-2xl text-[color:var(--ivory)] md:text-3xl">
+        <h3 className="mt-2 font-display text-3xl text-[color:var(--primary)] md:text-4xl">
           {title}
         </h3>
       </div>
@@ -131,7 +131,7 @@ export function FormularioCotizacion({
         <button
           type="submit"
           disabled={loading}
-          className="pulse-gold relative inline-flex items-center justify-center rounded-sm bg-[color:var(--accent)] px-10 py-3.5 text-sm font-medium text-[color:var(--accent-foreground)] shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--accent-hover)] disabled:opacity-70"
+          className="pulse-gold relative inline-flex items-center justify-center rounded-full bg-[color:var(--primary)] px-10 py-3.5 text-sm font-medium text-white shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] disabled:opacity-70"
         >
           {loading ? "Enviando..." : "Solicitar cotización"}
         </button>

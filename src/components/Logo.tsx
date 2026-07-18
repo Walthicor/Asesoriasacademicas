@@ -5,24 +5,24 @@ export function Logo({ compact = false }: { compact?: boolean }) {
     <Link to="/" className="group flex items-center gap-3">
       <span
         aria-hidden
-        className="grid h-9 w-9 place-items-center rounded-sm border border-[color:var(--accent)]/40 bg-[color:var(--surface)] transition-colors group-hover:border-[color:var(--accent)]"
+        className="grid h-10 w-10 place-items-center rounded-md bg-white ring-1 ring-[color:var(--border)] transition-all group-hover:ring-[color:var(--accent)]/60"
       >
-        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
           <path
             d="M12 3 L21 20 L3 20 Z"
-            stroke="var(--accent)"
-            strokeWidth="1.6"
+            stroke="var(--primary)"
+            strokeWidth="1.8"
             strokeLinejoin="round"
           />
-          <path d="M8 20 L16 20" stroke="var(--accent)" strokeWidth="1.6" />
+          <path d="M12 10 L15.5 17 L8.5 17 Z" fill="var(--brand-magenta)" />
         </svg>
       </span>
       {!compact && (
         <span className="flex flex-col leading-none">
-          <span className="font-display text-lg text-[color:var(--ivory)]">
+          <span className="font-display text-lg font-semibold text-[color:var(--primary)]">
             Asesorías Académicas
           </span>
-          <span className="mt-0.5 text-[10px] uppercase tracking-[0.22em] text-[color:var(--muted-foreground)]">
+          <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.24em] text-[color:var(--brand-magenta)]">
             Acompañamiento ético
           </span>
         </span>
