@@ -76,26 +76,20 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+import { organizationJsonLd, SITE_NAME } from "../lib/seo";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Asesorías Académicas — Acompañamiento ético para tu tesis y trabajo de grado" },
-      {
-        name: "description",
-        content:
-          "Asesoría, tutoría y acompañamiento académico para estudiantes de pregrado y posgrado en Colombia. Te formamos para que tu trabajo sea, siempre, tuyo.",
-      },
-      { name: "author", content: "Asesorías Académicas" },
-      { property: "og:title", content: "Asesorías Académicas — Acompañamiento ético" },
-      {
-        property: "og:description",
-        content:
-          "Asesoría de tesis, trabajos de grado, artículos y análisis estadístico. Te acompañamos; tú eres el autor.",
-      },
+      { name: "theme-color", content: "#1A2C5B" },
+      { name: "author", content: SITE_NAME },
+      { property: "og:site_name", content: SITE_NAME },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "es_CO" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@asesorias_academics" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -105,6 +99,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Poppins:wght@300;400;500;600;700;800&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(organizationJsonLd),
       },
     ],
   }),
