@@ -4,34 +4,35 @@ import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-tesis.jpg";
 
 export const Route = createFileRoute("/asesoria-de-tesis")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Asesoría de Tesis en Colombia | Acompañamiento Metodológico — Asesorías Académicas",
-      },
-      {
-        name: "description",
-        content:
-          "Asesoría de tesis de maestría y doctorado con acompañamiento metodológico capítulo a capítulo. Sesiones personalizadas, revisión de avances y preparación de sustentación.",
-      },
-      {
-        property: "og:title",
-        content:
-          "Asesoría de Tesis en Colombia | Acompañamiento Metodológico",
-      },
-      {
-        property: "og:description",
-        content:
-          "Acompañamiento experto capítulo a capítulo. Tú eres el autor; nosotros te guiamos.",
-      },
-      { property: "og:url", content: "/asesoria-de-tesis" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/asesoria-de-tesis" }],
+  head: () => serviceHead({
+    path: "/asesoria-de-tesis",
+    title: "Asesoría de Tesis en Colombia | Acompañamiento Metodológico — Asesorías Académicas",
+    description: "Asesoría de tesis de maestría y doctorado con acompañamiento metodológico capítulo a capítulo. Sesiones personalizadas, revisión de avances y preparación de sustentación.",
+    serviceName: "Asesoría de tesis",
+    ogType: "article",
+    faq: FAQ,
   }),
   component: AsesoriaTesisPage,
 });
+
+const FAQ = [
+        {
+          q: "¿Ustedes escriben la tesis por mí?",
+          a: "No. La autoría es tuya siempre: tú escribes y nosotros te asesoramos, revisamos y orientamos. Así garantizas dominio total de tu trabajo ante jurados y sistemas antiplagio, y un proceso académicamente ético.",
+        },
+        {
+          q: "¿Cuánto dura el acompañamiento?",
+          a: "Depende de tu avance y fecha límite; armamos planes desde 4 semanas hasta 12 meses.",
+        },
+        {
+          q: "¿Atienden todas las áreas?",
+          a: "Sí, contamos con más de 100 docentes asesores en todas las áreas curriculares.",
+        },
+        {
+          q: "¿Cómo son los pagos?",
+          a: "Planes diferidos por etapas del acompañamiento. Te lo detallamos en la cotización.",
+        },
+      ];
 
 function AsesoriaTesisPage() {
   return (
@@ -89,24 +90,7 @@ function AsesoriaTesisPage() {
             "Un plan realista para reactivar tu proyecto y llegar al grado.",
         },
       ]}
-      faq={[
-        {
-          q: "¿Ustedes escriben la tesis por mí?",
-          a: "No. La autoría es tuya siempre: tú escribes y nosotros te asesoramos, revisamos y orientamos. Así garantizas dominio total de tu trabajo ante jurados y sistemas antiplagio, y un proceso académicamente ético.",
-        },
-        {
-          q: "¿Cuánto dura el acompañamiento?",
-          a: "Depende de tu avance y fecha límite; armamos planes desde 4 semanas hasta 12 meses.",
-        },
-        {
-          q: "¿Atienden todas las áreas?",
-          a: "Sí, contamos con más de 100 docentes asesores en todas las áreas curriculares.",
-        },
-        {
-          q: "¿Cómo son los pagos?",
-          a: "Planes diferidos por etapas del acompañamiento. Te lo detallamos en la cotización.",
-        },
-      ]}
+      faq={FAQ}
       relacionados={[
         {
           to: "/",

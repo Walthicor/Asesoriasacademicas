@@ -4,33 +4,35 @@ import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-correccion.jpg";
 
 export const Route = createFileRoute("/correccion-de-estilo")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Corrección de Estilo de Tesis y Documentos Académicos — Asesorías Académicas",
-      },
-      {
-        name: "description",
-        content:
-          "Correctores profesionales pulen redacción, coherencia y ortotipografía de tu documento académico respetando tu autoría. Control de cambios y observaciones.",
-      },
-      {
-        property: "og:title",
-        content: "Corrección de estilo y contenido",
-      },
-      {
-        property: "og:description",
-        content:
-          "Tu texto en su mejor versión: claridad, precisión y fluidez, sin alterar tu voz.",
-      },
-      { property: "og:url", content: "/correccion-de-estilo" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/correccion-de-estilo" }],
+  head: () => serviceHead({
+    path: "/correccion-de-estilo",
+    title: "Corrección de Estilo de Tesis y Documentos Académicos — Asesorías Académicas",
+    description: "Correctores profesionales pulen la redacción, coherencia, cohesión y ortotipografía de tu documento académico respetando tu autoría.",
+    serviceName: "Corrección de estilo académica",
+    ogType: "article",
+    faq: FAQ,
   }),
   component: CorreccionPage,
 });
+
+const FAQ = [
+        {
+          q: "¿La corrección altera mi autoría?",
+          a: "No: la corrección de estilo es una práctica editorial estándar. Todos los cambios van con control de cambios y tú los apruebas.",
+        },
+        {
+          q: "¿En cuánto tiempo entregan?",
+          a: "De 5 a 10 días hábiles según extensión. Modalidad exprés bajo cotización.",
+        },
+        {
+          q: "¿Reescriben capítulos completos?",
+          a: "No. Corregimos y sugerimos; la reescritura la haces tú con nuestra retroalimentación.",
+        },
+        {
+          q: "¿Incluye normas APA?",
+          a: "No está incluido en este servicio, pero puedes contratarlo en paquete con el servicio de APA 7.",
+        },
+      ];
 
 function CorreccionPage() {
   return (
@@ -85,24 +87,7 @@ function CorreccionPage() {
             "Corrección profesional en español académico para escritores con otra lengua materna.",
         },
       ]}
-      faq={[
-        {
-          q: "¿La corrección altera mi autoría?",
-          a: "No: la corrección de estilo es una práctica editorial estándar. Todos los cambios van con control de cambios y tú los apruebas.",
-        },
-        {
-          q: "¿En cuánto tiempo entregan?",
-          a: "De 5 a 10 días hábiles según extensión. Modalidad exprés bajo cotización.",
-        },
-        {
-          q: "¿Reescriben capítulos completos?",
-          a: "No. Corregimos y sugerimos; la reescritura la haces tú con nuestra retroalimentación.",
-        },
-        {
-          q: "¿Incluye normas APA?",
-          a: "No está incluido en este servicio, pero puedes contratarlo en paquete con el servicio de APA 7.",
-        },
-      ]}
+      faq={FAQ}
       relacionados={[
         {
           to: "/normas-apa",
