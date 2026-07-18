@@ -10,9 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RevisionBibliograficaRouteImport } from './routes/revision-bibliografica'
+import { Route as QuienesSomosRouteImport } from './routes/quienes-somos'
 import { Route as PreparacionSustentacionesRouteImport } from './routes/preparacion-sustentaciones'
+import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frecuentes'
 import { Route as NormasApaRouteImport } from './routes/normas-apa'
 import { Route as CorreccionDeEstiloRouteImport } from './routes/correccion-de-estilo'
+import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as AsesoriaTrabajosDeGradoRouteImport } from './routes/asesoria-trabajos-de-grado'
 import { Route as AsesoriaMonografiasRouteImport } from './routes/asesoria-monografias'
 import { Route as AsesoriaEnsayosAcademicosRouteImport } from './routes/asesoria-ensayos-academicos'
@@ -26,12 +29,22 @@ const RevisionBibliograficaRoute = RevisionBibliograficaRouteImport.update({
   path: '/revision-bibliografica',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuienesSomosRoute = QuienesSomosRouteImport.update({
+  id: '/quienes-somos',
+  path: '/quienes-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PreparacionSustentacionesRoute =
   PreparacionSustentacionesRouteImport.update({
     id: '/preparacion-sustentaciones',
     path: '/preparacion-sustentaciones',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PreguntasFrecuentesRoute = PreguntasFrecuentesRouteImport.update({
+  id: '/preguntas-frecuentes',
+  path: '/preguntas-frecuentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NormasApaRoute = NormasApaRouteImport.update({
   id: '/normas-apa',
   path: '/normas-apa',
@@ -40,6 +53,11 @@ const NormasApaRoute = NormasApaRouteImport.update({
 const CorreccionDeEstiloRoute = CorreccionDeEstiloRouteImport.update({
   id: '/correccion-de-estilo',
   path: '/correccion-de-estilo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AsesoriaTrabajosDeGradoRoute = AsesoriaTrabajosDeGradoRouteImport.update({
@@ -88,9 +106,12 @@ export interface FileRoutesByFullPath {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
+  '/quienes-somos': typeof QuienesSomosRoute
   '/revision-bibliografica': typeof RevisionBibliograficaRoute
 }
 export interface FileRoutesByTo {
@@ -101,9 +122,12 @@ export interface FileRoutesByTo {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
+  '/quienes-somos': typeof QuienesSomosRoute
   '/revision-bibliografica': typeof RevisionBibliograficaRoute
 }
 export interface FileRoutesById {
@@ -115,9 +139,12 @@ export interface FileRoutesById {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
+  '/quienes-somos': typeof QuienesSomosRoute
   '/revision-bibliografica': typeof RevisionBibliograficaRoute
 }
 export interface FileRouteTypes {
@@ -130,9 +157,12 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
+    | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
+    | '/quienes-somos'
     | '/revision-bibliografica'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,9 +173,12 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
+    | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
+    | '/quienes-somos'
     | '/revision-bibliografica'
   id:
     | '__root__'
@@ -156,9 +189,12 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
+    | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
+    | '/quienes-somos'
     | '/revision-bibliografica'
   fileRoutesById: FileRoutesById
 }
@@ -170,9 +206,12 @@ export interface RootRouteChildren {
   AsesoriaEnsayosAcademicosRoute: typeof AsesoriaEnsayosAcademicosRoute
   AsesoriaMonografiasRoute: typeof AsesoriaMonografiasRoute
   AsesoriaTrabajosDeGradoRoute: typeof AsesoriaTrabajosDeGradoRoute
+  ContactoRoute: typeof ContactoRoute
   CorreccionDeEstiloRoute: typeof CorreccionDeEstiloRoute
   NormasApaRoute: typeof NormasApaRoute
+  PreguntasFrecuentesRoute: typeof PreguntasFrecuentesRoute
   PreparacionSustentacionesRoute: typeof PreparacionSustentacionesRoute
+  QuienesSomosRoute: typeof QuienesSomosRoute
   RevisionBibliograficaRoute: typeof RevisionBibliograficaRoute
 }
 
@@ -185,11 +224,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RevisionBibliograficaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quienes-somos': {
+      id: '/quienes-somos'
+      path: '/quienes-somos'
+      fullPath: '/quienes-somos'
+      preLoaderRoute: typeof QuienesSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/preparacion-sustentaciones': {
       id: '/preparacion-sustentaciones'
       path: '/preparacion-sustentaciones'
       fullPath: '/preparacion-sustentaciones'
       preLoaderRoute: typeof PreparacionSustentacionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preguntas-frecuentes': {
+      id: '/preguntas-frecuentes'
+      path: '/preguntas-frecuentes'
+      fullPath: '/preguntas-frecuentes'
+      preLoaderRoute: typeof PreguntasFrecuentesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/normas-apa': {
@@ -204,6 +257,13 @@ declare module '@tanstack/react-router' {
       path: '/correccion-de-estilo'
       fullPath: '/correccion-de-estilo'
       preLoaderRoute: typeof CorreccionDeEstiloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/asesoria-trabajos-de-grado': {
@@ -266,9 +326,12 @@ const rootRouteChildren: RootRouteChildren = {
   AsesoriaEnsayosAcademicosRoute: AsesoriaEnsayosAcademicosRoute,
   AsesoriaMonografiasRoute: AsesoriaMonografiasRoute,
   AsesoriaTrabajosDeGradoRoute: AsesoriaTrabajosDeGradoRoute,
+  ContactoRoute: ContactoRoute,
   CorreccionDeEstiloRoute: CorreccionDeEstiloRoute,
   NormasApaRoute: NormasApaRoute,
+  PreguntasFrecuentesRoute: PreguntasFrecuentesRoute,
   PreparacionSustentacionesRoute: PreparacionSustentacionesRoute,
+  QuienesSomosRoute: QuienesSomosRoute,
   RevisionBibliograficaRoute: RevisionBibliograficaRoute,
 }
 export const routeTree = rootRouteImport
