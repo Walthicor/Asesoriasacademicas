@@ -1,22 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "../lib/seo";
 import { PenLine, Library, BookMarked } from "lucide-react";
 import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-monografias.jpg";
 
 export const Route = createFileRoute("/asesoria-monografias")({
-  head: () => ({
-    meta: [
-      { title: "Asesoría de Monografías | Investigación Documental — Asesorías Académicas" },
-      { name: "description", content: "Asesoría en diseño, búsqueda de fuentes académicas y redacción de monografías, con revisiones progresivas de tus avances." },
-      { property: "og:title", content: "Asesoría de Monografías | Investigación Documental" },
-      { property: "og:description", content: "Investigación documental con rigor. Tú eres el autor; nosotros te acompañamos." },
-      { property: "og:url", content: "/asesoria-monografias" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/asesoria-monografias" }],
+  head: () => serviceHead({
+    path: "/asesoria-monografias",
+    title: "Asesoría de Monografías | Investigación Documental — Asesorías Académicas",
+    description: "Asesoría en diseño, búsqueda de fuentes académicas y redacción de monografías, con revisiones progresivas de tus avances.",
+    serviceName: "Asesoría de monografías",
+    ogType: "article",
+    faq: FAQ,
   }),
   component: Page,
 });
+
+const FAQ = [
+        { q: "¿Ustedes escriben la monografía por mí?", a: "No. Te acompañamos con asesoría y revisión detallada; la autoría del texto es siempre tuya." },
+        { q: "¿Cómo eligen las fuentes?", a: "Te enseñamos a buscarlas y evaluarlas en bases académicas confiables como Scopus, WoS y bibliotecas universitarias." },
+        { q: "¿Cuánto tarda el proceso?", a: "Depende del tema y del calendario de tu asignatura; armamos un plan a tu medida." },
+        { q: "¿Cómo son los pagos?", a: "Planes diferidos por etapas del acompañamiento. Te lo detallamos en la cotización." },
+      ];
 
 function Page() {
   return (
@@ -44,12 +49,7 @@ function Page() {
         { titulo: "Quienes buscan fortalecer su rigor documental", texto: "Ganan criterio para elegir y citar fuentes académicas." },
         { titulo: "Aspirantes a artículos o tesis", texto: "Convierten su monografía en base para futuros proyectos." },
       ]}
-      faq={[
-        { q: "¿Ustedes escriben la monografía por mí?", a: "No. Te acompañamos con asesoría y revisión detallada; la autoría del texto es siempre tuya." },
-        { q: "¿Cómo eligen las fuentes?", a: "Te enseñamos a buscarlas y evaluarlas en bases académicas confiables como Scopus, WoS y bibliotecas universitarias." },
-        { q: "¿Cuánto tarda el proceso?", a: "Depende del tema y del calendario de tu asignatura; armamos un plan a tu medida." },
-        { q: "¿Cómo son los pagos?", a: "Planes diferidos por etapas del acompañamiento. Te lo detallamos en la cotización." },
-      ]}
+      faq={FAQ}
       relacionados={[
         { to: "/asesoria-ensayos-academicos", titulo: "Ensayos académicos", texto: "Tutorías de escritura argumentativa con voz propia.", icon: PenLine },
         { to: "/", titulo: "Revisión bibliográfica", texto: "Aprende a filtrar y organizar literatura con gestores de referencias.", icon: Library },

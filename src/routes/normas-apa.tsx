@@ -1,36 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "../lib/seo";
 import { BookOpen, BarChart3, PenLine } from "lucide-react";
 import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-apa.jpg";
 
 export const Route = createFileRoute("/normas-apa")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Normas APA 7 | Formato y Citación de Tesis — Asesorías Académicas",
-      },
-      {
-        name: "description",
-        content:
-          "Aplicamos APA 7 a tu documento y te capacitamos en citación para que no pierdas puntos por forma. Portada, tablas, referencias y guía personalizada.",
-      },
-      {
-        property: "og:title",
-        content: "Normas APA 7: formato y citación impecables",
-      },
-      {
-        property: "og:description",
-        content:
-          "Formato APA aplicado a tu documento y mini-capacitación en citación para tu carrera.",
-      },
-      { property: "og:url", content: "/normas-apa" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/normas-apa" }],
+  head: () => serviceHead({
+    path: "/normas-apa",
+    title: "Normas APA 7 | Formato y Citación de Tesis — Asesorías Académicas",
+    description: "Aplicamos el formato APA a tu documento y te capacitamos en citación para que nunca más pierdas puntos por forma.",
+    serviceName: "Formato y capacitación en Normas APA 7",
+    ogType: "article",
+    faq: FAQ,
   }),
   component: APAPage,
 });
+
+const FAQ = [
+        {
+          q: "¿Trabajan también con IEEE, Vancouver o Chicago?",
+          a: "Nuestro fuerte es APA 7. Consulta por otros estilos: podemos orientarte según disponibilidad de asesores.",
+        },
+        {
+          q: "¿En cuánto tiempo entregan?",
+          a: "Un documento estándar de tesis se entrega entre 3 y 7 días hábiles. Servicio exprés bajo cotización.",
+        },
+        {
+          q: "¿Incluye corrección de estilo?",
+          a: "No: APA es forma y citación. Para redacción y estilo tenemos el servicio de corrección de estilo dedicado.",
+        },
+        {
+          q: "¿Reciben cualquier formato de archivo?",
+          a: "Sí: Word, Google Docs y LaTeX. Devolvemos el archivo en el mismo formato en que lo entregaste.",
+        },
+      ];
 
 function APAPage() {
   return (
@@ -85,24 +88,7 @@ function APAPage() {
             "Capacitación APA 7 aplicada a guías, syllabus y publicaciones institucionales.",
         },
       ]}
-      faq={[
-        {
-          q: "¿Trabajan también con IEEE, Vancouver o Chicago?",
-          a: "Nuestro fuerte es APA 7. Consulta por otros estilos: podemos orientarte según disponibilidad de asesores.",
-        },
-        {
-          q: "¿En cuánto tiempo entregan?",
-          a: "Un documento estándar de tesis se entrega entre 3 y 7 días hábiles. Servicio exprés bajo cotización.",
-        },
-        {
-          q: "¿Incluye corrección de estilo?",
-          a: "No: APA es forma y citación. Para redacción y estilo tenemos el servicio de corrección de estilo dedicado.",
-        },
-        {
-          q: "¿Reciben cualquier formato de archivo?",
-          a: "Sí: Word, Google Docs y LaTeX. Devolvemos el archivo en el mismo formato en que lo entregaste.",
-        },
-      ]}
+      faq={FAQ}
       relacionados={[
         {
           to: "/correccion-de-estilo",

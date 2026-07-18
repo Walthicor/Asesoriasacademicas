@@ -1,36 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "../lib/seo";
 import { BookOpen, BarChart3, PenLine } from "lucide-react";
 import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-sustentacion.jpg";
 
 export const Route = createFileRoute("/preparacion-sustentaciones")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Preparación para Sustentación de Tesis | Simulacros con Docentes — Asesorías Académicas",
-      },
-      {
-        name: "description",
-        content:
-          "Simulacros con docentes, diseño de diapositivas profesionales y entrenamiento en preguntas de jurado para que llegues seguro a tu sustentación.",
-      },
-      {
-        property: "og:title",
-        content: "Preparación de sustentación de tesis",
-      },
-      {
-        property: "og:description",
-        content:
-          "Ensaya con docentes reales, pule tu discurso y llega al gran día con total dominio.",
-      },
-      { property: "og:url", content: "/preparacion-sustentaciones" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/preparacion-sustentaciones" }],
+  head: () => serviceHead({
+    path: "/preparacion-sustentaciones",
+    title: "Preparación para Sustentación de Tesis | Simulacros con Docentes — Asesorías Académicas",
+    description: "Simulacros con docentes, diseño de tu presentación y entrenamiento en preguntas de jurado. La sustentación se gana antes de entrar a la sala.",
+    serviceName: "Preparación de sustentación",
+    ogType: "article",
+    faq: FAQ,
   }),
   component: SustentacionPage,
 });
+
+const FAQ = [
+        {
+          q: "¿Preparan también sustentación en modalidad virtual?",
+          a: "Sí, entrenamos manejo de cámara, encuadre, iluminación y ritmo específicos para defensa virtual.",
+        },
+        {
+          q: "¿Cuánto antes debo agendar?",
+          a: "Ideal: mínimo dos semanas antes. También ofrecemos preparación exprés en 4 a 5 días.",
+        },
+        {
+          q: "¿Ustedes hacen las diapositivas por mí?",
+          a: "Te asesoramos con criterios profesionales y te acompañamos en su construcción; el diseño lo ejecutas tú.",
+        },
+        {
+          q: "¿El docente del simulacro conoce mi área?",
+          a: "Asignamos un asesor con perfil afín a tu tema para que las preguntas sean realistas y pertinentes.",
+        },
+      ];
 
 function SustentacionPage() {
   return (
@@ -85,24 +88,7 @@ function SustentacionPage() {
             "Analizamos qué pasó, corregimos brechas y te preparamos para el segundo intento.",
         },
       ]}
-      faq={[
-        {
-          q: "¿Preparan también sustentación en modalidad virtual?",
-          a: "Sí, entrenamos manejo de cámara, encuadre, iluminación y ritmo específicos para defensa virtual.",
-        },
-        {
-          q: "¿Cuánto antes debo agendar?",
-          a: "Ideal: mínimo dos semanas antes. También ofrecemos preparación exprés en 4 a 5 días.",
-        },
-        {
-          q: "¿Ustedes hacen las diapositivas por mí?",
-          a: "Te asesoramos con criterios profesionales y te acompañamos en su construcción; el diseño lo ejecutas tú.",
-        },
-        {
-          q: "¿El docente del simulacro conoce mi área?",
-          a: "Asignamos un asesor con perfil afín a tu tema para que las preguntas sean realistas y pertinentes.",
-        },
-      ]}
+      faq={FAQ}
       relacionados={[
         {
           to: "/asesoria-de-tesis",

@@ -88,6 +88,9 @@
   --border: oklch(0.92 0.006 265);               /* subtle */
   --input: oklch(0.94 0.006 265);
   --ring: oklch(0.74 0.13 82);
+
+  /* Darker gold for small text on light backgrounds (AA contrast) */
+  --accent-ink: #8A6D14;
 }
 
 @layer base {
@@ -117,6 +120,13 @@
   ::selection {
     background-color: color-mix(in oklab, var(--color-accent) 40%, transparent);
     color: var(--ink);
+  }
+
+  /* Global focus-visible ring: gold, AA-visible on both light and navy surfaces */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 

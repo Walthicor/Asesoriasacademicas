@@ -1,36 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "../lib/seo";
 import { BookOpen, BookMarked, Presentation } from "lucide-react";
 import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-spss.jpg";
 
 export const Route = createFileRoute("/analisis-estadistico-spss")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Asesoría en Análisis Estadístico SPSS | Capacitación para Tesis — Asesorías Académicas",
-      },
-      {
-        name: "description",
-        content:
-          "Capacitación y consultoría estadística en SPSS: procesa tus datos, elige las pruebas adecuadas e interpreta cada tabla para sustentar con seguridad.",
-      },
-      {
-        property: "og:title",
-        content: "Análisis estadístico con SPSS para tu tesis",
-      },
-      {
-        property: "og:description",
-        content:
-          "Aprende a procesar e interpretar tus datos en SPSS con acompañamiento profesional.",
-      },
-      { property: "og:url", content: "/analisis-estadistico-spss" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/analisis-estadistico-spss" }],
+  head: () => serviceHead({
+    path: "/analisis-estadistico-spss",
+    title: "Asesoría en Análisis Estadístico SPSS | Capacitación para Tesis — Asesorías Académicas",
+    description: "Capacitación y consultoría estadística: te enseñamos a procesar tus datos en SPSS y a interpretar cada tabla para sustentar con seguridad.",
+    serviceName: "Análisis estadístico con SPSS",
+    ogType: "article",
+    faq: FAQ,
   }),
   component: SPSSPage,
 });
+
+const FAQ = [
+        {
+          q: "¿Hacen el análisis y ya?",
+          a: "Trabajamos contigo en pantalla compartida: el objetivo es que domines tu análisis, porque el jurado te preguntará por él.",
+        },
+        {
+          q: "¿Qué pruebas cubren?",
+          a: "Descriptivas, pruebas paramétricas y no paramétricas, correlaciones, regresiones, ANOVA, chi cuadrado, factoriales y más, según tu diseño.",
+        },
+        {
+          q: "¿Solo SPSS o también otros programas?",
+          a: "Nuestro fuerte es SPSS. También orientamos análisis básicos en Excel y R según el requerimiento de tu tesis.",
+        },
+        {
+          q: "¿Cuántas sesiones necesito?",
+          a: "Depende de la complejidad del estudio. Un análisis descriptivo suele resolverse en 2 a 4 sesiones; diseños avanzados requieren un plan mayor.",
+        },
+      ];
 
 function SPSSPage() {
   return (
@@ -86,24 +89,7 @@ function SPSSPage() {
             "Refuerzo intensivo para explicar tus resultados con solvencia ante el jurado.",
         },
       ]}
-      faq={[
-        {
-          q: "¿Hacen el análisis y ya?",
-          a: "Trabajamos contigo en pantalla compartida: el objetivo es que domines tu análisis, porque el jurado te preguntará por él.",
-        },
-        {
-          q: "¿Qué pruebas cubren?",
-          a: "Descriptivas, pruebas paramétricas y no paramétricas, correlaciones, regresiones, ANOVA, chi cuadrado, factoriales y más, según tu diseño.",
-        },
-        {
-          q: "¿Solo SPSS o también otros programas?",
-          a: "Nuestro fuerte es SPSS. También orientamos análisis básicos en Excel y R según el requerimiento de tu tesis.",
-        },
-        {
-          q: "¿Cuántas sesiones necesito?",
-          a: "Depende de la complejidad del estudio. Un análisis descriptivo suele resolverse en 2 a 4 sesiones; diseños avanzados requieren un plan mayor.",
-        },
-      ]}
+      faq={FAQ}
       relacionados={[
         {
           to: "/asesoria-de-tesis",

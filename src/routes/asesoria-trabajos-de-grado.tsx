@@ -1,22 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "../lib/seo";
 import { GraduationCap, BookMarked, SpellCheck } from "lucide-react";
 import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-grado.jpg";
 
 export const Route = createFileRoute("/asesoria-trabajos-de-grado")({
-  head: () => ({
-    meta: [
-      { title: "Asesoría de Trabajos de Grado | Acompañamiento para Pregrado — Asesorías Académicas" },
-      { name: "description", content: "Acompañamiento integral para planear, estructurar, escribir y sustentar tu trabajo de grado de pregrado, con revisión de avances y docentes especializados." },
-      { property: "og:title", content: "Asesoría de Trabajos de Grado | Acompañamiento para Pregrado" },
-      { property: "og:description", content: "Te orientamos hasta la sustentación. Tú eres el autor de tu trabajo." },
-      { property: "og:url", content: "/asesoria-trabajos-de-grado" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/asesoria-trabajos-de-grado" }],
+  head: () => serviceHead({
+    path: "/asesoria-trabajos-de-grado",
+    title: "Asesoría de Trabajos de Grado | Acompañamiento para Pregrado — Asesorías Académicas",
+    description: "Acompañamiento integral para planear, estructurar, escribir y sustentar tu trabajo de grado de pregrado, con revisión de avances y docentes especializados.",
+    serviceName: "Asesoría de trabajos de grado",
+    ogType: "article",
+    faq: FAQ,
   }),
   component: Page,
 });
+
+const FAQ = [
+        { q: "¿Me entregan el trabajo hecho?", a: "No: te acompañamos para que tú lo desarrolles con calidad. Ese es el camino que te asegura graduarte con dominio de tu proyecto." },
+        { q: "¿Cuánto dura el acompañamiento?", a: "Depende de tu avance y fecha límite; armamos planes desde 4 semanas hasta varios meses." },
+        { q: "¿Atienden todas las facultades?", a: "Sí, contamos con más de 100 docentes asesores en todas las áreas curriculares." },
+        { q: "¿Cómo son los pagos?", a: "Planes diferidos por etapas del acompañamiento. Te lo detallamos en la cotización." },
+      ];
 
 function Page() {
   return (
@@ -45,12 +50,7 @@ function Page() {
         { titulo: "Quienes trabajan y estudian", texto: "Un plan realista para avanzar sin sacrificar la calidad." },
         { titulo: "Quienes buscan graduarse con excelencia", texto: "Trabajos sólidos, con dominio total del contenido." },
       ]}
-      faq={[
-        { q: "¿Me entregan el trabajo hecho?", a: "No: te acompañamos para que tú lo desarrolles con calidad. Ese es el camino que te asegura graduarte con dominio de tu proyecto." },
-        { q: "¿Cuánto dura el acompañamiento?", a: "Depende de tu avance y fecha límite; armamos planes desde 4 semanas hasta varios meses." },
-        { q: "¿Atienden todas las facultades?", a: "Sí, contamos con más de 100 docentes asesores en todas las áreas curriculares." },
-        { q: "¿Cómo son los pagos?", a: "Planes diferidos por etapas del acompañamiento. Te lo detallamos en la cotización." },
-      ]}
+      faq={FAQ}
       relacionados={[
         { to: "/asesoria-de-tesis", titulo: "Asesoría de tesis", texto: "Acompañamiento metodológico para maestría y doctorado.", icon: GraduationCap },
         { to: "/", titulo: "Normas APA", texto: "Formato profesional y capacitación en citación APA 7.", icon: BookMarked },

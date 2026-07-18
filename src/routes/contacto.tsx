@@ -2,27 +2,29 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, Instagram, Clock } from "lucide-react";
 import { CTABanda } from "../components/CTABanda";
 import { FormularioCotizacion } from "../components/FormularioCotizacion";
+import { pageHead, SITE_NAME, SITE_URL } from "../lib/seo";
 
 export const Route = createFileRoute("/contacto")({
-  head: () => ({
-    meta: [
-      { title: "Contacto y Cotización | Asesorías Académicas" },
+  head: () =>
+    pageHead(
       {
-        name: "description",
-        content:
+        path: "/contacto",
+        title: "Contacto y Cotización | Asesorías Académicas",
+        description:
           "Escríbenos por WhatsApp al +57 316 364 1646 o cotiza tu proyecto en línea. Respondemos en menos de 2 horas hábiles.",
       },
-      { property: "og:title", content: "Contacto | Asesorías Académicas" },
-      {
-        property: "og:description",
-        content:
-          "Hablemos de tu proyecto académico: diagnóstico gratuito y respuesta el mismo día.",
-      },
-      { property: "og:url", content: "/contacto" },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: "/contacto" }],
-  }),
+      [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: `Contacto — ${SITE_NAME}`,
+            url: `${SITE_URL}/contacto`,
+          }),
+        },
+      ],
+    ),
   component: ContactoPage,
 });
 

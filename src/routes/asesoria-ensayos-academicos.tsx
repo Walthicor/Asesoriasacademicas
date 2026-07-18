@@ -1,22 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "../lib/seo";
 import { FileText, BookMarked, SpellCheck } from "lucide-react";
 import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-ensayos.jpg";
 
 export const Route = createFileRoute("/asesoria-ensayos-academicos")({
-  head: () => ({
-    meta: [
-      { title: "Tutoría de Ensayos Académicos | Escritura Argumentativa — Asesorías Académicas" },
-      { name: "description", content: "Tutorías de escritura argumentativa: tesis central, estructura, evidencia y estilo. Aprende a escribir ensayos con voz propia." },
-      { property: "og:title", content: "Tutoría de Ensayos Académicos | Escritura Argumentativa" },
-      { property: "og:description", content: "Sesiones prácticas para escribir mejores ensayos durante toda tu carrera." },
-      { property: "og:url", content: "/asesoria-ensayos-academicos" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/asesoria-ensayos-academicos" }],
+  head: () => serviceHead({
+    path: "/asesoria-ensayos-academicos",
+    title: "Tutoría de Ensayos Académicos | Escritura Argumentativa — Asesorías Académicas",
+    description: "Tutorías de escritura argumentativa: tesis central, estructura, evidencia y estilo. Aprende a escribir ensayos con voz propia.",
+    serviceName: "Tutoría de ensayos académicos",
+    ogType: "article",
+    faq: FAQ,
   }),
   component: Page,
 });
+
+const FAQ = [
+        { q: "¿Ustedes escriben el ensayo por mí?", a: "No. Te enseñamos a escribirlo mejor: tú desarrollas el texto y nosotros te acompañamos con tutorías y retroalimentación." },
+        { q: "¿Cuántas sesiones necesito?", a: "Desde una tutoría puntual hasta un plan mensual, según tu carga académica." },
+        { q: "¿Trabajan cualquier tema?", a: "Sí, contamos con docentes en humanidades, sociales, ciencias, salud, ingeniería y más." },
+        { q: "¿Cómo son los pagos?", a: "Sesiones sueltas o paquetes con precio preferencial. Te lo detallamos en la cotización." },
+      ];
 
 function Page() {
   return (
@@ -44,12 +49,7 @@ function Page() {
         { titulo: "Quienes entregan ensayos frecuentemente", texto: "Ganan un método replicable para toda la carrera." },
         { titulo: "Aspirantes a posgrado", texto: "Elevan la calidad de sus escritos para procesos de admisión." },
       ]}
-      faq={[
-        { q: "¿Ustedes escriben el ensayo por mí?", a: "No. Te enseñamos a escribirlo mejor: tú desarrollas el texto y nosotros te acompañamos con tutorías y retroalimentación." },
-        { q: "¿Cuántas sesiones necesito?", a: "Desde una tutoría puntual hasta un plan mensual, según tu carga académica." },
-        { q: "¿Trabajan cualquier tema?", a: "Sí, contamos con docentes en humanidades, sociales, ciencias, salud, ingeniería y más." },
-        { q: "¿Cómo son los pagos?", a: "Sesiones sueltas o paquetes con precio preferencial. Te lo detallamos en la cotización." },
-      ]}
+      faq={FAQ}
       relacionados={[
         { to: "/asesoria-monografias", titulo: "Monografías", texto: "Asesoría en investigación documental con rigor académico.", icon: FileText },
         { to: "/", titulo: "Normas APA", texto: "Formato profesional y capacitación en citación APA 7.", icon: BookMarked },
