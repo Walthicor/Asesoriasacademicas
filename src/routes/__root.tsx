@@ -142,6 +142,7 @@ function RootComponent() {
         </main>
         <Footer />
         <WhatsAppButton />
+        <CookieConsent />
       </div>
     </QueryClientProvider>
   );
