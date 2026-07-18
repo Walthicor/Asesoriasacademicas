@@ -4,30 +4,40 @@ import { CTABanda } from "../components/CTABanda";
 import { FormularioCotizacion } from "../components/FormularioCotizacion";
 import heroImg from "../assets/quienes-somos-hero.jpg";
 import historiaImg from "../assets/quienes-somos-historia.jpg";
+import { pageHead, breadcrumbJsonLd, SITE_NAME, SITE_URL } from "../lib/seo";
 
 export const Route = createFileRoute("/quienes-somos")({
-  head: () => ({
-    meta: [
+  head: () =>
+    pageHead(
       {
+        path: "/quienes-somos",
         title:
           "Quiénes Somos | Asesorías Académicas — Acompañamiento Académico Ético en Colombia",
-      },
-      {
-        name: "description",
-        content:
+        description:
           "Empresa colombiana legalmente constituida con más de 100 docentes asesores. Hemos acompañado a más de 10.000 estudiantes en Colombia y Latinoamérica.",
+        ogType: "website",
       },
-      { property: "og:title", content: "Quiénes Somos | Asesorías Académicas" },
-      {
-        property: "og:description",
-        content:
-          "Un equipo académico comprometido con tu éxito y con la ética en cada asesoría.",
-      },
-      { property: "og:url", content: "/quienes-somos" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/quienes-somos" }],
-  }),
+      [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: `Quiénes somos — ${SITE_NAME}`,
+            url: `${SITE_URL}/quienes-somos`,
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Inicio", path: "/" },
+              { name: "Quiénes somos", path: "/quienes-somos" },
+            ]),
+          ),
+        },
+      ],
+    ),
   component: QuienesSomosPage,
 });
 
