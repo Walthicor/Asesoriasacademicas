@@ -18,6 +18,7 @@ import { Route as NormasApaRouteImport } from './routes/normas-apa'
 import { Route as CorreccionDeEstiloRouteImport } from './routes/correccion-de-estilo'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as AsesoriaTrabajosDeGradoRouteImport } from './routes/asesoria-trabajos-de-grado'
 import { Route as AsesoriaMonografiasRouteImport } from './routes/asesoria-monografias'
 import { Route as AsesoriaEnsayosAcademicosRouteImport } from './routes/asesoria-ensayos-academicos'
@@ -73,6 +74,11 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AvisoLegalRoute = AvisoLegalRouteImport.update({
+  id: '/aviso-legal',
+  path: '/aviso-legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AsesoriaTrabajosDeGradoRoute = AsesoriaTrabajosDeGradoRouteImport.update({
   id: '/asesoria-trabajos-de-grado',
   path: '/asesoria-trabajos-de-grado',
@@ -124,6 +130,7 @@ export interface FileRoutesByFullPath {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
@@ -143,6 +150,7 @@ export interface FileRoutesByTo {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
@@ -163,6 +171,7 @@ export interface FileRoutesById {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
@@ -184,6 +193,7 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/aviso-legal'
     | '/blog'
     | '/contacto'
     | '/correccion-de-estilo'
@@ -203,6 +213,7 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/aviso-legal'
     | '/blog'
     | '/contacto'
     | '/correccion-de-estilo'
@@ -222,6 +233,7 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/aviso-legal'
     | '/blog'
     | '/contacto'
     | '/correccion-de-estilo'
@@ -242,6 +254,7 @@ export interface RootRouteChildren {
   AsesoriaEnsayosAcademicosRoute: typeof AsesoriaEnsayosAcademicosRoute
   AsesoriaMonografiasRoute: typeof AsesoriaMonografiasRoute
   AsesoriaTrabajosDeGradoRoute: typeof AsesoriaTrabajosDeGradoRoute
+  AvisoLegalRoute: typeof AvisoLegalRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactoRoute: typeof ContactoRoute
   CorreccionDeEstiloRoute: typeof CorreccionDeEstiloRoute
@@ -316,6 +329,13 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aviso-legal': {
+      id: '/aviso-legal'
+      path: '/aviso-legal'
+      fullPath: '/aviso-legal'
+      preLoaderRoute: typeof AvisoLegalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/asesoria-trabajos-de-grado': {
@@ -395,6 +415,7 @@ const rootRouteChildren: RootRouteChildren = {
   AsesoriaEnsayosAcademicosRoute: AsesoriaEnsayosAcademicosRoute,
   AsesoriaMonografiasRoute: AsesoriaMonografiasRoute,
   AsesoriaTrabajosDeGradoRoute: AsesoriaTrabajosDeGradoRoute,
+  AvisoLegalRoute: AvisoLegalRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactoRoute: ContactoRoute,
   CorreccionDeEstiloRoute: CorreccionDeEstiloRoute,
