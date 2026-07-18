@@ -62,6 +62,7 @@ export function FormularioCotizacion({
   return (
     <form
       onSubmit={onSubmit}
+      aria-label="Formulario de cotización de asesoría académica"
       className="rounded-2xl border border-[color:var(--border)] bg-white p-8 shadow-[var(--shadow-elegant)] md:p-10"
     >
       <div className="mb-8">
