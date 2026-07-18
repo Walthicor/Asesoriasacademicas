@@ -64,11 +64,13 @@ export function FormularioCotizacion({
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      aria-label="Formulario de cotización de asesoría académica"
-      className="rounded-2xl border border-[color:var(--border)] bg-white p-8 shadow-[var(--shadow-elegant)] md:p-10"
-    >
+    <div className="pulse-frame-gold rounded-2xl">
+      <form
+        onSubmit={onSubmit}
+        aria-label="Formulario de cotización de asesoría académica"
+        className="rounded-2xl border border-[color:var(--border)] bg-white p-8 shadow-[var(--shadow-elegant)] md:p-10"
+      >
+
       <div className="mb-8">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
           Cotización sin compromiso
