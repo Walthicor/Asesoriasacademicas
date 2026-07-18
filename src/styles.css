@@ -121,6 +121,13 @@
     background-color: color-mix(in oklab, var(--color-accent) 40%, transparent);
     color: var(--ink);
   }
+
+  /* Global focus-visible ring: gold, AA-visible on both light and navy surfaces */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
 }
 
 /* ----- Utilities ----- */
