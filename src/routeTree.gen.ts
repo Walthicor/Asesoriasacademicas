@@ -9,14 +9,40 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AsesoriaTrabajosDeGradoRouteImport } from './routes/asesoria-trabajos-de-grado'
+import { Route as AsesoriaMonografiasRouteImport } from './routes/asesoria-monografias'
+import { Route as AsesoriaEnsayosAcademicosRouteImport } from './routes/asesoria-ensayos-academicos'
 import { Route as AsesoriaDeTesisRouteImport } from './routes/asesoria-de-tesis'
+import { Route as AsesoriaArticulosCientificosRouteImport } from './routes/asesoria-articulos-cientificos'
 import { Route as IndexRouteImport } from './routes/index'
 
+const AsesoriaTrabajosDeGradoRoute = AsesoriaTrabajosDeGradoRouteImport.update({
+  id: '/asesoria-trabajos-de-grado',
+  path: '/asesoria-trabajos-de-grado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AsesoriaMonografiasRoute = AsesoriaMonografiasRouteImport.update({
+  id: '/asesoria-monografias',
+  path: '/asesoria-monografias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AsesoriaEnsayosAcademicosRoute =
+  AsesoriaEnsayosAcademicosRouteImport.update({
+    id: '/asesoria-ensayos-academicos',
+    path: '/asesoria-ensayos-academicos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AsesoriaDeTesisRoute = AsesoriaDeTesisRouteImport.update({
   id: '/asesoria-de-tesis',
   path: '/asesoria-de-tesis',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AsesoriaArticulosCientificosRoute =
+  AsesoriaArticulosCientificosRouteImport.update({
+    id: '/asesoria-articulos-cientificos',
+    path: '/asesoria-articulos-cientificos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -25,37 +51,100 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/asesoria-articulos-cientificos': typeof AsesoriaArticulosCientificosRoute
   '/asesoria-de-tesis': typeof AsesoriaDeTesisRoute
+  '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
+  '/asesoria-monografias': typeof AsesoriaMonografiasRoute
+  '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/asesoria-articulos-cientificos': typeof AsesoriaArticulosCientificosRoute
   '/asesoria-de-tesis': typeof AsesoriaDeTesisRoute
+  '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
+  '/asesoria-monografias': typeof AsesoriaMonografiasRoute
+  '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/asesoria-articulos-cientificos': typeof AsesoriaArticulosCientificosRoute
   '/asesoria-de-tesis': typeof AsesoriaDeTesisRoute
+  '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
+  '/asesoria-monografias': typeof AsesoriaMonografiasRoute
+  '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/asesoria-de-tesis'
+  fullPaths:
+    | '/'
+    | '/asesoria-articulos-cientificos'
+    | '/asesoria-de-tesis'
+    | '/asesoria-ensayos-academicos'
+    | '/asesoria-monografias'
+    | '/asesoria-trabajos-de-grado'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/asesoria-de-tesis'
-  id: '__root__' | '/' | '/asesoria-de-tesis'
+  to:
+    | '/'
+    | '/asesoria-articulos-cientificos'
+    | '/asesoria-de-tesis'
+    | '/asesoria-ensayos-academicos'
+    | '/asesoria-monografias'
+    | '/asesoria-trabajos-de-grado'
+  id:
+    | '__root__'
+    | '/'
+    | '/asesoria-articulos-cientificos'
+    | '/asesoria-de-tesis'
+    | '/asesoria-ensayos-academicos'
+    | '/asesoria-monografias'
+    | '/asesoria-trabajos-de-grado'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AsesoriaArticulosCientificosRoute: typeof AsesoriaArticulosCientificosRoute
   AsesoriaDeTesisRoute: typeof AsesoriaDeTesisRoute
+  AsesoriaEnsayosAcademicosRoute: typeof AsesoriaEnsayosAcademicosRoute
+  AsesoriaMonografiasRoute: typeof AsesoriaMonografiasRoute
+  AsesoriaTrabajosDeGradoRoute: typeof AsesoriaTrabajosDeGradoRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/asesoria-trabajos-de-grado': {
+      id: '/asesoria-trabajos-de-grado'
+      path: '/asesoria-trabajos-de-grado'
+      fullPath: '/asesoria-trabajos-de-grado'
+      preLoaderRoute: typeof AsesoriaTrabajosDeGradoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/asesoria-monografias': {
+      id: '/asesoria-monografias'
+      path: '/asesoria-monografias'
+      fullPath: '/asesoria-monografias'
+      preLoaderRoute: typeof AsesoriaMonografiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/asesoria-ensayos-academicos': {
+      id: '/asesoria-ensayos-academicos'
+      path: '/asesoria-ensayos-academicos'
+      fullPath: '/asesoria-ensayos-academicos'
+      preLoaderRoute: typeof AsesoriaEnsayosAcademicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/asesoria-de-tesis': {
       id: '/asesoria-de-tesis'
       path: '/asesoria-de-tesis'
       fullPath: '/asesoria-de-tesis'
       preLoaderRoute: typeof AsesoriaDeTesisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/asesoria-articulos-cientificos': {
+      id: '/asesoria-articulos-cientificos'
+      path: '/asesoria-articulos-cientificos'
+      fullPath: '/asesoria-articulos-cientificos'
+      preLoaderRoute: typeof AsesoriaArticulosCientificosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,7 +159,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AsesoriaArticulosCientificosRoute: AsesoriaArticulosCientificosRoute,
   AsesoriaDeTesisRoute: AsesoriaDeTesisRoute,
+  AsesoriaEnsayosAcademicosRoute: AsesoriaEnsayosAcademicosRoute,
+  AsesoriaMonografiasRoute: AsesoriaMonografiasRoute,
+  AsesoriaTrabajosDeGradoRoute: AsesoriaTrabajosDeGradoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
