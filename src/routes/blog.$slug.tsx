@@ -3,6 +3,7 @@ import { Calendar, Clock, ArrowRight, ArrowLeft } from "lucide-react";
 import { getArticleBySlug, type Article, type ArticleBlock } from "../data/blog";
 import { CTABanda } from "../components/CTABanda";
 import { FormularioCotizacion } from "../components/FormularioCotizacion";
+import { abs, breadcrumbJsonLd, SITE_NAME, SITE_URL } from "../lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -20,19 +21,28 @@ export const Route = createFileRoute("/blog/$slug")({
       };
     }
     const a = loaderData.article;
+    const url = abs(`/blog/${a.slug}`);
+    const image = abs(a.image);
     return {
       meta: [
         { title: `${a.title} | Blog Asesorías Académicas` },
         { name: "description", content: a.excerpt },
+        { property: "og:site_name", content: SITE_NAME },
         { property: "og:title", content: a.title },
         { property: "og:description", content: a.excerpt },
-        { property: "og:url", content: `/blog/${a.slug}` },
+        { property: "og:url", content: url },
         { property: "og:type", content: "article" },
-        { property: "og:image", content: a.image },
+        { property: "og:image", content: image },
+        { property: "og:locale", content: "es_CO" },
         { property: "article:published_time", content: a.date },
         { property: "article:section", content: a.category },
+        { property: "article:author", content: "Equipo docente de Asesorías Académicas" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: a.title },
+        { name: "twitter:description", content: a.excerpt },
+        { name: "twitter:image", content: image },
       ],
-      links: [{ rel: "canonical", href: `/blog/${a.slug}` }],
+      links: [{ rel: "canonical", href: url }],
       scripts: [
         {
           type: "application/ld+json",
@@ -41,13 +51,35 @@ export const Route = createFileRoute("/blog/$slug")({
             "@type": "Article",
             headline: a.title,
             description: a.excerpt,
+            image: [image],
             datePublished: a.date,
+            dateModified: a.date,
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
             author: {
               "@type": "Organization",
               name: "Equipo docente de Asesorías Académicas",
+              url: SITE_URL,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: SITE_NAME,
+              logo: {
+                "@type": "ImageObject",
+                url: `${SITE_URL}/logo.png`,
+              },
             },
             articleSection: a.category,
           }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Inicio", path: "/" },
+              { name: "Blog", path: "/blog" },
+              { name: a.title, path: `/blog/${a.slug}` },
+            ]),
+          ),
         },
       ],
     };
@@ -55,6 +87,7 @@ export const Route = createFileRoute("/blog/$slug")({
   notFoundComponent: ArticleNotFound,
   component: ArticleView,
 });
+
 
 function ArticleNotFound() {
   return (
