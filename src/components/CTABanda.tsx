@@ -1,14 +1,19 @@
-const WA_URL =
-  "https://wa.me/573163641646?text=" +
-  encodeURIComponent("Hola, quiero una cotización de asesoría académica");
+import { waUrl } from "../lib/whatsapp";
 
 export function CTABanda({
   title = "¿Listo para avanzar con tu trabajo académico?",
   subtitle = "Recibe orientación profesional, personalizada y ética. Tú sigues siendo el autor; nosotros te guiamos en cada paso.",
+  servicio,
 }: {
   title?: string;
   subtitle?: string;
+  servicio?: string;
 }) {
+  const href = waUrl(servicio);
+  const waLabel = servicio
+    ? `Escríbenos por WhatsApp para ${servicio.toLowerCase()}`
+    : "Escríbenos por WhatsApp al +57 316 364 1646";
+
   return (
     <section className="relative overflow-hidden border-y border-[color:var(--border)] bg-white">
       <div
@@ -19,7 +24,7 @@ export function CTABanda({
             "radial-gradient(60% 80% at 50% 0%, rgba(201,162,39,0.10), transparent 70%), radial-gradient(50% 60% at 100% 100%, rgba(142,29,69,0.08), transparent 70%)",
         }}
       />
-      <div className="relative mx-auto max-w-4xl px-5 py-24 text-center lg:px-8">
+      <div className="relative mx-auto max-w-4xl px-5 py-16 text-center lg:px-8 lg:py-24">
         <h2 className="font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
           {title}
         </h2>
@@ -28,10 +33,10 @@ export function CTABanda({
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
-            href={WA_URL}
+            href={href}
             target="_blank"
             rel="noreferrer"
-            aria-label="Escríbenos por WhatsApp al +57 316 364 1646"
+            aria-label={waLabel}
             className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] px-7 py-3 text-sm font-medium text-white shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
           >
             Escríbenos por WhatsApp
