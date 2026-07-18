@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { WhatsAppButton } from "../components/WhatsAppButton";
+import { CookieConsent } from "../components/CookieConsent";
 import { useReveal } from "../hooks/useReveal";
 
 function NotFoundComponent() {
@@ -141,6 +142,7 @@ function RootComponent() {
         </main>
         <Footer />
         <WhatsAppButton />
+        <CookieConsent />
       </div>
     </QueryClientProvider>
   );
