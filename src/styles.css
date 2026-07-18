@@ -221,6 +221,27 @@
   animation: marquee 40s linear infinite;
 }
 
+@utility pulse-frame-gold {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    z-index: -1;
+    border-radius: calc(var(--radius) + 6px);
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 45%, transparent);
+    animation: pulseFrame 3.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes pulseFrame {
+  0%   { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 42%, transparent); }
+  70%  { box-shadow: 0 0 0 18px color-mix(in oklab, var(--accent) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 0%, transparent); }
+}
+
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
