@@ -367,7 +367,7 @@ function Galeria() {
   // Duplicate for seamless loop
   const items = [...galeria, ...galeria];
   return (
-    <section className="overflow-hidden bg-white py-24 lg:py-32">
+    <section className="overflow-hidden bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="reveal mx-auto max-w-3xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
