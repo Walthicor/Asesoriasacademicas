@@ -2,6 +2,7 @@ import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ChevronDown } from "lucide-react";
 import { CTABanda } from "../components/CTABanda";
+import { pageHead } from "../lib/seo";
 
 type QA = { q: string; a: string };
 
