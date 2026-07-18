@@ -14,6 +14,7 @@ import { Route as RevisionBibliograficaRouteImport } from './routes/revision-bib
 import { Route as QuienesSomosRouteImport } from './routes/quienes-somos'
 import { Route as PreparacionSustentacionesRouteImport } from './routes/preparacion-sustentaciones'
 import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frecuentes'
+import { Route as PoliticaDeReembolsosRouteImport } from './routes/politica-de-reembolsos'
 import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
 import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
 import { Route as NormasApaRouteImport } from './routes/normas-apa'
@@ -54,6 +55,11 @@ const PreparacionSustentacionesRoute =
 const PreguntasFrecuentesRoute = PreguntasFrecuentesRouteImport.update({
   id: '/preguntas-frecuentes',
   path: '/preguntas-frecuentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeReembolsosRoute = PoliticaDeReembolsosRouteImport.update({
+  id: '/politica-de-reembolsos',
+  path: '/politica-de-reembolsos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PoliticaDePrivacidadRoute = PoliticaDePrivacidadRouteImport.update({
@@ -149,6 +155,7 @@ export interface FileRoutesByFullPath {
   '/normas-apa': typeof NormasApaRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-reembolsos': typeof PoliticaDeReembolsosRoute
   '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
@@ -171,6 +178,7 @@ export interface FileRoutesByTo {
   '/normas-apa': typeof NormasApaRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-reembolsos': typeof PoliticaDeReembolsosRoute
   '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
@@ -194,6 +202,7 @@ export interface FileRoutesById {
   '/normas-apa': typeof NormasApaRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-reembolsos': typeof PoliticaDeReembolsosRoute
   '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
@@ -218,6 +227,7 @@ export interface FileRouteTypes {
     | '/normas-apa'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
+    | '/politica-de-reembolsos'
     | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
@@ -240,6 +250,7 @@ export interface FileRouteTypes {
     | '/normas-apa'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
+    | '/politica-de-reembolsos'
     | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
@@ -262,6 +273,7 @@ export interface FileRouteTypes {
     | '/normas-apa'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
+    | '/politica-de-reembolsos'
     | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
@@ -285,6 +297,7 @@ export interface RootRouteChildren {
   NormasApaRoute: typeof NormasApaRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
+  PoliticaDeReembolsosRoute: typeof PoliticaDeReembolsosRoute
   PreguntasFrecuentesRoute: typeof PreguntasFrecuentesRoute
   PreparacionSustentacionesRoute: typeof PreparacionSustentacionesRoute
   QuienesSomosRoute: typeof QuienesSomosRoute
@@ -327,6 +340,13 @@ declare module '@tanstack/react-router' {
       path: '/preguntas-frecuentes'
       fullPath: '/preguntas-frecuentes'
       preLoaderRoute: typeof PreguntasFrecuentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-reembolsos': {
+      id: '/politica-de-reembolsos'
+      path: '/politica-de-reembolsos'
+      fullPath: '/politica-de-reembolsos'
+      preLoaderRoute: typeof PoliticaDeReembolsosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/politica-de-privacidad': {
@@ -462,6 +482,7 @@ const rootRouteChildren: RootRouteChildren = {
   NormasApaRoute: NormasApaRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
+  PoliticaDeReembolsosRoute: PoliticaDeReembolsosRoute,
   PreguntasFrecuentesRoute: PreguntasFrecuentesRoute,
   PreparacionSustentacionesRoute: PreparacionSustentacionesRoute,
   QuienesSomosRoute: QuienesSomosRoute,

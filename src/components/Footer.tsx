@@ -110,7 +110,37 @@ export function Footer() {
 
         <div className="mt-14 h-px w-full bg-gradient-to-r from-transparent via-[color:var(--border)] to-transparent" />
 
-        <p className="mt-6 text-center text-xs text-[color:var(--muted-foreground)]">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-center text-xs text-[color:var(--muted-foreground)]">
+          <Link
+            to="/aviso-legal"
+            className="transition-colors hover:text-[color:var(--brand-magenta)]"
+          >
+            Aviso legal
+          </Link>
+          <span aria-hidden>·</span>
+          <Link
+            to="/politica-de-privacidad"
+            className="transition-colors hover:text-[color:var(--brand-magenta)]"
+          >
+            Política de privacidad
+          </Link>
+          <span aria-hidden>·</span>
+          <Link
+            to="/politica-de-cookies"
+            className="transition-colors hover:text-[color:var(--brand-magenta)]"
+          >
+            Política de cookies
+          </Link>
+          <span aria-hidden>·</span>
+          <Link
+            to="/politica-de-reembolsos"
+            className="transition-colors hover:text-[color:var(--brand-magenta)]"
+          >
+            Política de reembolsos
+          </Link>
+        </div>
+
+        <p className="mt-5 text-center text-xs text-[color:var(--muted-foreground)]">
           © 2026 Asesorías Académicas — Acompañamiento académico ético. Tú eres
           el autor de tu trabajo.
         </p>
