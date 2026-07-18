@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { CTABanda } from "../components/CTABanda";
 import { FormularioCotizacion } from "../components/FormularioCotizacion";
+import { articles } from "../data/blog";
 
 import aprendeDestaca from "../assets/posters/aprende-destaca.jpg.asset.json";
 import enfoqueTotal from "../assets/posters/enfoque-total.jpg.asset.json";
