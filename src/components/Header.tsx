@@ -54,7 +54,7 @@ export function Header() {
           : "border-b border-transparent bg-white/60 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:h-24 lg:px-8">
         <Logo />
 
         <nav className="hidden items-center gap-8 lg:flex">
