@@ -57,8 +57,10 @@ export function FormularioCotizacion({
         >
           Enviar otra solicitud
         </button>
+        </div>
       </div>
     );
+
   }
 
   return (
