@@ -36,6 +36,8 @@ import cadaPaso from "../assets/posters/cada-paso.jpg.asset.json";
 import cadaDetalle from "../assets/posters/cada-detalle.jpg.asset.json";
 import nivelSuperior from "../assets/posters/nivel-superior.jpg.asset.json";
 import todoEstructura from "../assets/posters/todo-estructura.jpg.asset.json";
+import heroVideo from "../assets/hero-estudiantes.mp4.asset.json";
+
 
 const WA_URL =
   "https://wa.me/573163641646?text=" +
