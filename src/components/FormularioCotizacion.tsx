@@ -40,7 +40,9 @@ export function FormularioCotizacion({
 
   if (sent) {
     return (
-      <div className="rounded-2xl border border-[color:var(--border)] bg-white p-10 text-center shadow-[var(--shadow-elegant)]">
+      <div className="pulse-frame-gold rounded-2xl">
+        <div className="rounded-2xl border border-[color:var(--border)] bg-white p-10 text-center shadow-[var(--shadow-elegant)]">
+
         <CheckCircle2 className="mx-auto h-14 w-14 text-[color:var(--accent)]" />
         <h3 className="mt-5 font-display text-2xl text-[color:var(--primary)]">
           Recibimos tu solicitud
