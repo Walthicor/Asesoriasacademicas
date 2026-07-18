@@ -483,7 +483,7 @@ function Blog() {
             </h2>
           </div>
           <Link
-            to="/"
+            to="/blog"
             className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)] hover:text-[color:var(--primary)]"
           >
             Ver todos los artículos →
@@ -491,35 +491,34 @@ function Blog() {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {posts.map((p) => (
-            <article
-              key={p.title}
-              className="reveal card-elevate group overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white"
+          {articles.slice(0, 3).map((p) => (
+            <Link
+              key={p.slug}
+              to="/blog/$slug"
+              params={{ slug: p.slug }}
+              className="reveal card-elevate group flex flex-col overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white"
             >
               <div className="aspect-[4/5] overflow-hidden">
                 <img
-                  src={p.img}
-                  alt={p.title}
+                  src={p.image}
+                  alt={p.imageAlt}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="p-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[color:var(--brand-magenta)]">
-                  {p.cat}
+                  {p.category}
                 </p>
-                <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-[color:var(--primary)]">
+                <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-[color:var(--primary)] transition-colors group-hover:text-[color:var(--brand-magenta)]">
                   {p.title}
                 </h3>
-                <Link
-                  to="/"
-                  className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--accent)] hover:text-[color:var(--brand-magenta)]"
-                >
+                <span className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--accent-ink)] group-hover:text-[color:var(--brand-magenta)]">
                   Leer artículo
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                </Link>
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
