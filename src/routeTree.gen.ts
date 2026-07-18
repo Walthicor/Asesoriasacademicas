@@ -14,6 +14,7 @@ import { Route as RevisionBibliograficaRouteImport } from './routes/revision-bib
 import { Route as QuienesSomosRouteImport } from './routes/quienes-somos'
 import { Route as PreparacionSustentacionesRouteImport } from './routes/preparacion-sustentaciones'
 import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frecuentes'
+import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
 import { Route as NormasApaRouteImport } from './routes/normas-apa'
 import { Route as CorreccionDeEstiloRouteImport } from './routes/correccion-de-estilo'
 import { Route as ContactoRouteImport } from './routes/contacto'
@@ -52,6 +53,11 @@ const PreparacionSustentacionesRoute =
 const PreguntasFrecuentesRoute = PreguntasFrecuentesRouteImport.update({
   id: '/preguntas-frecuentes',
   path: '/preguntas-frecuentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadRoute = PoliticaDePrivacidadRouteImport.update({
+  id: '/politica-de-privacidad',
+  path: '/politica-de-privacidad',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NormasApaRoute = NormasApaRouteImport.update({
@@ -135,6 +141,7 @@ export interface FileRoutesByFullPath {
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
@@ -155,6 +162,7 @@ export interface FileRoutesByTo {
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
@@ -176,6 +184,7 @@ export interface FileRoutesById {
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
@@ -198,6 +207,7 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
+    | '/politica-de-privacidad'
     | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
@@ -218,6 +228,7 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
+    | '/politica-de-privacidad'
     | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
@@ -238,6 +249,7 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
+    | '/politica-de-privacidad'
     | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
@@ -259,6 +271,7 @@ export interface RootRouteChildren {
   ContactoRoute: typeof ContactoRoute
   CorreccionDeEstiloRoute: typeof CorreccionDeEstiloRoute
   NormasApaRoute: typeof NormasApaRoute
+  PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
   PreguntasFrecuentesRoute: typeof PreguntasFrecuentesRoute
   PreparacionSustentacionesRoute: typeof PreparacionSustentacionesRoute
   QuienesSomosRoute: typeof QuienesSomosRoute
@@ -301,6 +314,13 @@ declare module '@tanstack/react-router' {
       path: '/preguntas-frecuentes'
       fullPath: '/preguntas-frecuentes'
       preLoaderRoute: typeof PreguntasFrecuentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidad': {
+      id: '/politica-de-privacidad'
+      path: '/politica-de-privacidad'
+      fullPath: '/politica-de-privacidad'
+      preLoaderRoute: typeof PoliticaDePrivacidadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/normas-apa': {
@@ -420,6 +440,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactoRoute: ContactoRoute,
   CorreccionDeEstiloRoute: CorreccionDeEstiloRoute,
   NormasApaRoute: NormasApaRoute,
+  PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
   PreguntasFrecuentesRoute: PreguntasFrecuentesRoute,
   PreparacionSustentacionesRoute: PreparacionSustentacionesRoute,
   QuienesSomosRoute: QuienesSomosRoute,
