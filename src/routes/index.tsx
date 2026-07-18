@@ -36,6 +36,8 @@ import cadaPaso from "../assets/posters/cada-paso.jpg.asset.json";
 import cadaDetalle from "../assets/posters/cada-detalle.jpg.asset.json";
 import nivelSuperior from "../assets/posters/nivel-superior.jpg.asset.json";
 import todoEstructura from "../assets/posters/todo-estructura.jpg.asset.json";
+import heroVideo from "../assets/hero-estudiantes.mp4.asset.json";
+
 
 const WA_URL =
   "https://wa.me/573163641646?text=" +
@@ -119,118 +121,90 @@ const galeria = [
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white">
-      {/* Decorative background */}
+    <section className="relative isolate overflow-hidden bg-[color:var(--primary)]">
+      {/* Video de fondo */}
+      <video
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        src={heroVideo.url}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      />
+
+      {/* Overlay oscuro para legibilidad */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(50% 60% at 0% 0%, rgba(201,162,39,0.10), transparent 60%), radial-gradient(50% 60% at 100% 100%, rgba(142,29,69,0.10), transparent 60%)",
+            "linear-gradient(180deg, rgba(10,14,25,0.75) 0%, rgba(10,14,25,0.60) 45%, rgba(10,14,25,0.85) 100%)",
         }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        className="absolute inset-0 -z-10"
         style={{
-          backgroundImage:
-            "linear-gradient(var(--primary) 1px, transparent 1px), linear-gradient(90deg, var(--primary) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+          background:
+            "radial-gradient(60% 80% at 20% 20%, rgba(201,162,39,0.18), transparent 65%), radial-gradient(50% 70% at 90% 90%, rgba(142,29,69,0.22), transparent 65%)",
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pt-16 pb-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:px-8 lg:pt-24 lg:pb-32">
-        {/* Left — copy */}
-        <div className="flex flex-col justify-center">
-          <span className="reveal inline-flex w-fit items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)] shadow-[var(--shadow-soft)]">
-            <Sparkles className="h-3.5 w-3.5 text-[color:var(--accent)]" />
-            Asesoría académica en Colombia
-          </span>
+      <div className="relative mx-auto max-w-5xl px-5 pt-24 pb-20 text-center text-white lg:px-8 lg:pt-32 lg:pb-28">
+        <span className="reveal mx-auto inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/95 backdrop-blur">
+          <Sparkles className="h-3.5 w-3.5 text-[color:var(--accent)]" />
+          Asesoría académica en Colombia
+        </span>
 
-          <h1 className="reveal mt-6 font-display text-5xl font-medium leading-[1.02] text-[color:var(--primary)] md:text-7xl">
-            Convertimos tu proceso académico en un{" "}
-            <span className="italic text-[color:var(--brand-magenta)]">camino claro</span>.
-          </h1>
+        <h1 className="reveal mx-auto mt-6 max-w-4xl font-display text-5xl font-medium leading-[1.05] text-white md:text-7xl">
+          Convertimos tu proceso académico en un{" "}
+          <span className="italic text-[color:var(--accent)]">camino claro</span>.
+        </h1>
 
-          <p className="reveal mt-7 max-w-xl text-lg leading-relaxed text-[color:var(--muted-foreground)]">
-            Metodología, disciplina y mentoría profesional para que llegues al
-            grado con dominio total de tu trabajo. Sin atajos ni trampas: solo
-            acompañamiento humano, riguroso y ético.
-          </p>
+        <p className="reveal mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/85">
+          Metodología, disciplina y mentoría profesional para que llegues al
+          grado con dominio total de tu trabajo. Sin atajos ni trampas: solo
+          acompañamiento humano, riguroso y ético.
+        </p>
 
-          <div className="reveal mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href="#cotizar"
-              className="inline-flex items-center justify-center rounded-full bg-[color:var(--primary)] px-8 py-3.5 text-sm font-medium text-white shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
-            >
-              Cotiza tu asesoría
-            </a>
-            <a
-              href={WA_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] px-7 py-3.5 text-sm font-medium text-white shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
-            >
-              Escríbenos por WhatsApp
-            </a>
-          </div>
-
-          {/* Trust row */}
-          <dl className="reveal mt-12 grid grid-cols-3 gap-6 border-t border-[color:var(--border)] pt-8">
-            {cifras.map((c) => (
-              <div key={c.label}>
-                <dt className="font-display text-3xl font-semibold text-[color:var(--primary)] md:text-4xl">
-                  {c.n}
-                </dt>
-                <dd className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-[color:var(--muted-foreground)]">
-                  {c.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
+        <div className="reveal mt-9 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="#cotizar"
+            className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-medium text-[color:var(--primary)] shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-[color:var(--accent)] hover:text-white hover:-translate-y-0.5"
+          >
+            Cotiza tu asesoría
+          </a>
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] px-7 py-3.5 text-sm font-medium text-white shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
+          >
+            Escríbenos por WhatsApp
+          </a>
         </div>
 
-        {/* Right — poster collage */}
-        <div className="reveal relative">
-          <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-[color:var(--accent)]/25 via-transparent to-[color:var(--brand-magenta)]/20 blur-3xl" />
-
-          <div className="relative">
-            <img
-              src={aprendeDestaca.url}
-              alt="Aprende hoy, destaca mañana — Asesorías Académicas"
-              className="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-[var(--shadow-elegant)]"
-            />
-            {/* Floating cards */}
-            <div className="absolute -bottom-6 -left-6 hidden w-56 rounded-2xl border border-[color:var(--border)] bg-white/95 p-4 shadow-[var(--shadow-elegant)] backdrop-blur md:block">
-              <div className="flex items-center gap-1 text-[color:var(--accent)]">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <p className="mt-2 text-xs leading-relaxed text-[color:var(--primary)]">
-                “Sustenté con seguridad y me gradué.”
-              </p>
-              <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">
-                Maestría en Educación
-              </p>
+        {/* Trust row */}
+        <dl className="reveal mx-auto mt-14 grid max-w-3xl grid-cols-3 gap-6 border-t border-white/15 pt-8">
+          {cifras.map((c) => (
+            <div key={c.label}>
+              <dt className="font-display text-3xl font-semibold text-white md:text-4xl">
+                {c.n}
+              </dt>
+              <dd className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-white/70">
+                {c.label}
+              </dd>
             </div>
-            <div className="absolute -right-4 -top-4 hidden w-44 rounded-2xl border border-[color:var(--border)] bg-white/95 p-4 shadow-[var(--shadow-elegant)] backdrop-blur md:block">
-              <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--accent)]/15 text-[color:var(--accent)]">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-              <p className="mt-2 text-xs font-semibold text-[color:var(--primary)]">
-                Acompañamiento ético
-              </p>
-              <p className="mt-1 text-[11px] text-[color:var(--muted-foreground)]">
-                Tú siempre eres el autor.
-              </p>
-            </div>
-          </div>
-        </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
 }
+
+
 
 function Servicios() {
   return (
