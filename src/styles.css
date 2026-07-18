@@ -265,7 +265,8 @@
     background-position: 0% 50%;
   }
   .pulse-gold::before,
-  .pulse-gold::after {
+  .pulse-gold::after,
+  .pulse-frame-gold::before {
     animation: none;
     display: none;
   }
