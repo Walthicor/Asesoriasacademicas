@@ -31,7 +31,7 @@ export function CTABanda({
             href={WA_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-[color:var(--primary)]/20 bg-white px-7 py-3 text-sm font-medium text-[color:var(--primary)] transition-all duration-300 hover:border-[color:var(--primary)] hover:-translate-y-0.5"
+            className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] px-7 py-3 text-sm font-medium text-white shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
           >
             Escríbenos por WhatsApp
           </a>
