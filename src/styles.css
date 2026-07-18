@@ -178,6 +178,21 @@
   }
 }
 
+@utility legal-heading {
+  position: relative;
+  padding-bottom: 0.75rem;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 48px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  }
+}
+
 @utility card-elevate {
   transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
   &:hover {
