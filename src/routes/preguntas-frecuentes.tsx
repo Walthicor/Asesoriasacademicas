@@ -72,34 +72,22 @@ const faqJsonLd = {
 };
 
 export const Route = createFileRoute("/preguntas-frecuentes")({
-  head: () => ({
-    meta: [
-      { title: "Preguntas Frecuentes | Asesorías Académicas" },
+  head: () =>
+    pageHead(
       {
-        name: "description",
-        content:
+        path: "/preguntas-frecuentes",
+        title: "Preguntas Frecuentes | Asesorías Académicas",
+        description:
           "Resolvemos las dudas más comunes sobre asesoría de tesis, proceso de acompañamiento, pagos y ética académica.",
+        ogType: "article",
       },
-      {
-        property: "og:title",
-        content: "Preguntas Frecuentes | Asesorías Académicas",
-      },
-      {
-        property: "og:description",
-        content:
-          "Todo lo que necesitas saber antes de iniciar tu acompañamiento académico.",
-      },
-      { property: "og:url", content: "/preguntas-frecuentes" },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: "/preguntas-frecuentes" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd),
-      },
-    ],
-  }),
+      [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(faqJsonLd),
+        },
+      ],
+    ),
   component: FAQPage,
 });
 
