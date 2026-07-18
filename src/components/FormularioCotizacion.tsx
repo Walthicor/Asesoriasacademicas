@@ -143,6 +143,8 @@ export function FormularioCotizacion({
           {loading ? "Enviando..." : "Solicitar cotización"}
         </button>
       </div>
-    </form>
+      </form>
+    </div>
+
   );
 }
