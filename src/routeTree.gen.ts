@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AsesoriaDeTesisRouteImport } from './routes/asesoria-de-tesis'
 import { Route as IndexRouteImport } from './routes/index'
 
+const AsesoriaDeTesisRoute = AsesoriaDeTesisRouteImport.update({
+  id: '/asesoria-de-tesis',
+  path: '/asesoria-de-tesis',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/asesoria-de-tesis': typeof AsesoriaDeTesisRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/asesoria-de-tesis': typeof AsesoriaDeTesisRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/asesoria-de-tesis': typeof AsesoriaDeTesisRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/asesoria-de-tesis'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/asesoria-de-tesis'
+  id: '__root__' | '/' | '/asesoria-de-tesis'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AsesoriaDeTesisRoute: typeof AsesoriaDeTesisRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/asesoria-de-tesis': {
+      id: '/asesoria-de-tesis'
+      path: '/asesoria-de-tesis'
+      fullPath: '/asesoria-de-tesis'
+      preLoaderRoute: typeof AsesoriaDeTesisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AsesoriaDeTesisRoute: AsesoriaDeTesisRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
