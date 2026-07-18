@@ -1,8 +1,11 @@
 import { useState, type ComponentType } from "react";
 import { Link } from "@tanstack/react-router";
-import { Check, ChevronDown, ArrowRight } from "lucide-react";
+import { Check, ChevronDown, ArrowRight, BookOpen } from "lucide-react";
 import { CTABanda } from "./CTABanda";
 import { FormularioCotizacion } from "./FormularioCotizacion";
+import { articles as blogArticles } from "../data/blog";
+import { waUrl } from "../lib/whatsapp";
+
 
 export type ServicioTemplateProps = {
   nombre: string;
