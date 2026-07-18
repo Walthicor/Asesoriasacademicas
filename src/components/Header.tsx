@@ -146,7 +146,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="max-h-[calc(100dvh-72px)] overflow-y-auto border-t border-[color:var(--border)] bg-white/98 backdrop-blur-lg lg:hidden">
+        <div className="max-h-[calc(100dvh-80px)] overflow-y-auto border-t border-[color:var(--border)] bg-white/98 backdrop-blur-lg lg:hidden">
           <div className="mx-auto max-w-7xl space-y-1 px-5 py-5">
             <details className="group border-b border-[color:var(--border)]/60 pb-2">
               <summary className="flex cursor-pointer list-none items-center justify-between py-2 text-sm font-semibold text-[color:var(--primary)]">
