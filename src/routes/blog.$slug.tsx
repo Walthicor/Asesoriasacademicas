@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Calendar, Clock, ArrowRight, ArrowLeft } from "lucide-react";
-import { getArticleBySlug, type ArticleBlock } from "../data/blog";
+import { getArticleBySlug, type Article, type ArticleBlock } from "../data/blog";
 import { CTABanda } from "../components/CTABanda";
 import { FormularioCotizacion } from "../components/FormularioCotizacion";
 
@@ -79,9 +79,9 @@ function ArticleNotFound() {
 }
 
 function ArticleView() {
-  const { article } = Route.useLoaderData();
+  const { article } = Route.useLoaderData() as { article: Article };
   const headings = article.blocks.filter(
-    (b): b is Extract<ArticleBlock, { type: "h2" }> => b.type === "h2"
+    (b: ArticleBlock): b is Extract<ArticleBlock, { type: "h2" }> => b.type === "h2"
   );
 
   return (
@@ -134,7 +134,7 @@ function ArticleView() {
                 Índice
               </p>
               <ul className="mt-4 space-y-3 border-l border-[color:var(--border)] pl-4">
-                {headings.map((h) => (
+                {headings.map((h: Extract<ArticleBlock, { type: "h2" }>) => (
                   <li key={h.id}>
                     <a
                       href={`#${h.id}`}
@@ -151,7 +151,7 @@ function ArticleView() {
           {/* Body */}
           <article className="mx-auto w-full max-w-[720px]">
             <div className="space-y-6 text-[17px] leading-[1.85] text-[color:var(--primary)]/90">
-              {article.blocks.map((b, i) => renderBlock(b, i))}
+              {article.blocks.map((b: ArticleBlock, i: number) => renderBlock(b, i))}
             </div>
 
             {/* CTA intermedio hacia servicio relacionado */}

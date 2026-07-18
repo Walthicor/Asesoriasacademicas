@@ -16,6 +16,7 @@ import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frec
 import { Route as NormasApaRouteImport } from './routes/normas-apa'
 import { Route as CorreccionDeEstiloRouteImport } from './routes/correccion-de-estilo'
 import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AsesoriaTrabajosDeGradoRouteImport } from './routes/asesoria-trabajos-de-grado'
 import { Route as AsesoriaMonografiasRouteImport } from './routes/asesoria-monografias'
 import { Route as AsesoriaEnsayosAcademicosRouteImport } from './routes/asesoria-ensayos-academicos'
@@ -23,6 +24,7 @@ import { Route as AsesoriaDeTesisRouteImport } from './routes/asesoria-de-tesis'
 import { Route as AsesoriaArticulosCientificosRouteImport } from './routes/asesoria-articulos-cientificos'
 import { Route as AnalisisEstadisticoSpssRouteImport } from './routes/analisis-estadistico-spss'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const RevisionBibliograficaRoute = RevisionBibliograficaRouteImport.update({
   id: '/revision-bibliografica',
@@ -58,6 +60,11 @@ const CorreccionDeEstiloRoute = CorreccionDeEstiloRouteImport.update({
 const ContactoRoute = ContactoRouteImport.update({
   id: '/contacto',
   path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AsesoriaTrabajosDeGradoRoute = AsesoriaTrabajosDeGradoRouteImport.update({
@@ -97,6 +104,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -106,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
@@ -113,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
   '/revision-bibliografica': typeof RevisionBibliograficaRoute
+  '/blog/$slug': typeof BlogSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -122,6 +136,7 @@ export interface FileRoutesByTo {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
@@ -129,6 +144,7 @@ export interface FileRoutesByTo {
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
   '/revision-bibliografica': typeof RevisionBibliograficaRoute
+  '/blog/$slug': typeof BlogSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -139,6 +155,7 @@ export interface FileRoutesById {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
@@ -146,6 +163,7 @@ export interface FileRoutesById {
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
   '/revision-bibliografica': typeof RevisionBibliograficaRoute
+  '/blog/$slug': typeof BlogSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -157,6 +175,7 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/blog'
     | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
@@ -164,6 +183,7 @@ export interface FileRouteTypes {
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
     | '/revision-bibliografica'
+    | '/blog/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -173,6 +193,7 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/blog'
     | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
@@ -180,6 +201,7 @@ export interface FileRouteTypes {
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
     | '/revision-bibliografica'
+    | '/blog/$slug'
   id:
     | '__root__'
     | '/'
@@ -189,6 +211,7 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/blog'
     | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
@@ -196,6 +219,7 @@ export interface FileRouteTypes {
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
     | '/revision-bibliografica'
+    | '/blog/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -206,6 +230,7 @@ export interface RootRouteChildren {
   AsesoriaEnsayosAcademicosRoute: typeof AsesoriaEnsayosAcademicosRoute
   AsesoriaMonografiasRoute: typeof AsesoriaMonografiasRoute
   AsesoriaTrabajosDeGradoRoute: typeof AsesoriaTrabajosDeGradoRoute
+  BlogRoute: typeof BlogRouteWithChildren
   ContactoRoute: typeof ContactoRoute
   CorreccionDeEstiloRoute: typeof CorreccionDeEstiloRoute
   NormasApaRoute: typeof NormasApaRoute
@@ -266,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/asesoria-trabajos-de-grado': {
       id: '/asesoria-trabajos-de-grado'
       path: '/asesoria-trabajos-de-grado'
@@ -315,8 +347,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -326,6 +375,7 @@ const rootRouteChildren: RootRouteChildren = {
   AsesoriaEnsayosAcademicosRoute: AsesoriaEnsayosAcademicosRoute,
   AsesoriaMonografiasRoute: AsesoriaMonografiasRoute,
   AsesoriaTrabajosDeGradoRoute: AsesoriaTrabajosDeGradoRoute,
+  BlogRoute: BlogRouteWithChildren,
   ContactoRoute: ContactoRoute,
   CorreccionDeEstiloRoute: CorreccionDeEstiloRoute,
   NormasApaRoute: NormasApaRoute,
