@@ -139,7 +139,23 @@ export function Footer() {
           >
             Política de reembolsos
           </Link>
+          <span aria-hidden>·</span>
+          <button
+            type="button"
+            onClick={openCookiePreferences}
+            className="transition-colors hover:text-[color:var(--brand-magenta)]"
+          >
+            Preferencias de cookies
+          </button>
         </div>
+
+        <p className="mx-auto mt-6 max-w-3xl text-center text-[11px] leading-relaxed" style={{ color: "#8A94A6" }}>
+          Asesorías Académicas presta exclusivamente servicios de asesoría,
+          tutoría y apoyo formativo. Toda guía, material o retroalimentación
+          entregada durante el acompañamiento constituye un recurso de
+          orientación, estudio y referencia; la autoría y presentación de los
+          trabajos académicos corresponden siempre al estudiante.
+        </p>
 
         <p className="mt-5 text-center text-xs text-[color:var(--muted-foreground)]">
           © 2026 Asesorías Académicas — Acompañamiento académico ético. Tú eres
