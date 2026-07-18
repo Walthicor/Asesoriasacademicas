@@ -41,18 +41,17 @@ const WA_URL =
   "https://wa.me/573163641646?text=" +
   encodeURIComponent("Hola, quiero una cotización de asesoría académica");
 
+import { pageHead } from "../lib/seo";
+
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Asesorías Académicas | Asesoría de Tesis y Acompañamiento en Colombia" },
-      { name: "description", content: "Asesoría metodológica de tesis, trabajos de grado, corrección de estilo, normas APA y análisis estadístico SPSS. Acompañamiento académico ético para pregrado y posgrado en Colombia." },
-      { property: "og:title", content: "Asesorías Académicas | Acompañamiento Académico Ético" },
-      { property: "og:description", content: "Asesoría metodológica, tutorías personalizadas y preparación de sustentaciones. Tú eres el autor; nosotros te acompañamos." },
-      { property: "og:url", content: "/" },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/",
+      title: "Asesorías Académicas | Asesoría de Tesis y Acompañamiento en Colombia",
+      description:
+        "Asesoría metodológica de tesis, trabajos de grado, corrección de estilo, normas APA y análisis estadístico SPSS. Acompañamiento académico ético para pregrado y posgrado en Colombia.",
+      ogType: "website",
+    }),
   component: Home,
 });
 
