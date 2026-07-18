@@ -67,13 +67,17 @@ export function ServicioTemplate({
               >
                 Cotizar esta asesoría
               </a>
-              <Link
-                to="/"
-                className="inline-flex items-center justify-center rounded-full border border-[color:var(--border)] bg-white px-7 py-3.5 text-sm font-medium text-[color:var(--primary)] transition-all duration-300 hover:border-[color:var(--primary)]"
+              <a
+                href={waUrl(nombre)}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Escríbenos por WhatsApp para ${nombre.toLowerCase()}`}
+                className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] px-7 py-3.5 text-sm font-medium text-white shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
               >
-                Ver todos los servicios
-              </Link>
+                Escríbenos por WhatsApp
+              </a>
             </div>
+
           </div>
 
           <div className="reveal relative">
