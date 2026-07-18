@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone } from "lucide-react";
 import { Logo } from "./Logo";
+import { openCookiePreferences } from "./CookieConsent";
 
 const servicios = [
   { label: "Asesoría de tesis", to: "/asesoria-de-tesis" },
