@@ -14,10 +14,14 @@ import { Route as RevisionBibliograficaRouteImport } from './routes/revision-bib
 import { Route as QuienesSomosRouteImport } from './routes/quienes-somos'
 import { Route as PreparacionSustentacionesRouteImport } from './routes/preparacion-sustentaciones'
 import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frecuentes'
+import { Route as PoliticaDeReembolsosRouteImport } from './routes/politica-de-reembolsos'
+import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
+import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
 import { Route as NormasApaRouteImport } from './routes/normas-apa'
 import { Route as CorreccionDeEstiloRouteImport } from './routes/correccion-de-estilo'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as AsesoriaTrabajosDeGradoRouteImport } from './routes/asesoria-trabajos-de-grado'
 import { Route as AsesoriaMonografiasRouteImport } from './routes/asesoria-monografias'
 import { Route as AsesoriaEnsayosAcademicosRouteImport } from './routes/asesoria-ensayos-academicos'
@@ -53,6 +57,21 @@ const PreguntasFrecuentesRoute = PreguntasFrecuentesRouteImport.update({
   path: '/preguntas-frecuentes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PoliticaDeReembolsosRoute = PoliticaDeReembolsosRouteImport.update({
+  id: '/politica-de-reembolsos',
+  path: '/politica-de-reembolsos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadRoute = PoliticaDePrivacidadRouteImport.update({
+  id: '/politica-de-privacidad',
+  path: '/politica-de-privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
+  id: '/politica-de-cookies',
+  path: '/politica-de-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NormasApaRoute = NormasApaRouteImport.update({
   id: '/normas-apa',
   path: '/normas-apa',
@@ -71,6 +90,11 @@ const ContactoRoute = ContactoRouteImport.update({
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvisoLegalRoute = AvisoLegalRouteImport.update({
+  id: '/aviso-legal',
+  path: '/aviso-legal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AsesoriaTrabajosDeGradoRoute = AsesoriaTrabajosDeGradoRouteImport.update({
@@ -124,10 +148,14 @@ export interface FileRoutesByFullPath {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-reembolsos': typeof PoliticaDeReembolsosRoute
   '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
@@ -143,10 +171,14 @@ export interface FileRoutesByTo {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-reembolsos': typeof PoliticaDeReembolsosRoute
   '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
@@ -163,10 +195,14 @@ export interface FileRoutesById {
   '/asesoria-ensayos-academicos': typeof AsesoriaEnsayosAcademicosRoute
   '/asesoria-monografias': typeof AsesoriaMonografiasRoute
   '/asesoria-trabajos-de-grado': typeof AsesoriaTrabajosDeGradoRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/correccion-de-estilo': typeof CorreccionDeEstiloRoute
   '/normas-apa': typeof NormasApaRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-reembolsos': typeof PoliticaDeReembolsosRoute
   '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/preparacion-sustentaciones': typeof PreparacionSustentacionesRoute
   '/quienes-somos': typeof QuienesSomosRoute
@@ -184,10 +220,14 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/aviso-legal'
     | '/blog'
     | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
+    | '/politica-de-cookies'
+    | '/politica-de-privacidad'
+    | '/politica-de-reembolsos'
     | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
@@ -203,10 +243,14 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/aviso-legal'
     | '/blog'
     | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
+    | '/politica-de-cookies'
+    | '/politica-de-privacidad'
+    | '/politica-de-reembolsos'
     | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
@@ -222,10 +266,14 @@ export interface FileRouteTypes {
     | '/asesoria-ensayos-academicos'
     | '/asesoria-monografias'
     | '/asesoria-trabajos-de-grado'
+    | '/aviso-legal'
     | '/blog'
     | '/contacto'
     | '/correccion-de-estilo'
     | '/normas-apa'
+    | '/politica-de-cookies'
+    | '/politica-de-privacidad'
+    | '/politica-de-reembolsos'
     | '/preguntas-frecuentes'
     | '/preparacion-sustentaciones'
     | '/quienes-somos'
@@ -242,10 +290,14 @@ export interface RootRouteChildren {
   AsesoriaEnsayosAcademicosRoute: typeof AsesoriaEnsayosAcademicosRoute
   AsesoriaMonografiasRoute: typeof AsesoriaMonografiasRoute
   AsesoriaTrabajosDeGradoRoute: typeof AsesoriaTrabajosDeGradoRoute
+  AvisoLegalRoute: typeof AvisoLegalRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactoRoute: typeof ContactoRoute
   CorreccionDeEstiloRoute: typeof CorreccionDeEstiloRoute
   NormasApaRoute: typeof NormasApaRoute
+  PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
+  PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
+  PoliticaDeReembolsosRoute: typeof PoliticaDeReembolsosRoute
   PreguntasFrecuentesRoute: typeof PreguntasFrecuentesRoute
   PreparacionSustentacionesRoute: typeof PreparacionSustentacionesRoute
   QuienesSomosRoute: typeof QuienesSomosRoute
@@ -290,6 +342,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PreguntasFrecuentesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/politica-de-reembolsos': {
+      id: '/politica-de-reembolsos'
+      path: '/politica-de-reembolsos'
+      fullPath: '/politica-de-reembolsos'
+      preLoaderRoute: typeof PoliticaDeReembolsosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidad': {
+      id: '/politica-de-privacidad'
+      path: '/politica-de-privacidad'
+      fullPath: '/politica-de-privacidad'
+      preLoaderRoute: typeof PoliticaDePrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-cookies': {
+      id: '/politica-de-cookies'
+      path: '/politica-de-cookies'
+      fullPath: '/politica-de-cookies'
+      preLoaderRoute: typeof PoliticaDeCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/normas-apa': {
       id: '/normas-apa'
       path: '/normas-apa'
@@ -316,6 +389,13 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aviso-legal': {
+      id: '/aviso-legal'
+      path: '/aviso-legal'
+      fullPath: '/aviso-legal'
+      preLoaderRoute: typeof AvisoLegalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/asesoria-trabajos-de-grado': {
@@ -395,10 +475,14 @@ const rootRouteChildren: RootRouteChildren = {
   AsesoriaEnsayosAcademicosRoute: AsesoriaEnsayosAcademicosRoute,
   AsesoriaMonografiasRoute: AsesoriaMonografiasRoute,
   AsesoriaTrabajosDeGradoRoute: AsesoriaTrabajosDeGradoRoute,
+  AvisoLegalRoute: AvisoLegalRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactoRoute: ContactoRoute,
   CorreccionDeEstiloRoute: CorreccionDeEstiloRoute,
   NormasApaRoute: NormasApaRoute,
+  PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
+  PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
+  PoliticaDeReembolsosRoute: PoliticaDeReembolsosRoute,
   PreguntasFrecuentesRoute: PreguntasFrecuentesRoute,
   PreparacionSustentacionesRoute: PreparacionSustentacionesRoute,
   QuienesSomosRoute: QuienesSomosRoute,
@@ -408,3 +492,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
