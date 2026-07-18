@@ -19,7 +19,13 @@ const fieldBase =
 const labelBase =
   "text-xs uppercase tracking-[0.18em] text-[color:var(--muted-foreground)]";
 
-export function FormularioCotizacion({ title = "Solicita tu cotización" }: { title?: string }) {
+export function FormularioCotizacion({
+  title = "Solicita tu cotización",
+  servicioPreseleccionado,
+}: {
+  title?: string;
+  servicioPreseleccionado?: string;
+}) {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -82,7 +88,12 @@ export function FormularioCotizacion({ title = "Solicita tu cotización" }: { ti
         </div>
         <div className="space-y-2">
           <label className={labelBase}>Tipo de servicio</label>
-          <select required name="servicio" defaultValue="" className={fieldBase}>
+          <select
+            required
+            name="servicio"
+            defaultValue={servicioPreseleccionado ?? ""}
+            className={fieldBase}
+          >
             <option value="" disabled>Selecciona un servicio</option>
             {SERVICIOS.map((s) => (
               <option key={s} value={s}>{s}</option>
