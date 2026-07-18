@@ -2,27 +2,37 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { articles, CATEGORIES, getArticlesByCategory } from "../data/blog";
+import { pageHead, abs } from "../lib/seo";
 
 export const Route = createFileRoute("/blog")({
-  head: () => ({
-    meta: [
-      { title: "Blog académico | Asesorías Académicas" },
+  head: () =>
+    pageHead(
       {
-        name: "description",
-        content:
+        path: "/blog",
+        title: "Blog académico | Asesorías Académicas",
+        description:
           "Guías prácticas de investigación, escritura académica, estadística y normas APA escritas por nuestros docentes asesores.",
+        ogType: "website",
       },
-      { property: "og:title", content: "Blog académico | Asesorías Académicas" },
-      {
-        property: "og:description",
-        content:
-          "Consejos claros y aplicables para avanzar en tu tesis y trabajos académicos.",
-      },
-      { property: "og:url", content: "/blog" },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: "/blog" }],
-  }),
+      [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: "Blog académico de Asesorías Académicas",
+            url: abs("/blog"),
+            blogPost: articles.map((a) => ({
+              "@type": "BlogPosting",
+              headline: a.title,
+              url: abs(`/blog/${a.slug}`),
+              datePublished: a.date,
+              image: abs(a.image),
+            })),
+          }),
+        },
+      ],
+    ),
   component: BlogIndex,
 });
 
