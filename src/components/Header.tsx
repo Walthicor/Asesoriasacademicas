@@ -54,7 +54,7 @@ export function Header() {
           : "border-b border-transparent bg-white/60 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:h-24 lg:px-8">
         <Logo />
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -146,7 +146,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="max-h-[calc(100dvh-72px)] overflow-y-auto border-t border-[color:var(--border)] bg-white/98 backdrop-blur-lg lg:hidden">
+        <div className="max-h-[calc(100dvh-80px)] overflow-y-auto border-t border-[color:var(--border)] bg-white/98 backdrop-blur-lg lg:hidden">
           <div className="mx-auto max-w-7xl space-y-1 px-5 py-5">
             <details className="group border-b border-[color:var(--border)]/60 pb-2">
               <summary className="flex cursor-pointer list-none items-center justify-between py-2 text-sm font-semibold text-[color:var(--primary)]">

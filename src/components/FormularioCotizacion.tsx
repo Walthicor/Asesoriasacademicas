@@ -40,7 +40,9 @@ export function FormularioCotizacion({
 
   if (sent) {
     return (
-      <div className="rounded-2xl border border-[color:var(--border)] bg-white p-10 text-center shadow-[var(--shadow-elegant)]">
+      <div className="pulse-frame-gold rounded-2xl">
+        <div className="rounded-2xl border border-[color:var(--border)] bg-white p-10 text-center shadow-[var(--shadow-elegant)]">
+
         <CheckCircle2 className="mx-auto h-14 w-14 text-[color:var(--accent)]" />
         <h3 className="mt-5 font-display text-2xl text-[color:var(--primary)]">
           Recibimos tu solicitud
@@ -55,16 +57,20 @@ export function FormularioCotizacion({
         >
           Enviar otra solicitud
         </button>
+        </div>
       </div>
     );
+
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      aria-label="Formulario de cotización de asesoría académica"
-      className="rounded-2xl border border-[color:var(--border)] bg-white p-8 shadow-[var(--shadow-elegant)] md:p-10"
-    >
+    <div className="pulse-frame-gold rounded-2xl">
+      <form
+        onSubmit={onSubmit}
+        aria-label="Formulario de cotización de asesoría académica"
+        className="rounded-2xl border border-[color:var(--border)] bg-white p-8 shadow-[var(--shadow-elegant)] md:p-10"
+      >
+
       <div className="mb-8">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
           Cotización sin compromiso
@@ -137,6 +143,8 @@ export function FormularioCotizacion({
           {loading ? "Enviando..." : "Solicitar cotización"}
         </button>
       </div>
-    </form>
+      </form>
+    </div>
+
   );
 }
