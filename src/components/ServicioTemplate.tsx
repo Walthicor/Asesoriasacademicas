@@ -88,7 +88,7 @@ export function ServicioTemplate({
       </section>
 
       {/* ¿QUÉ INCLUYE? */}
-      <section className="bg-white px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-5xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -118,7 +118,7 @@ export function ServicioTemplate({
       </section>
 
       {/* CÓMO TE ACOMPAÑAMOS */}
-      <section className="bg-[color:var(--surface)] px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -153,7 +153,7 @@ export function ServicioTemplate({
       </section>
 
       {/* PARA QUIÉN ES */}
-      <section className="bg-white px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -188,7 +188,7 @@ export function ServicioTemplate({
       </section>
 
       {/* FAQ */}
-      <section className="bg-[color:var(--surface)] px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -208,7 +208,7 @@ export function ServicioTemplate({
       </section>
 
       {/* RELACIONADOS */}
-      <section className="bg-white px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -248,7 +248,7 @@ export function ServicioTemplate({
       </section>
 
       {/* COTIZACIÓN */}
-      <section id="cotizar" className="bg-[color:var(--surface)] px-5 py-24 lg:px-8">
+      <section id="cotizar" className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="reveal mb-10 text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">

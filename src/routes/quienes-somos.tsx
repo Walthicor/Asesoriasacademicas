@@ -130,7 +130,7 @@ function QuienesSomosPage() {
       </section>
 
       {/* HISTORIA */}
-      <section className="bg-white px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
           <div className="reveal">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -181,7 +181,7 @@ function QuienesSomosPage() {
       </section>
 
       {/* MISIÓN Y VISIÓN */}
-      <section className="bg-[color:var(--surface)] px-5 py-24 lg:px-8">
+      <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
           <div className="reveal card-elevate rounded-3xl border border-[color:var(--border)] bg-white p-10">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--accent)]">
@@ -206,7 +206,7 @@ function QuienesSomosPage() {
       </section>
 
       {/* PRINCIPIOS */}
-      <section className="bg-[color:var(--primary)] px-5 py-24 text-white lg:px-8 lg:py-28">
+      <section className="bg-[color:var(--primary)] px-5 py-16 text-white lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--accent)]">
@@ -239,7 +239,7 @@ function QuienesSomosPage() {
       </section>
 
       {/* MÉTODO DE SERVICIO */}
-      <section className="bg-white px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -272,7 +272,7 @@ function QuienesSomosPage() {
       </section>
 
       {/* COTIZACIÓN */}
-      <section id="cotizar" className="bg-[color:var(--surface)] px-5 py-24 lg:px-8">
+      <section id="cotizar" className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="reveal mb-10 text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">

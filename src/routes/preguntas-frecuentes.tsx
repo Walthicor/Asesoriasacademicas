@@ -95,7 +95,7 @@ export const Route = createFileRoute("/preguntas-frecuentes")({
 function FAQPage() {
   return (
     <>
-      <section className="bg-[color:var(--surface)] px-5 py-20 lg:px-8 lg:py-28">
+      <section className="bg-[color:var(--surface)] px-5 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="reveal text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
             Centro de ayuda

@@ -234,7 +234,7 @@ function Hero() {
 
 function Servicios() {
   return (
-    <section className="bg-[color:var(--surface)] px-5 py-24 lg:px-8 lg:py-32">
+    <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="reveal mx-auto max-w-3xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -279,7 +279,7 @@ function Servicios() {
 
 function ComoTrabajamos() {
   return (
-    <section className="bg-white px-5 py-24 lg:px-8 lg:py-32">
+    <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="reveal grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-end">
           <div>
@@ -324,7 +324,7 @@ function ComoTrabajamos() {
 
 function PorQue() {
   return (
-    <section className="relative overflow-hidden bg-[color:var(--primary)] px-5 py-24 lg:px-8 lg:py-32">
+    <section className="relative overflow-hidden bg-[color:var(--primary)] px-5 py-16 lg:px-8 lg:py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-40"
@@ -415,7 +415,7 @@ function Testimonios() {
   const next = () => setI((v) => (v + 1) % testimonios.length);
 
   return (
-    <section className="relative overflow-hidden bg-[color:var(--surface)] px-5 py-24 lg:px-8 lg:py-32">
+    <section className="relative overflow-hidden bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-center">
         {/* Poster */}
         <div className="reveal relative">
@@ -496,7 +496,7 @@ function Testimonios() {
 
 function Blog() {
   return (
-    <section className="bg-white px-5 py-24 lg:px-8 lg:py-32">
+    <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="reveal flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
@@ -556,7 +556,7 @@ function Cotizar() {
   return (
     <section
       id="cotizar"
-      className="relative overflow-hidden bg-[color:var(--surface)] px-5 py-24 lg:px-8 lg:py-32"
+      className="relative overflow-hidden bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24"
     >
       <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
         <div className="reveal">
