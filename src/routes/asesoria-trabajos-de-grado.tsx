@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "../lib/seo";
 import { GraduationCap, BookMarked, SpellCheck } from "lucide-react";
 import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-grado.jpg";

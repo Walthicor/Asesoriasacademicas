@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "../lib/seo";
 import { BookOpen, BarChart3, PenLine } from "lucide-react";
 import { ServicioTemplate } from "../components/ServicioTemplate";
 import heroImg from "../assets/servicio-sustentacion.jpg";
