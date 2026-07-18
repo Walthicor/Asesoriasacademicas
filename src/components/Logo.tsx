@@ -11,12 +11,12 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       <img
         src={logo.url}
         alt="Asesorías Académicas"
-        width={compact ? 64 : 260}
-        height={compact ? 64 : 80}
+        width={compact ? 56 : 220}
+        height={compact ? 56 : 72}
         className={
           compact
-            ? "h-16 w-16 object-contain"
-            : "h-16 w-auto object-contain md:h-20"
+            ? "h-14 w-14 object-contain"
+            : "h-14 w-auto object-contain md:h-16"
         }
         style={{ mixBlendMode: "darken" }}
       />
