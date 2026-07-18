@@ -1,8 +1,11 @@
 import { useState, type ComponentType } from "react";
 import { Link } from "@tanstack/react-router";
-import { Check, ChevronDown, ArrowRight } from "lucide-react";
+import { Check, ChevronDown, ArrowRight, BookOpen } from "lucide-react";
 import { CTABanda } from "./CTABanda";
 import { FormularioCotizacion } from "./FormularioCotizacion";
+import { articles as blogArticles } from "../data/blog";
+import { waUrl } from "../lib/whatsapp";
+
 
 export type ServicioTemplateProps = {
   nombre: string;
@@ -64,13 +67,17 @@ export function ServicioTemplate({
               >
                 Cotizar esta asesoría
               </a>
-              <Link
-                to="/"
-                className="inline-flex items-center justify-center rounded-full border border-[color:var(--border)] bg-white px-7 py-3.5 text-sm font-medium text-[color:var(--primary)] transition-all duration-300 hover:border-[color:var(--primary)]"
+              <a
+                href={waUrl(nombre)}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Escríbenos por WhatsApp para ${nombre.toLowerCase()}`}
+                className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] px-7 py-3.5 text-sm font-medium text-white shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
               >
-                Ver todos los servicios
-              </Link>
+                Escríbenos por WhatsApp
+              </a>
             </div>
+
           </div>
 
           <div className="reveal relative">
@@ -85,7 +92,7 @@ export function ServicioTemplate({
       </section>
 
       {/* ¿QUÉ INCLUYE? */}
-      <section className="bg-white px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-5xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -115,7 +122,7 @@ export function ServicioTemplate({
       </section>
 
       {/* CÓMO TE ACOMPAÑAMOS */}
-      <section className="bg-[color:var(--surface)] px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -150,7 +157,7 @@ export function ServicioTemplate({
       </section>
 
       {/* PARA QUIÉN ES */}
-      <section className="bg-white px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -185,7 +192,7 @@ export function ServicioTemplate({
       </section>
 
       {/* FAQ */}
-      <section className="bg-[color:var(--surface)] px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -205,7 +212,7 @@ export function ServicioTemplate({
       </section>
 
       {/* RELACIONADOS */}
-      <section className="bg-white px-5 py-24 lg:px-8 lg:py-28">
+      <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="reveal mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -244,8 +251,64 @@ export function ServicioTemplate({
         </div>
       </section>
 
+      {/* DEL BLOG — enlaces útiles */}
+      <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="reveal flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+                Recursos del blog
+              </p>
+              <h2 className="mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
+                Lecturas para acompañar tu proceso
+              </h2>
+            </div>
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)] hover:text-[color:var(--primary)]"
+            >
+              Ver todo el blog
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {blogArticles.slice(0, 3).map((a) => (
+              <Link
+                key={a.slug}
+                to="/blog/$slug"
+                params={{ slug: a.slug }}
+                className="reveal card-elevate group flex flex-col overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white"
+              >
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img
+                    src={a.image}
+                    alt={a.imageAlt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--accent-ink)]">
+                    <BookOpen className="mr-1 inline h-3 w-3" />
+                    {a.category}
+                  </span>
+                  <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-[color:var(--primary)]">
+                    {a.title}
+                  </h3>
+                  <span className="mt-auto pt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
+                    Leer artículo
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* COTIZACIÓN */}
-      <section id="cotizar" className="bg-[color:var(--surface)] px-5 py-24 lg:px-8">
+      <section id="cotizar" className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="reveal mb-10 text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -264,7 +327,8 @@ export function ServicioTemplate({
         </div>
       </section>
 
-      <CTABanda title={ctaTitle} subtitle={ctaSubtitle} />
+      <CTABanda title={ctaTitle} subtitle={ctaSubtitle} servicio={nombre} />
+
     </>
   );
 }

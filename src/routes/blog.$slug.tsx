@@ -210,7 +210,7 @@ function ArticleView() {
       </section>
 
       {/* COTIZACIÓN */}
-      <section className="bg-[color:var(--surface)] px-5 py-24 lg:px-8">
+      <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="mb-10 text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
