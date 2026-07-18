@@ -251,8 +251,64 @@ export function ServicioTemplate({
         </div>
       </section>
 
+      {/* DEL BLOG — enlaces útiles */}
+      <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="reveal flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+                Recursos del blog
+              </p>
+              <h2 className="mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
+                Lecturas para acompañar tu proceso
+              </h2>
+            </div>
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)] hover:text-[color:var(--primary)]"
+            >
+              Ver todo el blog
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {blogArticles.slice(0, 3).map((a) => (
+              <Link
+                key={a.slug}
+                to="/blog/$slug"
+                params={{ slug: a.slug }}
+                className="reveal card-elevate group flex flex-col overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white"
+              >
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img
+                    src={a.image}
+                    alt={a.imageAlt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--accent-ink)]">
+                    <BookOpen className="mr-1 inline h-3 w-3" />
+                    {a.category}
+                  </span>
+                  <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-[color:var(--primary)]">
+                    {a.title}
+                  </h3>
+                  <span className="mt-auto pt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
+                    Leer artículo
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* COTIZACIÓN */}
-      <section id="cotizar" className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
+      <section id="cotizar" className="bg-white px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="reveal mb-10 text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
@@ -271,7 +327,8 @@ export function ServicioTemplate({
         </div>
       </section>
 
-      <CTABanda title={ctaTitle} subtitle={ctaSubtitle} />
+      <CTABanda title={ctaTitle} subtitle={ctaSubtitle} servicio={nombre} />
+
     </>
   );
 }
