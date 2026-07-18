@@ -204,9 +204,7 @@ function Hero() {
   );
 }
 
-    </section>
-  );
-}
+
 
 function Servicios() {
   return (
