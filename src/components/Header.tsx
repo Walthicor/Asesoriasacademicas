@@ -76,12 +76,14 @@ export function Header() {
           <Link to="/" className={navLinkClass}>Blog</Link>
           <Link to="/" className={navLinkClass}>Contacto</Link>
 
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-2.5 text-sm font-medium text-white shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
+          <a
+            href="https://wa.me/573163641646?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20asesor%C3%ADa%20acad%C3%A9mica"
+            target="_blank"
+            rel="noreferrer"
+            className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-2.5 text-sm font-medium text-white shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
           >
-            Cotizar ahora
-          </Link>
+            Escríbenos por WhatsApp
+          </a>
         </nav>
 
         <button
@@ -118,12 +120,14 @@ export function Header() {
             <Link to="/" className="block py-2 text-sm font-medium text-[color:var(--primary)]">Quiénes somos</Link>
             <Link to="/" className="block py-2 text-sm font-medium text-[color:var(--primary)]">Blog</Link>
             <Link to="/" className="block py-2 text-sm font-medium text-[color:var(--primary)]">Contacto</Link>
-            <Link
-              to="/"
+            <a
+              href="https://wa.me/573163641646?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20asesor%C3%ADa%20acad%C3%A9mica"
+              target="_blank"
+              rel="noreferrer"
               className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-sm font-medium text-white"
             >
-              Cotizar ahora
-            </Link>
+              Escríbenos por WhatsApp
+            </a>
           </div>
         </div>
       )}
