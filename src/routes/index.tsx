@@ -161,7 +161,7 @@ function Hero() {
 
         <h1 className="reveal mx-auto mt-6 max-w-4xl font-display text-5xl font-medium leading-[1.05] text-white md:text-7xl">
           Convertimos tu proceso académico en un{" "}
-          <span className="italic text-[color:var(--accent)]">camino claro</span>.
+          <span className="italic text-[color:var(--accent)]">camino sólido</span>.
         </h1>
 
         <p className="reveal mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/85">
