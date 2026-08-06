@@ -65,7 +65,7 @@ export const Route = createFileRoute("/blog/$slug")({
               name: SITE_NAME,
               logo: {
                 "@type": "ImageObject",
-                url: `${SITE_URL}/logo.png`,
+                url: `${SITE_URL}/og-cover.jpg`,
               },
             },
             articleSection: a.category,

@@ -15,7 +15,7 @@ export const organizationJsonLd = {
   "@type": "Organization",
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/og-cover.jpg`,
   description:
     "Empresa colombiana de asesoría, tutoría y acompañamiento académico ético para estudiantes de pregrado y posgrado.",
   address: { "@type": "PostalAddress", addressCountry: "CO" },
