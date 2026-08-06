@@ -1,6 +1,6 @@
 // Central SEO helpers for consistent metadata across the site.
 
-export const SITE_URL = "https://www.asesoriasacademicas.co";
+export const SITE_URL = "https://asesoriasacademicaslatam.com";
 export const SITE_NAME = "Asesorías Académicas";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-cover.jpg`;
 
