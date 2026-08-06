@@ -19,6 +19,10 @@ const staticPaths: { path: string; changefreq: string; priority: string }[] = [
   { path: "/normas-apa", changefreq: "monthly", priority: "0.8" },
   { path: "/correccion-de-estilo", changefreq: "monthly", priority: "0.8" },
   { path: "/preparacion-sustentaciones", changefreq: "monthly", priority: "0.8" },
+  { path: "/aviso-legal", changefreq: "yearly", priority: "0.3" },
+  { path: "/politica-de-privacidad", changefreq: "yearly", priority: "0.3" },
+  { path: "/politica-de-cookies", changefreq: "yearly", priority: "0.3" },
+  { path: "/politica-de-reembolsos", changefreq: "yearly", priority: "0.3" },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
