@@ -50,9 +50,9 @@ export const Route = createFileRoute("/")({
   head: () =>
     pageHead({
       path: "/",
-      title: "Asesorías Académicas | Asesoría de Tesis y Acompañamiento en Colombia",
+      title: "Asesorías Académicas | Asesoría de Tesis en Colombia",
       description:
-        "Asesoría metodológica de tesis, trabajos de grado, corrección de estilo, normas APA y análisis estadístico SPSS. Acompañamiento académico ético para pregrado y posgrado en Colombia.",
+        "Asesoría y tutoría académica ética: tesis, trabajos de grado, normas APA, corrección de estilo y análisis estadístico. Pregrado y posgrado en Colombia y Latinoamérica.",
       ogType: "website",
     }),
   component: Home,
