@@ -152,20 +152,15 @@ function Hero() {
       />
 
       <div className="relative mx-auto max-w-5xl px-5 pt-24 pb-20 text-center text-white lg:px-8 lg:pt-32 lg:pb-28">
-        <span className="reveal mx-auto inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/95 backdrop-blur">
-          <Sparkles className="h-3.5 w-3.5 text-[color:var(--accent)]" />
-          Asesoría académica en Colombia
-        </span>
-
-        <h1 className="reveal mx-auto mt-6 max-w-4xl font-display text-5xl font-medium leading-[1.05] text-white md:text-7xl">
-          Convertimos tu proceso académico en un{" "}
-          <span className="italic text-[color:var(--accent)]">camino sólido</span>.
+        <h1 className="reveal mx-auto max-w-4xl font-display text-5xl font-medium leading-[1.05] text-white md:text-7xl">
+          Tu proceso académico, con el{" "}
+          <span className="italic text-[color:var(--accent)]">respaldo</span> que
+          necesitas.
         </h1>
 
         <p className="reveal mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/85">
-          Metodología, disciplina y mentoría profesional para que llegues al
-          grado con dominio total de tu trabajo. Sin atajos ni trampas: solo
-          acompañamiento humano, riguroso y ético.
+          Te acompañamos en cada etapa con asesoría personalizada, claridad y
+          compromiso para que avances con confianza.
         </p>
 
         <div className="reveal mt-9 flex flex-wrap items-center justify-center gap-4">
@@ -173,7 +168,7 @@ function Hero() {
             href="#cotizar"
             className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-medium text-[color:var(--primary)] shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-[color:var(--accent)] hover:text-white hover:-translate-y-0.5"
           >
-            Cotiza tu asesoría
+            Cotiza hoy
           </a>
           <a
             href={WA_URL}
