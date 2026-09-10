@@ -15,13 +15,11 @@ import {
   Layers,
   UserCheck,
   Lock,
-  Scale,
+  Award,
   ArrowRight,
   Quote,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
-  Star,
 } from "lucide-react";
 import { CTABanda } from "../components/CTABanda";
 import { FormularioCotizacion } from "../components/FormularioCotizacion";
@@ -61,36 +59,36 @@ export const Route = createFileRoute("/")({
 /* ---------------- Data ---------------- */
 
 const servicios = [
-  { icon: GraduationCap, title: "Asesoría de tesis", to: "/asesoria-de-tesis", text: "Acompañamiento metodológico capítulo a capítulo para tu tesis de maestría o doctorado." },
-  { icon: BookOpen, title: "Trabajos de grado", to: "/asesoria-trabajos-de-grado", text: "Orientación integral para planear, estructurar y sustentar tu trabajo de grado de pregrado." },
-  { icon: PenLine, title: "Ensayos académicos", to: "/asesoria-ensayos-academicos", text: "Tutorías de escritura argumentativa para que tus ensayos tengan estructura y voz propia." },
-  { icon: FileText, title: "Monografías", to: "/asesoria-monografias", text: "Asesoría en diseño, fuentes y redacción académica para monografías sólidas." },
-  { icon: Microscope, title: "Artículos científicos", to: "/asesoria-articulos-cientificos", text: "Mentoría para escribir, ajustar y postular tu artículo a revistas indexadas." },
-  { icon: BarChart3, title: "Análisis estadístico SPSS", to: "/", text: "Capacitación y consultoría estadística para que entiendas y defiendas tus resultados." },
-  { icon: Library, title: "Revisión bibliográfica", to: "/", text: "Te enseñamos a buscar, filtrar y organizar literatura con gestores de referencias." },
-  { icon: BookMarked, title: "Normas APA", to: "/", text: "Formato profesional de tu documento y capacitación en citación APA 7." },
-  { icon: SpellCheck, title: "Corrección de estilo", to: "/", text: "Pulimos redacción, coherencia y ortotipografía de tu texto, respetando tu autoría." },
+  { icon: GraduationCap, title: "Asesoría de tesis", to: "/asesoria-de-tesis" },
+  { icon: BookOpen, title: "Trabajos de grado", to: "/asesoria-trabajos-de-grado" },
+  { icon: PenLine, title: "Ensayos académicos", to: "/asesoria-ensayos-academicos" },
+  { icon: FileText, title: "Monografías", to: "/asesoria-monografias" },
+  { icon: Microscope, title: "Artículos científicos", to: "/asesoria-articulos-cientificos" },
+  { icon: BarChart3, title: "Análisis estadístico SPSS", to: "/analisis-estadistico-spss" },
+  { icon: Library, title: "Revisión bibliográfica", to: "/revision-bibliografica" },
+  { icon: BookMarked, title: "Normas APA", to: "/normas-apa" },
+  { icon: SpellCheck, title: "Corrección de estilo", to: "/correccion-de-estilo" },
 ];
 
 const pasos = [
-  { n: "01", title: "Diagnóstico gratuito", text: "Evaluamos tu proyecto y tu fecha límite." },
-  { n: "02", title: "Plan de acompañamiento", text: "Definimos sesiones, entregas y asesor ideal." },
-  { n: "03", title: "Sesiones y seguimiento", text: "Grupo de WhatsApp multidisciplinar y reuniones periódicas con tu asesor." },
-  { n: "04", title: "Revisiones progresivas", text: "Retroalimentación detallada de cada avance que escribes." },
-  { n: "05", title: "Preparación final", text: "Corrección de estilo, normas APA y ensayo de sustentación." },
+  { n: "01", title: "Cotización gratuita", text: "Necesidades · tiempos · presupuesto" },
+  { n: "02", title: "Plan de acompañamiento", text: "Organización · asesor asignado · entregas" },
+  { n: "03", title: "Sesiones de seguimiento", text: "Comunicación · orientación · avances" },
+  { n: "04", title: "Revisiones progresivas", text: "Retroalimentación · ajustes · mejoras" },
+  { n: "05", title: "Entrega final", text: "Revisión · formato · entrega" },
 ];
 
 const razones = [
-  { icon: ShieldCheck, title: "Compromiso con la excelencia y la calidad" },
-  { icon: MessagesSquare, title: "Comunicación abierta y continua" },
-  { icon: Layers, title: "Flexibilidad y adaptabilidad a tu universidad" },
+  { icon: ShieldCheck, title: "Compromiso con la calidad" },
+  { icon: Lock, title: "Confidencialidad garantizada" },
+  { icon: MessagesSquare, title: "Comunicación continua" },
   { icon: UserCheck, title: "Seguimiento personalizado" },
-  { icon: Lock, title: "Garantía de confidencialidad" },
-  { icon: Scale, title: "Ética académica: tú eres siempre el autor de tu trabajo" },
+  { icon: Layers, title: "Flexibilidad y adaptabilidad" },
+  { icon: Award, title: "Garantía de resultados" },
 ];
 
 const cifras = [
-  { n: "+10.000", label: "estudiantes acompañados" },
+  { n: "+60.000", label: "estudiantes acompañados" },
   { n: "+100", label: "docentes asesores" },
   { n: "5/5", label: "satisfacción de estudiantes" },
 ];
