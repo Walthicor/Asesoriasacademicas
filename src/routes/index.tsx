@@ -565,8 +565,10 @@ function Home() {
     <>
       <Hero />
       <Servicios />
+      <WhatsAppCTA label="¿No sabes qué servicio necesitas? Te orientamos." />
       <ComoTrabajamos />
       <PorQue />
+      <WhatsAppCTA label="Empieza hoy tu acompañamiento académico." />
       <Galeria />
       <Testimonios />
       <Blog />

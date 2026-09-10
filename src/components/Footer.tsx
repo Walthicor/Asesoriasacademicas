@@ -12,11 +12,10 @@ const servicios = [
 ];
 
 const institucional = [
-  { label: "Quiénes somos", to: "/" },
-  { label: "Metodología", to: "/" },
-  { label: "Blog", to: "/" },
-  { label: "Preguntas frecuentes", to: "/" },
-  { label: "Ética académica", to: "/" },
+  { label: "Quiénes somos", to: "/quienes-somos" },
+  { label: "Blog", to: "/blog" },
+  { label: "Preguntas frecuentes", to: "/preguntas-frecuentes" },
+  { label: "Contacto", to: "/contacto" },
 ];
 
 export function Footer() {
