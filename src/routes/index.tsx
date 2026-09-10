@@ -330,15 +330,12 @@ function Galeria() {
     <section className="overflow-hidden bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+          <p className="font-display text-4xl font-semibold uppercase tracking-[0.14em] text-[color:var(--brand-magenta)] md:text-5xl">
             Nuestra comunidad
           </p>
-          <h2 className="mt-4 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
+          <h2 className="mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
             Ideas que acompañan tu camino
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-[color:var(--muted-foreground)]">
-            Recordatorios visuales de la filosofía con la que trabajamos: enfoque, estructura y mejora continua.
-          </p>
         </div>
       </div>
 
