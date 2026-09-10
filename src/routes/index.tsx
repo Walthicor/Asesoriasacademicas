@@ -385,10 +385,10 @@ function Testimonios() {
         </div>
 
         <div>
-          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+          <p className="reveal font-display text-4xl font-semibold uppercase tracking-[0.14em] text-[color:var(--brand-magenta)] md:text-5xl">
             Testimonios
           </p>
-          <h2 className="reveal mt-4 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
+          <h2 className="reveal mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
             Historias de quienes se graduaron con nosotros
           </h2>
 
@@ -457,10 +457,10 @@ function Blog() {
       <div className="mx-auto max-w-6xl">
         <div className="reveal flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+            <p className="font-display text-5xl font-semibold text-[color:var(--brand-magenta)] md:text-6xl">
               Blog
             </p>
-            <h2 className="mt-3 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
+            <h2 className="mt-2 font-display text-xl font-medium text-[color:var(--primary)] md:text-2xl">
               Recursos para tu vida académica
             </h2>
           </div>
