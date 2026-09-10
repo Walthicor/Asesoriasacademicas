@@ -205,37 +205,35 @@ function Servicios() {
     <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+          <p className="font-display text-4xl font-semibold uppercase tracking-[0.14em] text-[color:var(--brand-magenta)] md:text-5xl">
             Servicios
           </p>
-          <h2 className="mt-4 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
-            Un servicio para cada etapa de tu proceso académico
+          <h2 className="mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
+            Todo lo que necesitas para avanzar
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-[color:var(--muted-foreground)]">
-            Un equipo multidisciplinar que te orienta desde la idea de
-            investigación hasta la sustentación final.
+          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-[color:var(--muted-foreground)]">
+            Acompañamiento académico personalizado según tus necesidades.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {servicios.map(({ icon: Icon, title, text, to }) => (
+        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {servicios.map(({ icon: Icon, title, to }) => (
             <Link
               key={title}
               to={to}
-              className="reveal card-elevate group rounded-2xl border border-[color:var(--border)] bg-white p-7 text-left"
+              className="reveal card-elevate group flex items-center gap-4 rounded-xl border border-[color:var(--border)] bg-white px-5 py-5 text-left"
             >
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--accent)]/15 text-[color:var(--accent)] transition-colors group-hover:bg-[color:var(--primary)] group-hover:text-white">
-                <Icon className="h-6 w-6" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-[color:var(--primary)]">
-                {title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-                {text}
-              </p>
-              <span className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
-                Ver asesoría
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[color:var(--accent)]/15 text-[color:var(--accent)] transition-colors group-hover:bg-[color:var(--primary)] group-hover:text-white">
+                <Icon className="h-5 w-5" />
+              </span>
+              <span className="min-w-0">
+                <span className="block font-display text-xl font-semibold leading-snug text-[color:var(--primary)] md:text-2xl">
+                  {title}
+                </span>
+                <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--brand-magenta)]">
+                  Ver asesoría
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
               </span>
             </Link>
           ))}
@@ -249,19 +247,13 @@ function ComoTrabajamos() {
   return (
     <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="reveal grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-end">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
-              Cómo trabajamos
-            </p>
-            <h2 className="mt-4 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
-              Un método claro, de la idea al grado
-            </h2>
-          </div>
-          <p className="max-w-md leading-relaxed text-[color:var(--muted-foreground)] lg:justify-self-end lg:text-right">
-            Cinco etapas, un asesor asignado y comunicación continua. Así
-            traducimos tu proceso en un plan realista, ético y humano.
+        <div className="reveal mx-auto max-w-3xl text-center">
+          <p className="font-display text-4xl font-semibold uppercase tracking-[0.14em] text-[color:var(--brand-magenta)] md:text-5xl">
+            Cómo trabajamos
           </p>
+          <h2 className="mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
+            De la idea a la graduación
+          </h2>
         </div>
 
         <div className="relative mt-16">
@@ -275,10 +267,10 @@ function ComoTrabajamos() {
                 <div className="grid h-16 w-16 place-items-center rounded-full bg-white ring-2 ring-[color:var(--accent)] font-display text-2xl font-semibold text-[color:var(--accent)] shadow-[var(--shadow-soft)]">
                   {p.n}
                 </div>
-                <h3 className="mt-5 font-display text-lg font-semibold text-[color:var(--primary)]">
+                <h3 className="mt-5 font-display text-xl font-semibold leading-snug text-[color:var(--primary)] md:text-2xl">
                   {p.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+                <p className="mt-2 text-sm font-medium leading-relaxed text-[color:var(--muted-foreground)]">
                   {p.text}
                 </p>
               </li>
@@ -303,11 +295,11 @@ function PorQue() {
       />
       <div className="relative mx-auto max-w-6xl">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--accent)]">
-            Por qué elegirnos
+          <p className="font-display text-4xl font-semibold text-[color:var(--accent)] md:text-5xl">
+            ¿Por qué elegirnos?
           </p>
-          <h2 className="text-shine-dark mt-4 font-display text-4xl font-medium md:text-5xl">
-            La diferencia está en el acompañamiento
+          <h2 className="text-shine-dark mt-4 font-display text-3xl font-medium md:text-4xl">
+            Un servicio 100% garantizado
           </h2>
         </div>
 
@@ -320,7 +312,7 @@ function PorQue() {
               <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[color:var(--accent)]/20 text-[color:var(--accent)]">
                 <Icon className="h-5 w-5" />
               </div>
-              <p className="pt-1.5 font-display text-lg font-medium leading-snug text-white">
+              <p className="pt-1 font-display text-xl font-medium leading-snug text-white md:text-2xl">
                 {title}
               </p>
             </div>
