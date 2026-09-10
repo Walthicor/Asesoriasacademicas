@@ -22,6 +22,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { CTABanda } from "../components/CTABanda";
+import { WhatsAppCTA } from "../components/WhatsAppCTA";
 import { FormularioCotizacion } from "../components/FormularioCotizacion";
 import { articles } from "../data/blog";
 

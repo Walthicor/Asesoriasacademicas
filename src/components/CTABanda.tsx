@@ -37,7 +37,7 @@ export function CTABanda({
             target="_blank"
             rel="noreferrer"
             aria-label={waLabel}
-            className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] px-7 py-3 text-sm font-medium text-white shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
+            className="pulse-whatsapp inline-flex items-center justify-center rounded-full bg-[#25D366] px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_26px_-10px_rgba(37,211,102,0.8)] transition-all duration-300 hover:bg-[#1EBE5A] hover:-translate-y-0.5"
           >
             Contáctanos por WhatsApp
           </a>
