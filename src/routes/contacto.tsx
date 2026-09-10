@@ -11,7 +11,7 @@ export const Route = createFileRoute("/contacto")({
         path: "/contacto",
         title: "Contacto y Cotización | Asesorías Académicas",
         description:
-          "Escríbenos por WhatsApp al +57 316 364 1646 o cotiza tu proyecto en línea. Respondemos en menos de 2 horas hábiles.",
+          "Contáctanos por WhatsApp al +57 316 364 1646 o cotiza tu proyecto en línea. Respondemos en menos de 2 horas hábiles.",
       },
       [
         {

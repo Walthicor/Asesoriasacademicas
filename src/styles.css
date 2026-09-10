@@ -232,6 +232,25 @@
   }
 }
 
+@utility pulse-whatsapp {
+  position: relative;
+  isolation: isolate;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    border: 2px solid rgba(37, 211, 102, 0.55);
+    animation: pulseRing 3s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    pointer-events: none;
+  }
+  &::after {
+    animation-delay: 1.5s;
+  }
+}
+
 @utility marquee-track {
   animation: marquee 40s linear infinite;
 }

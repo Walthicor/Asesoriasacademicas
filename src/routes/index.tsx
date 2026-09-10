@@ -15,15 +15,14 @@ import {
   Layers,
   UserCheck,
   Lock,
-  Scale,
+  Award,
   ArrowRight,
   Quote,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
-  Star,
 } from "lucide-react";
 import { CTABanda } from "../components/CTABanda";
+import { WhatsAppCTA } from "../components/WhatsAppCTA";
 import { FormularioCotizacion } from "../components/FormularioCotizacion";
 import { articles } from "../data/blog";
 
@@ -61,36 +60,36 @@ export const Route = createFileRoute("/")({
 /* ---------------- Data ---------------- */
 
 const servicios = [
-  { icon: GraduationCap, title: "Asesoría de tesis", to: "/asesoria-de-tesis", text: "Acompañamiento metodológico capítulo a capítulo para tu tesis de maestría o doctorado." },
-  { icon: BookOpen, title: "Trabajos de grado", to: "/asesoria-trabajos-de-grado", text: "Orientación integral para planear, estructurar y sustentar tu trabajo de grado de pregrado." },
-  { icon: PenLine, title: "Ensayos académicos", to: "/asesoria-ensayos-academicos", text: "Tutorías de escritura argumentativa para que tus ensayos tengan estructura y voz propia." },
-  { icon: FileText, title: "Monografías", to: "/asesoria-monografias", text: "Asesoría en diseño, fuentes y redacción académica para monografías sólidas." },
-  { icon: Microscope, title: "Artículos científicos", to: "/asesoria-articulos-cientificos", text: "Mentoría para escribir, ajustar y postular tu artículo a revistas indexadas." },
-  { icon: BarChart3, title: "Análisis estadístico SPSS", to: "/", text: "Capacitación y consultoría estadística para que entiendas y defiendas tus resultados." },
-  { icon: Library, title: "Revisión bibliográfica", to: "/", text: "Te enseñamos a buscar, filtrar y organizar literatura con gestores de referencias." },
-  { icon: BookMarked, title: "Normas APA", to: "/", text: "Formato profesional de tu documento y capacitación en citación APA 7." },
-  { icon: SpellCheck, title: "Corrección de estilo", to: "/", text: "Pulimos redacción, coherencia y ortotipografía de tu texto, respetando tu autoría." },
+  { icon: GraduationCap, title: "Asesoría de tesis", to: "/asesoria-de-tesis" },
+  { icon: BookOpen, title: "Trabajos de grado", to: "/asesoria-trabajos-de-grado" },
+  { icon: PenLine, title: "Ensayos académicos", to: "/asesoria-ensayos-academicos" },
+  { icon: FileText, title: "Monografías", to: "/asesoria-monografias" },
+  { icon: Microscope, title: "Artículos científicos", to: "/asesoria-articulos-cientificos" },
+  { icon: BarChart3, title: "Análisis estadístico SPSS", to: "/analisis-estadistico-spss" },
+  { icon: Library, title: "Revisión bibliográfica", to: "/revision-bibliografica" },
+  { icon: BookMarked, title: "Normas APA", to: "/normas-apa" },
+  { icon: SpellCheck, title: "Corrección de estilo", to: "/correccion-de-estilo" },
 ];
 
 const pasos = [
-  { n: "01", title: "Diagnóstico gratuito", text: "Evaluamos tu proyecto y tu fecha límite." },
-  { n: "02", title: "Plan de acompañamiento", text: "Definimos sesiones, entregas y asesor ideal." },
-  { n: "03", title: "Sesiones y seguimiento", text: "Grupo de WhatsApp multidisciplinar y reuniones periódicas con tu asesor." },
-  { n: "04", title: "Revisiones progresivas", text: "Retroalimentación detallada de cada avance que escribes." },
-  { n: "05", title: "Preparación final", text: "Corrección de estilo, normas APA y ensayo de sustentación." },
+  { n: "01", title: "Cotización gratuita", text: "Necesidades · tiempos · presupuesto" },
+  { n: "02", title: "Plan de acompañamiento", text: "Organización · asesor asignado · entregas" },
+  { n: "03", title: "Sesiones de seguimiento", text: "Comunicación · orientación · avances" },
+  { n: "04", title: "Revisiones progresivas", text: "Retroalimentación · ajustes · mejoras" },
+  { n: "05", title: "Entrega final", text: "Revisión · formato · entrega" },
 ];
 
 const razones = [
-  { icon: ShieldCheck, title: "Compromiso con la excelencia y la calidad" },
-  { icon: MessagesSquare, title: "Comunicación abierta y continua" },
-  { icon: Layers, title: "Flexibilidad y adaptabilidad a tu universidad" },
+  { icon: ShieldCheck, title: "Compromiso con la calidad" },
+  { icon: Lock, title: "Confidencialidad garantizada" },
+  { icon: MessagesSquare, title: "Comunicación continua" },
   { icon: UserCheck, title: "Seguimiento personalizado" },
-  { icon: Lock, title: "Garantía de confidencialidad" },
-  { icon: Scale, title: "Ética académica: tú eres siempre el autor de tu trabajo" },
+  { icon: Layers, title: "Flexibilidad y adaptabilidad" },
+  { icon: Award, title: "Garantía de resultados" },
 ];
 
 const cifras = [
-  { n: "+10.000", label: "estudiantes acompañados" },
+  { n: "+60.000", label: "estudiantes acompañados" },
   { n: "+100", label: "docentes asesores" },
   { n: "5/5", label: "satisfacción de estudiantes" },
 ];
@@ -154,20 +153,15 @@ function Hero() {
       />
 
       <div className="relative mx-auto max-w-5xl px-5 pt-24 pb-20 text-center text-white lg:px-8 lg:pt-32 lg:pb-28">
-        <span className="reveal mx-auto inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/95 backdrop-blur">
-          <Sparkles className="h-3.5 w-3.5 text-[color:var(--accent)]" />
-          Asesoría académica en Colombia
-        </span>
-
-        <h1 className="reveal mx-auto mt-6 max-w-4xl font-display text-5xl font-medium leading-[1.05] text-white md:text-7xl">
-          Convertimos tu proceso académico en un{" "}
-          <span className="italic text-[color:var(--accent)]">camino sólido</span>.
+        <h1 className="reveal mx-auto max-w-4xl font-display text-5xl font-medium leading-[1.05] text-white md:text-7xl">
+          Tu proceso académico, con el{" "}
+          <span className="italic text-[color:var(--accent)]">respaldo</span> que
+          necesitas.
         </h1>
 
         <p className="reveal mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/85">
-          Metodología, disciplina y mentoría profesional para que llegues al
-          grado con dominio total de tu trabajo. Sin atajos ni trampas: solo
-          acompañamiento humano, riguroso y ético.
+          Te acompañamos en cada etapa con asesoría personalizada, claridad y
+          compromiso para que avances con confianza.
         </p>
 
         <div className="reveal mt-9 flex flex-wrap items-center justify-center gap-4">
@@ -175,7 +169,7 @@ function Hero() {
             href="#cotizar"
             className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-medium text-[color:var(--primary)] shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-[color:var(--accent)] hover:text-white hover:-translate-y-0.5"
           >
-            Cotiza tu asesoría
+            Cotiza hoy
           </a>
           <a
             href={WA_URL}
@@ -183,7 +177,7 @@ function Hero() {
             rel="noreferrer"
             className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] px-7 py-3.5 text-sm font-medium text-white shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
           >
-            Escríbenos por WhatsApp
+            Contáctanos por WhatsApp
           </a>
         </div>
 
@@ -212,37 +206,35 @@ function Servicios() {
     <section className="bg-[color:var(--surface)] px-5 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+          <p className="font-display text-4xl font-semibold uppercase tracking-[0.14em] text-[color:var(--brand-magenta)] md:text-5xl">
             Servicios
           </p>
-          <h2 className="mt-4 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
-            Un servicio para cada etapa de tu proceso académico
+          <h2 className="mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
+            Todo lo que necesitas para avanzar
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-[color:var(--muted-foreground)]">
-            Un equipo multidisciplinar que te orienta desde la idea de
-            investigación hasta la sustentación final.
+          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-[color:var(--muted-foreground)]">
+            Acompañamiento académico personalizado según tus necesidades.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {servicios.map(({ icon: Icon, title, text, to }) => (
+        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {servicios.map(({ icon: Icon, title, to }) => (
             <Link
               key={title}
               to={to}
-              className="reveal card-elevate group rounded-2xl border border-[color:var(--border)] bg-white p-7 text-left"
+              className="reveal card-elevate group flex items-center gap-4 rounded-xl border border-[color:var(--border)] bg-white px-5 py-5 text-left"
             >
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--accent)]/15 text-[color:var(--accent)] transition-colors group-hover:bg-[color:var(--primary)] group-hover:text-white">
-                <Icon className="h-6 w-6" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-[color:var(--primary)]">
-                {title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-                {text}
-              </p>
-              <span className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-magenta)]">
-                Ver asesoría
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[color:var(--accent)]/15 text-[color:var(--accent)] transition-colors group-hover:bg-[color:var(--primary)] group-hover:text-white">
+                <Icon className="h-5 w-5" />
+              </span>
+              <span className="min-w-0">
+                <span className="block font-display text-xl font-semibold leading-snug text-[color:var(--primary)] md:text-2xl">
+                  {title}
+                </span>
+                <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--brand-magenta)]">
+                  Ver asesoría
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
               </span>
             </Link>
           ))}
@@ -256,19 +248,13 @@ function ComoTrabajamos() {
   return (
     <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="reveal grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-end">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
-              Cómo trabajamos
-            </p>
-            <h2 className="mt-4 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
-              Un método claro, de la idea al grado
-            </h2>
-          </div>
-          <p className="max-w-md leading-relaxed text-[color:var(--muted-foreground)] lg:justify-self-end lg:text-right">
-            Cinco etapas, un asesor asignado y comunicación continua. Así
-            traducimos tu proceso en un plan realista, ético y humano.
+        <div className="reveal mx-auto max-w-3xl text-center">
+          <p className="font-display text-4xl font-semibold uppercase tracking-[0.14em] text-[color:var(--brand-magenta)] md:text-5xl">
+            Cómo trabajamos
           </p>
+          <h2 className="mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
+            De la idea a la graduación
+          </h2>
         </div>
 
         <div className="relative mt-16">
@@ -282,10 +268,10 @@ function ComoTrabajamos() {
                 <div className="grid h-16 w-16 place-items-center rounded-full bg-white ring-2 ring-[color:var(--accent)] font-display text-2xl font-semibold text-[color:var(--accent)] shadow-[var(--shadow-soft)]">
                   {p.n}
                 </div>
-                <h3 className="mt-5 font-display text-lg font-semibold text-[color:var(--primary)]">
+                <h3 className="mt-5 font-display text-xl font-semibold leading-snug text-[color:var(--primary)] md:text-2xl">
                   {p.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+                <p className="mt-2 text-sm font-medium leading-relaxed text-[color:var(--muted-foreground)]">
                   {p.text}
                 </p>
               </li>
@@ -310,11 +296,11 @@ function PorQue() {
       />
       <div className="relative mx-auto max-w-6xl">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--accent)]">
-            Por qué elegirnos
+          <p className="font-display text-4xl font-semibold text-[color:var(--accent)] md:text-5xl">
+            ¿Por qué elegirnos?
           </p>
-          <h2 className="text-shine-dark mt-4 font-display text-4xl font-medium md:text-5xl">
-            La diferencia está en el acompañamiento
+          <h2 className="text-shine-dark mt-4 font-display text-3xl font-medium md:text-4xl">
+            Un servicio 100% garantizado
           </h2>
         </div>
 
@@ -327,7 +313,7 @@ function PorQue() {
               <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[color:var(--accent)]/20 text-[color:var(--accent)]">
                 <Icon className="h-5 w-5" />
               </div>
-              <p className="pt-1.5 font-display text-lg font-medium leading-snug text-white">
+              <p className="pt-1 font-display text-xl font-medium leading-snug text-white md:text-2xl">
                 {title}
               </p>
             </div>
@@ -345,15 +331,12 @@ function Galeria() {
     <section className="overflow-hidden bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+          <p className="font-display text-4xl font-semibold uppercase tracking-[0.14em] text-[color:var(--brand-magenta)] md:text-5xl">
             Nuestra comunidad
           </p>
-          <h2 className="mt-4 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
+          <h2 className="mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
             Ideas que acompañan tu camino
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-[color:var(--muted-foreground)]">
-            Recordatorios visuales de la filosofía con la que trabajamos: enfoque, estructura y mejora continua.
-          </p>
         </div>
       </div>
 
@@ -403,10 +386,10 @@ function Testimonios() {
         </div>
 
         <div>
-          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+          <p className="reveal font-display text-4xl font-semibold uppercase tracking-[0.14em] text-[color:var(--brand-magenta)] md:text-5xl">
             Testimonios
           </p>
-          <h2 className="reveal mt-4 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
+          <h2 className="reveal mt-4 font-display text-3xl font-medium text-[color:var(--primary)] md:text-4xl">
             Historias de quienes se graduaron con nosotros
           </h2>
 
@@ -475,10 +458,10 @@ function Blog() {
       <div className="mx-auto max-w-6xl">
         <div className="reveal flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
+            <p className="font-display text-5xl font-semibold text-[color:var(--brand-magenta)] md:text-6xl">
               Blog
             </p>
-            <h2 className="mt-3 font-display text-4xl font-medium text-[color:var(--primary)] md:text-5xl">
+            <h2 className="mt-2 font-display text-xl font-medium text-[color:var(--primary)] md:text-2xl">
               Recursos para tu vida académica
             </h2>
           </div>
@@ -582,8 +565,10 @@ function Home() {
     <>
       <Hero />
       <Servicios />
+      <WhatsAppCTA label="¿No sabes qué servicio necesitas? Te orientamos." />
       <ComoTrabajamos />
       <PorQue />
+      <WhatsAppCTA label="Empieza hoy tu acompañamiento académico." />
       <Galeria />
       <Testimonios />
       <Blog />
