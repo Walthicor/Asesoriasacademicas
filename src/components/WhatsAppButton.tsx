@@ -3,8 +3,8 @@ import { waUrl } from "../lib/whatsapp";
 export function WhatsAppButton({ servicio }: { servicio?: string } = {}) {
   const href = waUrl(servicio);
   const label = servicio
-    ? `Escríbenos por WhatsApp para ${servicio.toLowerCase()}`
-    : "Escríbenos por WhatsApp";
+    ? `Contáctanos por WhatsApp para ${servicio.toLowerCase()}`
+    : "Contáctanos por WhatsApp";
 
   return (
     <a

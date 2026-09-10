@@ -11,8 +11,8 @@ export function CTABanda({
 }) {
   const href = waUrl(servicio);
   const waLabel = servicio
-    ? `Escríbenos por WhatsApp para ${servicio.toLowerCase()}`
-    : "Escríbenos por WhatsApp al +57 316 364 1646";
+    ? `Contáctanos por WhatsApp para ${servicio.toLowerCase()}`
+    : "Contáctanos por WhatsApp al +57 316 364 1646";
 
   return (
     <section className="relative overflow-hidden border-y border-[color:var(--border)] bg-white">
@@ -39,7 +39,7 @@ export function CTABanda({
             aria-label={waLabel}
             className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] px-7 py-3 text-sm font-medium text-white shadow-[var(--shadow-gold)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
           >
-            Escríbenos por WhatsApp
+            Contáctanos por WhatsApp
           </a>
           <a
             href="#cotizar"

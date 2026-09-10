@@ -128,10 +128,10 @@ export function Header() {
             href={waHeaderUrl}
             target="_blank"
             rel="noreferrer"
-            aria-label="Escríbenos por WhatsApp"
+            aria-label="Contáctanos por WhatsApp"
             className="pulse-gold inline-flex items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-2.5 text-sm font-medium text-white shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-[color:var(--brand-magenta)] hover:-translate-y-0.5"
           >
-            Escríbenos por WhatsApp
+            Contáctanos por WhatsApp
           </a>
         </nav>
 
@@ -195,7 +195,7 @@ export function Header() {
               onClick={() => setMobileOpen(false)}
               className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-3 text-sm font-semibold text-white"
             >
-              Escríbenos por WhatsApp
+              Contáctanos por WhatsApp
             </a>
           </div>
         </div>
