@@ -34,6 +34,26 @@ function injectGtag() {
     function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '${tagId}');
+
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': '${tagId}/XfdPCLnm-ZEZEKf41qg9',
+        'event_callback': callback
+      });
+      return false;
+    }
+
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest && e.target.closest('a[href*="wa.me"]');
+      if (el) {
+        gtag_report_conversion();
+      }
+    });
   `;
 
   const asyncScript = document.createElement("script");
