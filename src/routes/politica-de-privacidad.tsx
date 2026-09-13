@@ -74,7 +74,36 @@ function PoliticaPrivacidadPage() {
         datos personales.
       </p>
 
-      <LegalH2>5. Derechos del titular de los datos</LegalH2>
+      <LegalH2>5. Cookies y tecnologías de medición</LegalH2>
+      <p className="mt-4 leading-relaxed text-[color:var(--muted-foreground)]">
+        Usamos cookies y scripts de terceros solo con tu consentimiento, salvo
+        las estrictamente necesarias para el funcionamiento del sitio:
+      </p>
+      <ul className="mt-4 list-inside list-disc space-y-2 leading-relaxed text-[color:var(--muted-foreground)] marker:text-[color:var(--accent)]">
+        <li>
+          <strong className="text-[color:var(--ink)]">Esenciales:</strong>{" "}
+          necesarias para la navegación y el funcionamiento básico.
+        </li>
+        <li>
+          <strong className="text-[color:var(--ink)]">Analíticas:</strong>{" "}
+          nos permiten medir visitas y mejorar la experiencia.
+        </li>
+        <li>
+          <strong className="text-[color:var(--ink)]">Marketing:</strong>{" "}
+          utilizadas para medir el resultado de las campañas publicitarias.
+        </li>
+      </ul>
+      <p className="mt-4 leading-relaxed text-[color:var(--muted-foreground)]">
+        Si aceptas analíticas o marketing, cargamos el tag de conversión de{" "}
+        <strong className="text-[color:var(--ink)]">Google Ads</strong>{" "}
+        (ID AW-16459873319) para medir cuándo un visitante hace clic en un
+        enlace de WhatsApp. Esto nos ayuda a optimizar campañas sin identificarte
+        personalmente. Puedes cambiar tus preferencias en cualquier momento desde
+        el banner de cookies o el enlace "Preferencias de cookies" en el pie de
+        página.
+      </p>
+
+      <LegalH2>6. Derechos del titular de los datos</LegalH2>
       <p className="mt-4 leading-relaxed text-[color:var(--muted-foreground)]">
         Como titular de tus datos personales tienes derecho a:
       </p>
