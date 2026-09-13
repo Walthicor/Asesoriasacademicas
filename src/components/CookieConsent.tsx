@@ -47,6 +47,13 @@ function injectGtag() {
       });
       return false;
     }
+
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest && e.target.closest('a[href*="wa.me"]');
+      if (el) {
+        gtag_report_conversion();
+      }
+    });
   `;
 
   const asyncScript = document.createElement("script");
