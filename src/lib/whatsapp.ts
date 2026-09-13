@@ -16,3 +16,12 @@ export function waUrl(servicio?: string): string {
     : "Hola, quiero una cotización de asesoría académica";
   return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`;
 }
+
+/** Fire the Google Ads conversion event if the visitor accepted cookies. */
+export function trackConversion(url?: string) {
+  if (typeof window === "undefined") return;
+  const w = window as typeof window & { gtag_report_conversion?: (url?: string) => boolean | void };
+  if (typeof w.gtag_report_conversion === "function") {
+    w.gtag_report_conversion(url);
+  }
+}
