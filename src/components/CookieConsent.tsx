@@ -22,14 +22,42 @@ function readPrefs(): Prefs | null {
   }
 }
 
+function injectGtag() {
+  if (typeof document === "undefined") return;
+  const tagId = "AW-16459873319";
+  if (document.getElementById(`gtag-${tagId}`)) return;
+
+  const inline = document.createElement("script");
+  inline.id = `gtag-${tagId}-inline`;
+  inline.textContent = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${tagId}');
+  `;
+
+  const asyncScript = document.createElement("script");
+  asyncScript.id = `gtag-${tagId}`;
+  asyncScript.async = true;
+  asyncScript.src = `https://www.googletagmanager.com/gtag/js?id=${tagId}`;
+
+  const first = document.getElementsByTagName("script")[0];
+  if (first?.parentNode) {
+    first.parentNode.insertBefore(inline, first);
+    first.parentNode.insertBefore(asyncScript, first);
+  } else {
+    document.head.appendChild(inline);
+    document.head.appendChild(asyncScript);
+  }
+}
+
 function loadOptionalScripts(prefs: Prefs) {
   if (typeof window === "undefined") return;
   if (prefs.analytics) {
-    // Placeholder para Google Analytics u otro proveedor de analítica.
-    // window.dataLayer = window.dataLayer || [];
+    // Espacio reservado para Google Analytics 4 u otro proveedor de analítica.
   }
-  if (prefs.marketing) {
-    // Placeholder para pixel/remarketing.
+  if (prefs.marketing || prefs.analytics) {
+    injectGtag();
   }
 }
 
