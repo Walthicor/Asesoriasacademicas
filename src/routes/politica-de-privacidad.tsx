@@ -124,7 +124,7 @@ function PoliticaPrivacidadPage() {
         .
       </p>
 
-      <LegalH2>6. Autoridad de control</LegalH2>
+      <LegalH2>7. Autoridad de control</LegalH2>
       <p className="mt-4 leading-relaxed text-[color:var(--muted-foreground)]">
         La autoridad de control en materia de protección de datos personales en
         Colombia es la{" "}
@@ -132,7 +132,7 @@ function PoliticaPrivacidadPage() {
         Puedes consultar más información en su sitio web oficial.
       </p>
 
-      <LegalH2>7. Vigencia y cambios</LegalH2>
+      <LegalH2>8. Vigencia y cambios</LegalH2>
       <p className="mt-4 leading-relaxed text-[color:var(--muted-foreground)]">
         Esta política está vigente desde la fecha de última actualización. Cualquier
         cambio será publicado en esta misma sección. Te recomendamos revisarla
