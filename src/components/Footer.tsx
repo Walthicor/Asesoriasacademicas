@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone } from "lucide-react";
 import { Logo } from "./Logo";
+import { waUrl } from "../lib/whatsapp";
 import { openCookiePreferences } from "./CookieConsent";
 
 const servicios = [
@@ -74,7 +75,7 @@ export function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-[color:var(--primary)]/80">
               <li>
                 <a
-                  href="https://wa.me/573163641646"
+                  href={waUrl()}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 transition-colors hover:text-[color:var(--brand-magenta)]"

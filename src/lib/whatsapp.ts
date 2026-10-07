@@ -12,8 +12,8 @@ export const WA_DISPLAY = "+57 316 364 1646";
  */
 export function waUrl(servicio?: string): string {
   const message = servicio
-    ? `Hola, quiero cotizar la ${servicio.toLowerCase()}`
-    : "Hola, quiero una cotización de asesoría académica";
+    ? `Hola, vengo del website y quiero cotizar la ${servicio.toLowerCase()}`
+    : "Hola, vengo del website y quiero una cotización de asesoría académica";
   return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`;
 }
 

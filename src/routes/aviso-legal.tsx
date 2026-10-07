@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalTemplate, legalHead, LegalH2 } from "../components/LegalTemplate";
+import { waUrl } from "../lib/whatsapp";
 
 export const Route = createFileRoute("/aviso-legal")({
   head: () =>
@@ -35,7 +36,7 @@ function AvisoLegalPage() {
         </a>
         {" · "}
         <a
-          href="https://wa.me/573163641646"
+          href={waUrl()}
           target="_blank"
           rel="noreferrer"
           className="text-[color:var(--accent-ink)] underline underline-offset-4 transition-colors hover:text-[color:var(--brand-magenta)]"
