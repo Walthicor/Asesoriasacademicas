@@ -3,6 +3,7 @@ import { Phone, Mail, Instagram, Clock } from "lucide-react";
 import { CTABanda } from "../components/CTABanda";
 import { FormularioCotizacion } from "../components/FormularioCotizacion";
 import { pageHead, SITE_NAME, SITE_URL } from "../lib/seo";
+import { waUrl } from "../lib/whatsapp";
 
 export const Route = createFileRoute("/contacto")({
   head: () =>
@@ -33,7 +34,7 @@ const datos = [
     icon: Phone,
     label: "Teléfono / WhatsApp",
     value: "+57 316 364 1646",
-    href: "https://wa.me/573163641646",
+    href: waUrl(),
   },
   {
     icon: Mail,
