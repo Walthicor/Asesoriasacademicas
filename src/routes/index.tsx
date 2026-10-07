@@ -39,9 +39,9 @@ import todoEstructura from "../assets/posters/todo-estructura.jpg.asset.json";
 import heroVideo from "../assets/hero-estudiantes.mp4.asset.json";
 
 
-const WA_URL =
-  "https://wa.me/573163641646?text=" +
-  encodeURIComponent("Hola, quiero una cotización de asesoría académica");
+import { waUrl } from "../lib/whatsapp";
+
+const WA_URL = waUrl();
 
 import { pageHead } from "../lib/seo";
 
