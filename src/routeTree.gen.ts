@@ -9,108 +9,41 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AnalisisEstadisticoSpssRouteImport } from './routes/analisis-estadistico-spss'
-import { Route as AsesoriaArticulosCientificosRouteImport } from './routes/asesoria-articulos-cientificos'
-import { Route as AsesoriaDeTesisRouteImport } from './routes/asesoria-de-tesis'
-import { Route as AsesoriaEnsayosAcademicosRouteImport } from './routes/asesoria-ensayos-academicos'
-import { Route as AsesoriaMonografiasRouteImport } from './routes/asesoria-monografias'
-import { Route as AsesoriaTrabajosDeGradoRouteImport } from './routes/asesoria-trabajos-de-grado'
-import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
-import { Route as BlogRouteImport } from './routes/blog'
-import { Route as ContactoRouteImport } from './routes/contacto'
-import { Route as CorreccionDeEstiloRouteImport } from './routes/correccion-de-estilo'
-import { Route as NormasApaRouteImport } from './routes/normas-apa'
-import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
-import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
-import { Route as PoliticaDeReembolsosRouteImport } from './routes/politica-de-reembolsos'
-import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frecuentes'
-import { Route as PreparacionSustentacionesRouteImport } from './routes/preparacion-sustentaciones'
-import { Route as QuienesSomosRouteImport } from './routes/quienes-somos'
-import { Route as RevisionBibliograficaRouteImport } from './routes/revision-bibliografica'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RevisionBibliograficaRouteImport } from './routes/revision-bibliografica'
+import { Route as QuienesSomosRouteImport } from './routes/quienes-somos'
+import { Route as PreparacionSustentacionesRouteImport } from './routes/preparacion-sustentaciones'
+import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frecuentes'
+import { Route as PoliticaDeReembolsosRouteImport } from './routes/politica-de-reembolsos'
+import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
+import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
+import { Route as NormasApaRouteImport } from './routes/normas-apa'
+import { Route as CorreccionDeEstiloRouteImport } from './routes/correccion-de-estilo'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
+import { Route as AsesoriaTrabajosDeGradoRouteImport } from './routes/asesoria-trabajos-de-grado'
+import { Route as AsesoriaMonografiasRouteImport } from './routes/asesoria-monografias'
+import { Route as AsesoriaEnsayosAcademicosRouteImport } from './routes/asesoria-ensayos-academicos'
+import { Route as AsesoriaDeTesisRouteImport } from './routes/asesoria-de-tesis'
+import { Route as AsesoriaArticulosCientificosRouteImport } from './routes/asesoria-articulos-cientificos'
+import { Route as AnalisisEstadisticoSpssRouteImport } from './routes/analisis-estadistico-spss'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AnalisisEstadisticoSpssRoute = AnalisisEstadisticoSpssRouteImport.update({
-  id: '/analisis-estadistico-spss',
-  path: '/analisis-estadistico-spss',
+const RevisionBibliograficaRoute = RevisionBibliograficaRouteImport.update({
+  id: '/revision-bibliografica',
+  path: '/revision-bibliografica',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AsesoriaArticulosCientificosRoute =
-  AsesoriaArticulosCientificosRouteImport.update({
-    id: '/asesoria-articulos-cientificos',
-    path: '/asesoria-articulos-cientificos',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AsesoriaDeTesisRoute = AsesoriaDeTesisRouteImport.update({
-  id: '/asesoria-de-tesis',
-  path: '/asesoria-de-tesis',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AsesoriaEnsayosAcademicosRoute =
-  AsesoriaEnsayosAcademicosRouteImport.update({
-    id: '/asesoria-ensayos-academicos',
-    path: '/asesoria-ensayos-academicos',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AsesoriaMonografiasRoute = AsesoriaMonografiasRouteImport.update({
-  id: '/asesoria-monografias',
-  path: '/asesoria-monografias',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AsesoriaTrabajosDeGradoRoute = AsesoriaTrabajosDeGradoRouteImport.update({
-  id: '/asesoria-trabajos-de-grado',
-  path: '/asesoria-trabajos-de-grado',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AvisoLegalRoute = AvisoLegalRouteImport.update({
-  id: '/aviso-legal',
-  path: '/aviso-legal',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactoRoute = ContactoRouteImport.update({
-  id: '/contacto',
-  path: '/contacto',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CorreccionDeEstiloRoute = CorreccionDeEstiloRouteImport.update({
-  id: '/correccion-de-estilo',
-  path: '/correccion-de-estilo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NormasApaRoute = NormasApaRouteImport.update({
-  id: '/normas-apa',
-  path: '/normas-apa',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
-  id: '/politica-de-cookies',
-  path: '/politica-de-cookies',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PoliticaDePrivacidadRoute = PoliticaDePrivacidadRouteImport.update({
-  id: '/politica-de-privacidad',
-  path: '/politica-de-privacidad',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PoliticaDeReembolsosRoute = PoliticaDeReembolsosRouteImport.update({
-  id: '/politica-de-reembolsos',
-  path: '/politica-de-reembolsos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PreguntasFrecuentesRoute = PreguntasFrecuentesRouteImport.update({
-  id: '/preguntas-frecuentes',
-  path: '/preguntas-frecuentes',
+const QuienesSomosRoute = QuienesSomosRouteImport.update({
+  id: '/quienes-somos',
+  path: '/quienes-somos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PreparacionSustentacionesRoute =
@@ -119,19 +52,86 @@ const PreparacionSustentacionesRoute =
     path: '/preparacion-sustentaciones',
     getParentRoute: () => rootRouteImport,
   } as any)
-const QuienesSomosRoute = QuienesSomosRouteImport.update({
-  id: '/quienes-somos',
-  path: '/quienes-somos',
+const PreguntasFrecuentesRoute = PreguntasFrecuentesRouteImport.update({
+  id: '/preguntas-frecuentes',
+  path: '/preguntas-frecuentes',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RevisionBibliograficaRoute = RevisionBibliograficaRouteImport.update({
-  id: '/revision-bibliografica',
-  path: '/revision-bibliografica',
+const PoliticaDeReembolsosRoute = PoliticaDeReembolsosRouteImport.update({
+  id: '/politica-de-reembolsos',
+  path: '/politica-de-reembolsos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const PoliticaDePrivacidadRoute = PoliticaDePrivacidadRouteImport.update({
+  id: '/politica-de-privacidad',
+  path: '/politica-de-privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
+  id: '/politica-de-cookies',
+  path: '/politica-de-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NormasApaRoute = NormasApaRouteImport.update({
+  id: '/normas-apa',
+  path: '/normas-apa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CorreccionDeEstiloRoute = CorreccionDeEstiloRouteImport.update({
+  id: '/correccion-de-estilo',
+  path: '/correccion-de-estilo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvisoLegalRoute = AvisoLegalRouteImport.update({
+  id: '/aviso-legal',
+  path: '/aviso-legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AsesoriaTrabajosDeGradoRoute = AsesoriaTrabajosDeGradoRouteImport.update({
+  id: '/asesoria-trabajos-de-grado',
+  path: '/asesoria-trabajos-de-grado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AsesoriaMonografiasRoute = AsesoriaMonografiasRouteImport.update({
+  id: '/asesoria-monografias',
+  path: '/asesoria-monografias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AsesoriaEnsayosAcademicosRoute =
+  AsesoriaEnsayosAcademicosRouteImport.update({
+    id: '/asesoria-ensayos-academicos',
+    path: '/asesoria-ensayos-academicos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AsesoriaDeTesisRoute = AsesoriaDeTesisRouteImport.update({
+  id: '/asesoria-de-tesis',
+  path: '/asesoria-de-tesis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AsesoriaArticulosCientificosRoute =
+  AsesoriaArticulosCientificosRouteImport.update({
+    id: '/asesoria-articulos-cientificos',
+    path: '/asesoria-articulos-cientificos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AnalisisEstadisticoSpssRoute = AnalisisEstadisticoSpssRouteImport.update({
+  id: '/analisis-estadistico-spss',
+  path: '/analisis-estadistico-spss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -307,130 +307,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/analisis-estadistico-spss': {
-      id: '/analisis-estadistico-spss'
-      path: '/analisis-estadistico-spss'
-      fullPath: '/analisis-estadistico-spss'
-      preLoaderRoute: typeof AnalisisEstadisticoSpssRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asesoria-articulos-cientificos': {
-      id: '/asesoria-articulos-cientificos'
-      path: '/asesoria-articulos-cientificos'
-      fullPath: '/asesoria-articulos-cientificos'
-      preLoaderRoute: typeof AsesoriaArticulosCientificosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asesoria-de-tesis': {
-      id: '/asesoria-de-tesis'
-      path: '/asesoria-de-tesis'
-      fullPath: '/asesoria-de-tesis'
-      preLoaderRoute: typeof AsesoriaDeTesisRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asesoria-ensayos-academicos': {
-      id: '/asesoria-ensayos-academicos'
-      path: '/asesoria-ensayos-academicos'
-      fullPath: '/asesoria-ensayos-academicos'
-      preLoaderRoute: typeof AsesoriaEnsayosAcademicosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asesoria-monografias': {
-      id: '/asesoria-monografias'
-      path: '/asesoria-monografias'
-      fullPath: '/asesoria-monografias'
-      preLoaderRoute: typeof AsesoriaMonografiasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asesoria-trabajos-de-grado': {
-      id: '/asesoria-trabajos-de-grado'
-      path: '/asesoria-trabajos-de-grado'
-      fullPath: '/asesoria-trabajos-de-grado'
-      preLoaderRoute: typeof AsesoriaTrabajosDeGradoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/aviso-legal': {
-      id: '/aviso-legal'
-      path: '/aviso-legal'
-      fullPath: '/aviso-legal'
-      preLoaderRoute: typeof AvisoLegalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contacto': {
-      id: '/contacto'
-      path: '/contacto'
-      fullPath: '/contacto'
-      preLoaderRoute: typeof ContactoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/correccion-de-estilo': {
-      id: '/correccion-de-estilo'
-      path: '/correccion-de-estilo'
-      fullPath: '/correccion-de-estilo'
-      preLoaderRoute: typeof CorreccionDeEstiloRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/normas-apa': {
-      id: '/normas-apa'
-      path: '/normas-apa'
-      fullPath: '/normas-apa'
-      preLoaderRoute: typeof NormasApaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/politica-de-cookies': {
-      id: '/politica-de-cookies'
-      path: '/politica-de-cookies'
-      fullPath: '/politica-de-cookies'
-      preLoaderRoute: typeof PoliticaDeCookiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/politica-de-privacidad': {
-      id: '/politica-de-privacidad'
-      path: '/politica-de-privacidad'
-      fullPath: '/politica-de-privacidad'
-      preLoaderRoute: typeof PoliticaDePrivacidadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/politica-de-reembolsos': {
-      id: '/politica-de-reembolsos'
-      path: '/politica-de-reembolsos'
-      fullPath: '/politica-de-reembolsos'
-      preLoaderRoute: typeof PoliticaDeReembolsosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/preguntas-frecuentes': {
-      id: '/preguntas-frecuentes'
-      path: '/preguntas-frecuentes'
-      fullPath: '/preguntas-frecuentes'
-      preLoaderRoute: typeof PreguntasFrecuentesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/preparacion-sustentaciones': {
-      id: '/preparacion-sustentaciones'
-      path: '/preparacion-sustentaciones'
-      fullPath: '/preparacion-sustentaciones'
-      preLoaderRoute: typeof PreparacionSustentacionesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/quienes-somos': {
-      id: '/quienes-somos'
-      path: '/quienes-somos'
-      fullPath: '/quienes-somos'
-      preLoaderRoute: typeof QuienesSomosRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/revision-bibliografica': {
@@ -440,11 +321,130 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RevisionBibliograficaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
+    '/quienes-somos': {
+      id: '/quienes-somos'
+      path: '/quienes-somos'
+      fullPath: '/quienes-somos'
+      preLoaderRoute: typeof QuienesSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preparacion-sustentaciones': {
+      id: '/preparacion-sustentaciones'
+      path: '/preparacion-sustentaciones'
+      fullPath: '/preparacion-sustentaciones'
+      preLoaderRoute: typeof PreparacionSustentacionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preguntas-frecuentes': {
+      id: '/preguntas-frecuentes'
+      path: '/preguntas-frecuentes'
+      fullPath: '/preguntas-frecuentes'
+      preLoaderRoute: typeof PreguntasFrecuentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-reembolsos': {
+      id: '/politica-de-reembolsos'
+      path: '/politica-de-reembolsos'
+      fullPath: '/politica-de-reembolsos'
+      preLoaderRoute: typeof PoliticaDeReembolsosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidad': {
+      id: '/politica-de-privacidad'
+      path: '/politica-de-privacidad'
+      fullPath: '/politica-de-privacidad'
+      preLoaderRoute: typeof PoliticaDePrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-cookies': {
+      id: '/politica-de-cookies'
+      path: '/politica-de-cookies'
+      fullPath: '/politica-de-cookies'
+      preLoaderRoute: typeof PoliticaDeCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/normas-apa': {
+      id: '/normas-apa'
+      path: '/normas-apa'
+      fullPath: '/normas-apa'
+      preLoaderRoute: typeof NormasApaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/correccion-de-estilo': {
+      id: '/correccion-de-estilo'
+      path: '/correccion-de-estilo'
+      fullPath: '/correccion-de-estilo'
+      preLoaderRoute: typeof CorreccionDeEstiloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aviso-legal': {
+      id: '/aviso-legal'
+      path: '/aviso-legal'
+      fullPath: '/aviso-legal'
+      preLoaderRoute: typeof AvisoLegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/asesoria-trabajos-de-grado': {
+      id: '/asesoria-trabajos-de-grado'
+      path: '/asesoria-trabajos-de-grado'
+      fullPath: '/asesoria-trabajos-de-grado'
+      preLoaderRoute: typeof AsesoriaTrabajosDeGradoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/asesoria-monografias': {
+      id: '/asesoria-monografias'
+      path: '/asesoria-monografias'
+      fullPath: '/asesoria-monografias'
+      preLoaderRoute: typeof AsesoriaMonografiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/asesoria-ensayos-academicos': {
+      id: '/asesoria-ensayos-academicos'
+      path: '/asesoria-ensayos-academicos'
+      fullPath: '/asesoria-ensayos-academicos'
+      preLoaderRoute: typeof AsesoriaEnsayosAcademicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/asesoria-de-tesis': {
+      id: '/asesoria-de-tesis'
+      path: '/asesoria-de-tesis'
+      fullPath: '/asesoria-de-tesis'
+      preLoaderRoute: typeof AsesoriaDeTesisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/asesoria-articulos-cientificos': {
+      id: '/asesoria-articulos-cientificos'
+      path: '/asesoria-articulos-cientificos'
+      fullPath: '/asesoria-articulos-cientificos'
+      preLoaderRoute: typeof AsesoriaArticulosCientificosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analisis-estadistico-spss': {
+      id: '/analisis-estadistico-spss'
+      path: '/analisis-estadistico-spss'
+      fullPath: '/analisis-estadistico-spss'
+      preLoaderRoute: typeof AnalisisEstadisticoSpssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
