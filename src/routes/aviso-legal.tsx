@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalTemplate, legalHead, LegalH2 } from "../components/LegalTemplate";
+import { waUrl } from "../lib/whatsapp";
 
 export const Route = createFileRoute("/aviso-legal")({
   head: () =>
