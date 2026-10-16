@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { initTracking, updateConsent } from "../lib/tracking";
 
 const STORAGE_KEY = "aa_cookie_consent_v1";
 export const OPEN_COOKIE_PREFS_EVENT = "aa:open-cookie-prefs";
@@ -22,63 +23,10 @@ function readPrefs(): Prefs | null {
   }
 }
 
-function injectGtag() {
-  if (typeof document === "undefined") return;
-  const tagId = "AW-16459873319";
-  if (document.getElementById(`gtag-${tagId}`)) return;
-
-  const inline = document.createElement("script");
-  inline.id = `gtag-${tagId}-inline`;
-  inline.textContent = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '${tagId}');
-
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-        'send_to': '${tagId}/XfdPCLnm-ZEZEKf41qg9',
-        'event_callback': callback
-      });
-      return false;
-    }
-
-    document.addEventListener('click', function (e) {
-      var el = e.target.closest && e.target.closest('a[href*="wa.me"]');
-      if (el) {
-        gtag_report_conversion();
-      }
-    });
-  `;
-
-  const asyncScript = document.createElement("script");
-  asyncScript.id = `gtag-${tagId}`;
-  asyncScript.async = true;
-  asyncScript.src = `https://www.googletagmanager.com/gtag/js?id=${tagId}`;
-
-  const first = document.getElementsByTagName("script")[0];
-  if (first?.parentNode) {
-    first.parentNode.insertBefore(inline, first);
-    first.parentNode.insertBefore(asyncScript, first);
-  } else {
-    document.head.appendChild(inline);
-    document.head.appendChild(asyncScript);
-  }
-}
-
 function loadOptionalScripts(prefs: Prefs) {
   if (typeof window === "undefined") return;
-  if (prefs.analytics) {
-    // Espacio reservado para Google Analytics 4 u otro proveedor de analítica.
-  }
-  if (prefs.marketing || prefs.analytics) {
-    injectGtag();
-  }
+  initTracking();
+  updateConsent({ analytics: prefs.analytics, marketing: prefs.marketing });
 }
 
 export function CookieConsent() {
@@ -89,6 +37,7 @@ export function CookieConsent() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    initTracking();
     const existing = readPrefs();
     if (existing) {
       loadOptionalScripts(existing);

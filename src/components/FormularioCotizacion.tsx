@@ -1,5 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { CheckCircle2 } from "lucide-react";
+import { waFormularioUrl } from "../lib/whatsapp";
+import { CONVERSIONS, trackConversion } from "../lib/tracking";
 
 const SERVICIOS = [
   "Asesoría de tesis",
@@ -29,8 +31,29 @@ export function FormularioCotizacion({
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const campo = (nombre: string) => String(data.get(nombre) ?? "");
+
+    const url = waFormularioUrl({
+      Nombre: campo("nombre"),
+      WhatsApp: campo("whatsapp"),
+      Correo: campo("correo"),
+      Servicio: campo("servicio"),
+      Nivel: campo("nivel"),
+      "Fecha límite": campo("fecha"),
+      Mensaje: campo("mensaje"),
+    });
+
+    trackConversion(CONVERSIONS.formulario);
+
+    // Se abre en el mismo clic del envío para que el navegador no lo bloquee.
+    // (Sin "noopener": con esa opción window.open siempre devuelve null.)
+    const ventana = window.open(url, "_blank");
+    if (ventana) ventana.opener = null;
+    else window.location.href = url;
+
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -48,8 +71,8 @@ export function FormularioCotizacion({
           Recibimos tu solicitud
         </h3>
         <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
-          Un asesor te contactará por WhatsApp o correo en las próximas horas
-          hábiles para conversar sobre tu proceso académico.
+          Abrimos WhatsApp con tus datos: solo presiona enviar y un asesor te
+          responderá en las próximas horas hábiles.
         </p>
         <button
           onClick={() => setSent(false)}

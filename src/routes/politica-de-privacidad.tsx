@@ -94,13 +94,16 @@ function PoliticaPrivacidadPage() {
         </li>
       </ul>
       <p className="mt-4 leading-relaxed text-[color:var(--muted-foreground)]">
-        Si aceptas analíticas o marketing, cargamos el tag de conversión de{" "}
+        Usamos la etiqueta de conversión de{" "}
         <strong className="text-[color:var(--ink)]">Google Ads</strong>{" "}
-        (ID AW-16459873319) para medir cuándo un visitante hace clic en un
-        enlace de WhatsApp. Esto nos ayuda a optimizar campañas sin identificarte
-        personalmente. Puedes cambiar tus preferencias en cualquier momento desde
-        el banner de cookies o el enlace "Preferencias de cookies" en el pie de
-        página.
+        (ID AW-16459873319) con el modo de consentimiento de Google: mientras no
+        aceptes las cookies de marketing, la etiqueta no guarda cookies en tu
+        navegador y solo envía señales anónimas para saber cuándo alguien que
+        llegó desde un anuncio escribe por WhatsApp o envía el formulario. Si
+        aceptas, se usan cookies para medir esas acciones con mayor precisión.
+        Nada de esto te identifica personalmente. Puedes cambiar tus preferencias
+        en cualquier momento desde el banner de cookies o el enlace
+        "Preferencias de cookies" en el pie de página.
       </p>
 
       <LegalH2>6. Derechos del titular de los datos</LegalH2>

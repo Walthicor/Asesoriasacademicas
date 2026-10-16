@@ -17,11 +17,20 @@ export function waUrl(servicio?: string): string {
   return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`;
 }
 
-/** Fire the Google Ads conversion event if the visitor accepted cookies. */
-export function trackConversion(url?: string) {
-  if (typeof window === "undefined") return;
-  const w = window as typeof window & { gtag_report_conversion?: (url?: string) => boolean | void };
-  if (typeof w.gtag_report_conversion === "function") {
-    w.gtag_report_conversion(url);
-  }
+/** Link de la página puente: la gente llega desde el anuncio de Google. */
+export function waAnuncioUrl(): string {
+  const message = "Hola, vengo de Google y quiero una cotización de asesoría académica";
+  return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`;
+}
+
+/** Link con los datos del formulario de cotización, para que el lead llegue por WhatsApp. */
+export function waFormularioUrl(datos: Record<string, string>): string {
+  const lineas = [
+    "Hola, acabo de llenar el formulario de cotización del website:",
+    "",
+    ...Object.entries(datos)
+      .filter(([, valor]) => valor.trim() !== "")
+      .map(([campo, valor]) => `*${campo}:* ${valor.trim()}`),
+  ];
+  return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(lineas.join("\n"))}`;
 }
