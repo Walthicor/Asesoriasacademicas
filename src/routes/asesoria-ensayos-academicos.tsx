@@ -53,7 +53,7 @@ function Page() {
       relacionados={[
         { to: "/asesoria-monografias", titulo: "Monografías", texto: "Asesoría en investigación documental con rigor académico.", icon: FileText },
         { to: "/", titulo: "Normas APA", texto: "Formato profesional y capacitación en citación APA 7.", icon: BookMarked },
-        { to: "/", titulo: "Corrección de estilo", texto: "Pulimos redacción y ortotipografía respetando tu autoría.", icon: SpellCheck },
+        { to: "/", titulo: "Corrección de estilo", texto: "Te señalamos mejoras de redacción y ortotipografía; tú aplicas los cambios.", icon: SpellCheck },
       ]}
       ctaTitle="¿Quieres escribir mejor?"
       ctaSubtitle="Agenda hoy tu tutoría y empieza esta misma semana a fortalecer tu escritura académica."

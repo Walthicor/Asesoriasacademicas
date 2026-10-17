@@ -94,7 +94,7 @@ function APAPage() {
           to: "/correccion-de-estilo",
           titulo: "Corrección de estilo",
           texto:
-            "Pule la redacción, coherencia y ortotipografía manteniendo tu voz.",
+            "Recibe observaciones de redacción, coherencia y ortotipografía para mejorar tu texto.",
           icon: PenLine,
         },
         {

@@ -54,7 +54,7 @@ function Page() {
       relacionados={[
         { to: "/asesoria-de-tesis", titulo: "Asesoría de tesis", texto: "Acompañamiento metodológico para maestría y doctorado.", icon: GraduationCap },
         { to: "/", titulo: "Normas APA", texto: "Formato profesional y capacitación en citación APA 7.", icon: BookMarked },
-        { to: "/", titulo: "Corrección de estilo", texto: "Pulimos redacción y ortotipografía respetando tu autoría.", icon: SpellCheck },
+        { to: "/", titulo: "Corrección de estilo", texto: "Te señalamos mejoras de redacción y ortotipografía; tú aplicas los cambios.", icon: SpellCheck },
       ]}
       ctaTitle="¿Cerca de graduarte?"
       ctaSubtitle="Cuéntanos tu caso hoy y arma tu plan de acompañamiento esta misma semana."

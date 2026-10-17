@@ -64,10 +64,10 @@ function RevisionBibliograficaPage() {
         {
           titulo: "Gestión y matriz documental",
           texto:
-            "Organizamos referencias en Zotero o Mendeley y armamos tu matriz analítica.",
+            "Te enseñamos a organizar referencias en Zotero o Mendeley y a construir tu matriz analítica.",
         },
         {
-          titulo: "Redacción del estado del arte",
+          titulo: "Retroalimentación del estado del arte",
           texto:
             "Revisamos tu escritura hasta que refleje control conceptual del campo.",
         },
