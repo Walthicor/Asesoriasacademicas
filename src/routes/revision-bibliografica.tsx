@@ -59,7 +59,7 @@ function RevisionBibliograficaPage() {
         {
           titulo: "Selección de fuentes",
           texto:
-            "Aplicamos tus criterios de inclusión y exclusión para filtrar la literatura pertinente.",
+            "Te enseñamos a aplicar criterios de inclusión y exclusión para filtrar la literatura pertinente.",
         },
         {
           titulo: "Gestión y matriz documental",

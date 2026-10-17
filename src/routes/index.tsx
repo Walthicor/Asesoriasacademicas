@@ -76,16 +76,16 @@ const pasos = [
   { n: "02", title: "Plan de acompañamiento", text: "Organización · asesor asignado · entregas" },
   { n: "03", title: "Sesiones de seguimiento", text: "Comunicación · orientación · avances" },
   { n: "04", title: "Revisiones progresivas", text: "Retroalimentación · ajustes · mejoras" },
-  { n: "05", title: "Entrega final", text: "Revisión · formato · entrega" },
+  { n: "05", title: "Sustentación", text: "Preparación · simulacro · defensa" },
 ];
 
 const razones = [
   { icon: ShieldCheck, title: "Compromiso con la calidad" },
-  { icon: Lock, title: "Confidencialidad garantizada" },
+  { icon: Lock, title: "Protección de tus datos" },
   { icon: MessagesSquare, title: "Comunicación continua" },
   { icon: UserCheck, title: "Seguimiento personalizado" },
   { icon: Layers, title: "Flexibilidad y adaptabilidad" },
-  { icon: Award, title: "Garantía de resultados" },
+  { icon: Award, title: "Tú eres el autor de tu trabajo" },
 ];
 
 const cifras = [
@@ -161,7 +161,8 @@ function Hero() {
 
         <p className="reveal mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/85">
           Te acompañamos en cada etapa con asesoría personalizada, claridad y
-          compromiso para que avances con confianza.
+          compromiso para que avances con confianza. Tú escribes tu trabajo:
+          nosotros te orientamos y te capacitamos.
         </p>
 
         <div className="reveal mt-9 flex flex-wrap items-center justify-center gap-4">
@@ -300,7 +301,7 @@ function PorQue() {
             ¿Por qué elegirnos?
           </p>
           <h2 className="text-shine-dark mt-4 font-display text-3xl font-medium md:text-4xl">
-            Un servicio 100% garantizado
+            Acompañamiento ético y profesional
           </h2>
         </div>
 

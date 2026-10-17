@@ -16,7 +16,7 @@ const grupos: { titulo: string; items: QA[] }[] = [
       },
       {
         q: "¿Qué diferencia hay entre asesoría y que me lo hagan?",
-        a: "La asesoría desarrolla tus capacidades y produce un trabajo genuinamente tuyo, defendible ante jurados, software antiplagio y detectores de IA. Comprar un trabajo hecho es fraude académico: puede costarte el título y no te enseña nada. Por eso no lo ofrecemos.",
+        a: "La asesoría desarrolla tus capacidades y produce un trabajo genuinamente tuyo, defendible ante tu jurado. Comprar un trabajo hecho es fraude académico: puede costarte el título y no te enseña nada. Por eso no lo ofrecemos.",
       },
       {
         q: "¿En qué áreas asesoran?",

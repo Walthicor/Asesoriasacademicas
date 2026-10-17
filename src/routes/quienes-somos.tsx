@@ -85,7 +85,7 @@ const metodo = [
       "Registro claro del avance por capítulo o entregable, con hitos y fechas acordadas.",
   },
   {
-    titulo: "Garantía por sesión y entrega",
+    titulo: "Retroalimentación en cada sesión",
     texto:
       "Cada asesoría incluye retroalimentación escrita para que aproveches al máximo el trabajo.",
   },

@@ -27,8 +27,9 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-              Consultoría y acompañamiento integral para estudiantes de pregrado
-              y posgrado en Colombia. Servicio totalmente garantizado.
+              Tutoría y acompañamiento académico para estudiantes de pregrado
+              y posgrado en Colombia. El autor de cada trabajo es siempre el
+              estudiante.
             </p>
           </div>
 
@@ -149,6 +150,11 @@ export function Footer() {
         </div>
 
         <p className="mt-6 text-center text-xs text-[color:var(--muted-foreground)]">
+          <span className="block font-medium text-[color:var(--primary)]/80">
+            Política ética: no elaboramos, redactamos ni vendemos trabajos
+            académicos. Orientamos y capacitamos; la autoría es siempre del
+            estudiante.
+          </span>
           © 2026 Asesorías Académicas. Todos los derechos reservados.
         </p>
       </div>

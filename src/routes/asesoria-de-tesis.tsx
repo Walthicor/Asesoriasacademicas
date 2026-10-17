@@ -19,7 +19,7 @@ export const Route = createFileRoute("/asesoria-de-tesis")({
 const FAQ = [
         {
           q: "¿Ustedes escriben la tesis por mí?",
-          a: "No. La autoría es tuya siempre: tú escribes y nosotros te asesoramos, revisamos y orientamos. Así garantizas dominio total de tu trabajo ante jurados y sistemas antiplagio, y un proceso académicamente ético.",
+          a: "No. La autoría es tuya siempre: tú escribes y nosotros te asesoramos, revisamos y orientamos. Así garantizas dominio total de tu trabajo ante tu jurado y un proceso académicamente ético.",
         },
         {
           q: "¿Cuánto dura el acompañamiento?",

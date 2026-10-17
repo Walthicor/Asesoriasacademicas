@@ -85,7 +85,7 @@ function SustentacionPage() {
         {
           titulo: "Autores que ya reprobaron una sustentación",
           texto:
-            "Analizamos qué pasó, corregimos brechas y te preparamos para el segundo intento.",
+            "Analizamos qué pasó, identificamos brechas y te preparamos para el segundo intento.",
         },
       ]}
       faq={FAQ}

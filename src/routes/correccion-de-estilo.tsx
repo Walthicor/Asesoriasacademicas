@@ -8,7 +8,7 @@ export const Route = createFileRoute("/correccion-de-estilo")({
   head: () => serviceHead({
     path: "/correccion-de-estilo",
     title: "Corrección de Estilo de Tesis y Documentos Académicos — Asesorías Académicas",
-    description: "Correctores profesionales pulen la redacción, coherencia, cohesión y ortotipografía de tu documento académico respetando tu autoría.",
+    description: "Revisamos la redacción, coherencia y ortografía de tu documento con comentarios y explicaciones para que tú mejores tu texto.",
     serviceName: "Corrección de estilo académica",
     ogType: "article",
     faq: FAQ,
@@ -19,11 +19,11 @@ export const Route = createFileRoute("/correccion-de-estilo")({
 const FAQ = [
         {
           q: "¿La corrección altera mi autoría?",
-          a: "No: la corrección de estilo es una práctica editorial estándar. Todos los cambios van con control de cambios y tú los apruebas.",
+          a: "No: trabajamos con comentarios y sugerencias. Tú decides qué mejorar y haces los ajustes en tu documento.",
         },
         {
-          q: "¿En cuánto tiempo entregan?",
-          a: "De 5 a 10 días hábiles según extensión. Modalidad exprés bajo cotización.",
+          q: "¿Cuánto tarda la revisión?",
+          a: "Depende de la extensión del documento; lo acordamos en la cotización.",
         },
         {
           q: "¿Reescriben capítulos completos?",
@@ -40,7 +40,7 @@ function CorreccionPage() {
     <ServicioTemplate
       nombre="Corrección de estilo"
       h1="Corrección de estilo y contenido: tu texto, en su mejor versión"
-      subtitulo="Correctores profesionales pulen la redacción, coherencia, cohesión y ortotipografía de tu documento académico, siempre respetando tu voz y tu autoría."
+      subtitulo="Revisamos la redacción, coherencia y ortografía de tu documento con comentarios y explicaciones, para que tú mejores tu texto conservando tu voz y tu autoría."
       heroImage={heroImg}
       incluye={[
         "Corrección ortotipográfica (ortografía, puntuación, tildes)",
@@ -53,12 +53,12 @@ function CorreccionPage() {
         {
           titulo: "Muestra gratuita",
           texto:
-            "Corregimos una página para que veas el nivel de intervención antes de aprobar.",
+            "Revisamos una página de muestra para que veas el tipo de comentarios que recibirás.",
         },
         {
-          titulo: "Corrección con control de cambios",
+          titulo: "Comentarios explicados",
           texto:
-            "Cada modificación queda visible: tú decides qué aceptar y qué rechazar.",
+            "Cada observación explica el problema y cómo resolverlo: tú haces los cambios.",
         },
         {
           titulo: "Informe de observaciones",
@@ -112,8 +112,8 @@ function CorreccionPage() {
           icon: Presentation,
         },
       ]}
-      ctaTitle="Entrega un documento que se lea con solidez profesional"
-      ctaSubtitle="Envíanos tu manuscrito y recibe una muestra gratuita de corrección."
+      ctaTitle="Mejora tu redacción con retroalimentación profesional"
+      ctaSubtitle="Envíanos tu manuscrito y recibe una muestra gratuita de revisión."
     />
   );
 }

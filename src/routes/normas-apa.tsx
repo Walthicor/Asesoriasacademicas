@@ -8,7 +8,7 @@ export const Route = createFileRoute("/normas-apa")({
   head: () => serviceHead({
     path: "/normas-apa",
     title: "Normas APA 7 | Formato y Citación de Tesis — Asesorías Académicas",
-    description: "Aplicamos el formato APA a tu documento y te capacitamos en citación para que nunca más pierdas puntos por forma.",
+    description: "Revisamos tu documento, te señalamos cada ajuste de APA 7 y te capacitamos en citación para que nunca más pierdas puntos por forma.",
     serviceName: "Formato y capacitación en Normas APA 7",
     ogType: "article",
     faq: FAQ,
@@ -22,8 +22,8 @@ const FAQ = [
           a: "Nuestro fuerte es APA 7. Consulta por otros estilos: podemos orientarte según disponibilidad de asesores.",
         },
         {
-          q: "¿En cuánto tiempo entregan?",
-          a: "Un documento estándar de tesis se entrega entre 3 y 7 días hábiles. Servicio exprés bajo cotización.",
+          q: "¿Cuánto dura el acompañamiento?",
+          a: "Normalmente entre una y dos semanas: una revisión con observaciones y una sesión práctica para que apliques los ajustes.",
         },
         {
           q: "¿Incluye corrección de estilo?",
@@ -31,7 +31,7 @@ const FAQ = [
         },
         {
           q: "¿Reciben cualquier formato de archivo?",
-          a: "Sí: Word, Google Docs y LaTeX. Devolvemos el archivo en el mismo formato en que lo entregaste.",
+          a: "Sí: Word, Google Docs y LaTeX. Dejamos nuestras observaciones como comentarios en el mismo archivo para que tú hagas los ajustes.",
         },
       ];
 
@@ -40,7 +40,7 @@ function APAPage() {
     <ServicioTemplate
       nombre="Normas APA 7"
       h1="Normas APA 7: formato impecable y citación sin errores"
-      subtitulo="Aplicamos el formato APA a tu documento y te capacitamos en citación para que nunca más pierdas puntos por forma."
+      subtitulo="Revisamos tu documento, te señalamos cada ajuste de APA 7 y te capacitamos en citación para que nunca más pierdas puntos por forma."
       heroImage={heroImg}
       incluye={[
         "Formato completo del documento: portada, márgenes, interlineado, tablas y figuras",
@@ -58,7 +58,7 @@ function APAPage() {
         {
           titulo: "Aplicación de APA 7",
           texto:
-            "Formateamos tu documento completo cumpliendo la séptima edición.",
+            "Revisamos tu documento y marcamos cada ajuste de formato y citación según la séptima edición.",
         },
         {
           titulo: "Capacitación breve",
@@ -66,16 +66,16 @@ function APAPage() {
             "Sesión práctica para que aprendas a citar y referenciar por tu cuenta.",
         },
         {
-          titulo: "Entrega + guía personalizada",
+          titulo: "Guía personalizada",
           texto:
-            "Documento final más una guía rápida con los casos frecuentes de tu carrera.",
+            "Una guía rápida con los casos de citación más frecuentes de tu carrera.",
         },
       ]}
       perfiles={[
         {
           titulo: "Estudiantes con tesis o trabajo listo",
           texto:
-            "Dejamos tu documento presentable en tiempo récord antes de la entrega.",
+            "Te ayudamos a revisar la forma de tu documento antes de presentarlo.",
         },
         {
           titulo: "Investigadores redactando artículos",
@@ -113,7 +113,7 @@ function APAPage() {
         },
       ]}
       ctaTitle="Que tu documento se vea tan sólido como su contenido"
-      ctaSubtitle="Envíanos tu archivo y te devolvemos APA 7 impecable en pocos días."
+      ctaSubtitle="Envíanos tu archivo: te señalamos los ajustes de APA 7 y te enseñamos a aplicarlos."
     />
   );
 }

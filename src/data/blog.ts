@@ -121,7 +121,7 @@ export const articles: Article[] = [
       titulo: "Formato y citación APA 7",
       to: "/normas-apa",
       texto:
-        "Aplicamos APA 7 a tu documento y te capacitamos para que cites sin errores.",
+        "Revisamos el APA 7 de tu documento y te capacitamos para que cites sin errores.",
     },
     blocks: [
       {
@@ -568,7 +568,7 @@ export const articles: Article[] = [
       titulo: "Formato y citación APA 7",
       to: "/normas-apa",
       texto:
-        "Aplicamos y auditamos APA 7 en tu documento para que pases sin descuentos.",
+        "Revisamos el APA 7 de tu documento y te explicamos cada ajuste.",
     },
     blocks: [
       {
